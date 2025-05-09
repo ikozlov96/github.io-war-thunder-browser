@@ -4,6 +4,10 @@ import {ClearOutlined, FilterOutlined, SearchOutlined, SortAscendingOutlined} fr
 import {getCountryColor, getCountryName, getTypeName} from '../utils';
 import './FilterSidebar.css';
 
+const DISTANCE = 2.0;      // фиксированный зазор между ползунками
+const MIN = 0.0;           // минимальное значение шкалы
+const MAX = 10.0;          // максимальное значение шкалы
+
 const {Panel} = Collapse;
 
 const FilterSidebar = ({
@@ -24,7 +28,33 @@ const FilterSidebar = ({
 
     // Handle BR slider change
     const handleBRChange = (value) => {
-        onFilterChange('brRange', value);
+        const [oldMin, oldMax] = brRange;
+        let newMin, newMax;
+
+        if (value[0] !== oldMin) {
+            const delta = value[0] - oldMin;
+            newMin = value[0];
+            newMax = oldMax + delta;
+        } else {
+            const delta = value[1] - oldMax;
+            newMax = value[1];
+            newMin = oldMin + delta;
+        }
+
+        // Границы [0, 12]
+        if (newMin < 0) {
+            newMin = 0;
+            newMax = DISTANCE;
+        }
+        if (newMax > 12) {
+            newMax = 12;
+            newMin = 12 - DISTANCE;
+        }
+
+        onFilterChange('brRange', [
+            parseFloat(newMin.toFixed(1)),
+            parseFloat(newMax.toFixed(1))
+        ]);
     };
 
     // Handle country selection
