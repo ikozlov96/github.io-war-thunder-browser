@@ -91,42 +91,49 @@ const materialDarkTheme = {
   },
 };
 
+// Константа для хранения данных в localStorage
+const STORAGE_KEY = 'warThunderBrowserFilters';
+
 function App() {
   // State for the vehicles data
   const [vehicles, setVehicles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // State for available filter options (derived from data)
+  // State for available BR values and filter options
   const [availableFilters, setAvailableFilters] = useState({
     countries: [],
     ranks: [],
     types: [],
+    brValues: [], // доступные значения BR из JSON
   });
 
-  // State for active filters
-  const [filters, setFilters] = useState({
+  // Default filter values
+  const defaultFilters = {
     nameFilter: '',
     countryFilter: [],
     rankFilter: [],
     typeFilter: [],
-    brRange: [0, 12],
+    brValue: 6.0,      // выбранное значение BR
+    brFilterActive: false,  // флаг активации фильтра BR
+  };
+
+  // State for active filters с загрузкой из localStorage
+  const [filters, setFilters] = useState(() => {
+    const savedFilters = localStorage.getItem(STORAGE_KEY);
+    return savedFilters ? JSON.parse(savedFilters) : defaultFilters;
   });
 
   // Временные фильтры для мобильной версии
-  // Это нужно чтобы пользователь мог отменить изменения
-  const [tempFilters, setTempFilters] = useState({
-    nameFilter: '',
-    countryFilter: [],
-    rankFilter: [],
-    typeFilter: [],
-    brRange: [0, 12],
-  });
+  const [tempFilters, setTempFilters] = useState({...filters});
 
   // State for sorting
-  const [sort, setSort] = useState({
-    field: 'br',
-    order: 'asc',
+  const [sort, setSort] = useState(() => {
+    const savedSort = localStorage.getItem(STORAGE_KEY + '_sort');
+    return savedSort ? JSON.parse(savedSort) : {
+      field: 'br',
+      order: 'asc',
+    };
   });
 
   // State for pagination
@@ -139,6 +146,16 @@ function App() {
   // State for mobile drawer (for filters on mobile)
   const [mobileDrawerVisible, setMobileDrawerVisible] = useState(false);
 
+  // Сохраняем фильтры в localStorage при их изменении
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(filters));
+  }, [filters]);
+
+  // Сохраняем сортировку в localStorage при её изменении
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY + '_sort', JSON.stringify(sort));
+  }, [sort]);
+
   // Количество активных фильтров для мобильного интерфейса
   const activeFiltersCount = useMemo(() => {
     let count = 0;
@@ -146,7 +163,7 @@ function App() {
     if (filters.countryFilter.length > 0) count++;
     if (filters.rankFilter.length > 0) count++;
     if (filters.typeFilter.length > 0) count++;
-    if (filters.brRange[0] > 0 || filters.brRange[1] < 12) count++;
+    if (filters.brFilterActive) count++;
     return count;
   }, [filters]);
 
@@ -170,10 +187,13 @@ function App() {
         setVehicles(data.vehicles);
 
         // Extract unique values for filters
+        const brValues = [...new Set(data.vehicles.map(v => parseFloat(v.br)))].sort((a, b) => a - b);
+
         setAvailableFilters({
           countries: [...new Set(data.vehicles.map(v => v.country))].sort(),
           ranks: [...new Set(data.vehicles.map(v => v.rank))].sort((a, b) => a - b),
           types: [...new Set(data.vehicles.map(v => v.type))].sort(),
+          brValues: brValues,
         });
 
         setLoading(false);
@@ -192,8 +212,19 @@ function App() {
   const filteredVehicles = useMemo(() => {
     if (!vehicles.length) return [];
 
+    // Создаем объект с фильтрами, преобразуя одиночное значение BR в диапазон ±1
+    const filterWithBrRange = {
+      ...filters,
+      brRange: filters.brFilterActive
+          ? [
+            Math.max(0, filters.brValue - 1.0),  // Минимальное значение (но не меньше 0)
+            Math.min(12.0, filters.brValue + 1.0) // Максимальное значение (но не больше 12.0)
+          ]
+          : [0, 12] // Если фильтр не активен, показываем все значения
+    };
+
     // First apply all filters
-    const filtered = vehicles.filter(vehicle => filterVehicle(vehicle, filters));
+    const filtered = vehicles.filter(vehicle => filterVehicle(vehicle, filterWithBrRange));
 
     // Then sort the results
     const sorted = orderBy(
@@ -225,6 +256,30 @@ function App() {
 
   // Function to handle filter changes
   const handleFilterChange = (filterName, value) => {
+    // Специальная обработка для BR фильтра
+    if (filterName === 'brValue') {
+      const updateData = {
+        brValue: value,
+        brFilterActive: true // Активируем фильтр при изменении значения
+      };
+
+      // На мобильных изменяем временные фильтры
+      if (mobileDrawerVisible) {
+        setTempFilters(prev => ({
+          ...prev,
+          ...updateData
+        }));
+      } else {
+        // На десктопе меняем основные фильтры
+        setFilters(prev => ({
+          ...prev,
+          ...updateData
+        }));
+      }
+      return;
+    }
+
+    // Обработка остальных фильтров
     // На мобильных изменяем временные фильтры
     if (mobileDrawerVisible) {
       setTempFilters(prev => ({
@@ -255,7 +310,8 @@ function App() {
       countryFilter: [],
       rankFilter: [],
       typeFilter: [],
-      brRange: [0, 12],
+      brValue: 6.0,
+      brFilterActive: false, // Деактивируем фильтр BR при сбросе
     };
 
     // Очищаем основные или временные фильтры в зависимости от контекста
@@ -299,6 +355,12 @@ function App() {
     message.success('Фильтры применены');
   };
 
+  // Определяем, является ли устройство планшетом
+  const isTablet = useMemo(() => {
+    // Базовая проверка размера экрана для планшетов
+    return window.innerWidth >= 768 && window.innerWidth <= 1024;
+  }, []);
+
   return (
       <ConfigProvider theme={materialDarkTheme}>
         <Layout className="app-layout">
@@ -334,8 +396,8 @@ function App() {
           <Layout className="main-layout">
             {/* Desktop Sidebar */}
             <Sider
-                className="filter-sider desktop-only"
-                width={300}
+                className={`filter-sider ${isTablet ? 'tablet-filter' : 'desktop-only'}`}
+                width={isTablet ? 300 : 300}
                 theme="dark"
             >
               <FilterSidebar
@@ -346,6 +408,7 @@ function App() {
                   onClearFilters={handleClearFilters}
                   sort={sort}
                   isMobile={false}
+                  isTablet={isTablet}
               />
             </Sider>
 

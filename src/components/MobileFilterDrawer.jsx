@@ -15,6 +15,22 @@ const MobileFilterDrawer = ({
                                 sort,
                                 onApply
                             }) => {
+    // Определяем, является ли устройство планшетом
+    const isTablet = window.innerWidth >= 768 && window.innerWidth <= 1024;
+
+    // Определяем количество активных фильтров для отображения в кнопке применения
+    const getActiveFilterCount = () => {
+        let count = 0;
+        if (filters.nameFilter) count++;
+        if (filters.countryFilter && filters.countryFilter.length > 0) count++;
+        if (filters.rankFilter && filters.rankFilter.length > 0) count++;
+        if (filters.typeFilter && filters.typeFilter.length > 0) count++;
+        if (filters.brFilterActive) count++;
+        return count;
+    };
+
+    const activeCount = getActiveFilterCount();
+
     return (
         <Drawer
             title={
@@ -26,9 +42,9 @@ const MobileFilterDrawer = ({
             placement="left"
             onClose={onClose}
             open={visible}
-            width="85%" // Почти на весь экран
-            className="mobile-filter-drawer"
-            contentWrapperStyle={{ maxWidth: '400px' }} // Ограничение максимальной ширины
+            width={isTablet ? "60%" : "85%"} // Меньшая ширина для планшетов
+            className={`mobile-filter-drawer ${isTablet ? 'tablet-drawer' : ''}`}
+            contentWrapperStyle={{ maxWidth: isTablet ? '500px' : '400px' }} // Ограничение максимальной ширины
             closeIcon={<CloseOutlined style={{ fontSize: '18px' }} />}
             // Убираем стандартную кнопку закрытия в пользу наших кнопок
             extra={null}
@@ -42,6 +58,7 @@ const MobileFilterDrawer = ({
                     onClearFilters={onClearFilters}
                     sort={sort}
                     isMobile={true} // Добавляем флаг для мобильной версии
+                    isTablet={isTablet} // Передаем флаг планшета
                 />
             </div>
 
@@ -64,7 +81,10 @@ const MobileFilterDrawer = ({
                     }}
                     className="apply-button"
                 >
-                    Применить
+                    {activeCount > 0 ?
+                        `Применить (${activeCount})` :
+                        'Применить'
+                    }
                 </Button>
             </div>
         </Drawer>

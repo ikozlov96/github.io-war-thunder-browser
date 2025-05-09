@@ -70,6 +70,11 @@ export const formatBR = (br) => {
 export const filterVehicle = (vehicle, filters) => {
     const { nameFilter, countryFilter, rankFilter, typeFilter, brRange } = filters;
 
+    // Проверяем, определено ли имя техники
+    if (!vehicle.name) {
+        return false;
+    }
+
     // Filter by name
     if (nameFilter && !vehicle.name.toLowerCase().includes(nameFilter.toLowerCase())) {
         return false;
@@ -90,11 +95,23 @@ export const filterVehicle = (vehicle, filters) => {
         return false;
     }
 
-    // Filter by BR range
-    const vehicleBR = parseFloat(vehicle.br);
-    if (vehicleBR < brRange[0] || vehicleBR > brRange[1]) {
-        return false;
+    // Filter by BR range только если задан диапазон
+    if (brRange && brRange.length === 2) {
+        const vehicleBR = parseFloat(vehicle.br);
+        if (vehicleBR < brRange[0] || vehicleBR > brRange[1]) {
+            return false;
+        }
     }
 
     return true;
+};
+
+// Находит ближайшее значение BR из доступных в данных
+export const findClosestBRValue = (value, availableBRs) => {
+    if (!availableBRs || availableBRs.length === 0) return value;
+
+    // Находим ближайшее значение BR из доступных
+    return availableBRs.reduce((prev, curr) => {
+        return (Math.abs(curr - value) < Math.abs(prev - value) ? curr : prev);
+    });
 };

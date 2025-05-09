@@ -191,7 +191,23 @@ body {
   color: var(--text-primary);
 }
 
-/* Mobile styles */
+/* Планшетные стили (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .mobile-filter-button {
+    display: flex; /* Показываем кнопку фильтров на планшетах */
+  }
+
+  .filter-sider.tablet-filter {
+    /* Убираем стандартную боковую панель на планшетах */
+    display: none !important;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+}
+
+/* Мобильные стили (до 768px) */
 @media (max-width: 768px) {
   .mobile-filter-button {
     display: flex;
@@ -212,4 +228,35 @@ body {
   .app-header {
     padding: 0 16px;
   }
+}
+
+/* Улучшения сенсорного взаимодействия для всех устройств */
+.ant-slider-handle {
+  touch-action: pan-x;
+  cursor: grab;
+}
+
+.ant-slider-handle:active {
+  cursor: grabbing;
+}
+
+.ant-checkbox-wrapper,
+.ant-radio-wrapper,
+.ant-radio-button-wrapper {
+  touch-action: manipulation;
+}
+
+/* Анимации для лучшего визуального отклика */
+.ant-slider-handle,
+.ant-checkbox-wrapper,
+.ant-radio-wrapper,
+.ant-btn {
+  transition: transform 0.1s ease-out;
+}
+
+.ant-slider-handle:active,
+.ant-checkbox-wrapper:active,
+.ant-radio-wrapper:active,
+.ant-btn:active {
+  transform: scale(0.97); /* Небольшая анимация нажатия */
 }

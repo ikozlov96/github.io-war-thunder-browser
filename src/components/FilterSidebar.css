@@ -38,12 +38,102 @@
     color: rgba(255, 255, 255, 0.87);
 }
 
+.br-value {
+    margin-left: 6px;
+    font-size: 16px;
+    color: #bb86fc;
+}
+
+.br-filter-status {
+    margin-left: 8px;
+    font-size: 12px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: normal;
+}
+
+.br-filter-status.active {
+    background-color: rgba(187, 134, 252, 0.2);
+    color: #bb86fc;
+}
+
+.br-filter-status:not(.active) {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.br-range-info {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 12px;
+}
+
 .slider-labels {
     display: flex;
     justify-content: space-between;
     margin-top: 4px;
     font-size: 12px;
     color: rgba(255, 255, 255, 0.6);
+}
+
+/* Улучшенный слайдер для сенсорного ввода */
+.slider-wrapper {
+    position: relative;
+    padding: 15px 0; /* Дополнительный отступ для большей области касания */
+    margin-bottom: 10px;
+}
+
+/* Увеличиваем высоту полоски слайдера */
+.br-slider .ant-slider-rail {
+    height: 6px !important;
+}
+
+.br-slider .ant-slider-track {
+    height: 6px !important;
+}
+
+/* Увеличиваем размер ручки слайдера */
+.br-slider .ant-slider-handle {
+    width: 22px;
+    height: 22px;
+    margin-top: -8px; /* Центрирование с учетом увеличенной высоты */
+    background-color: #bb86fc;
+    border: 2px solid #bb86fc;
+    box-shadow: 0 0 0 4px rgba(187, 134, 252, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.br-slider .ant-slider-handle:focus,
+.br-slider .ant-slider-handle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 6px rgba(187, 134, 252, 0.3);
+}
+
+/* Еще больше увеличиваем для мобильных экранов */
+.br-slider.enlarged-slider .ant-slider-rail,
+.br-slider.enlarged-slider .ant-slider-track {
+    height: 10px !important;
+}
+
+.br-slider.enlarged-slider .ant-slider-handle {
+    width: 30px;
+    height: 30px;
+    margin-top: -10px;
+    border-width: 3px;
+}
+
+/* Улучшенные метки на слайдере */
+.br-slider .ant-slider-mark {
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.br-slider .ant-slider-mark .ant-slider-mark-text {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.br-slider .ant-slider-mark .ant-slider-mark-text-active {
+    color: rgba(255, 255, 255, 0.87);
 }
 
 .filter-options {
@@ -147,6 +237,73 @@
     text-align: center;
 }
 
+/* Tablet-specific styles */
+.filter-sidebar.tablet-friendly {
+    padding: 20px;
+}
+
+.filter-sidebar.tablet-friendly .filter-header h2 {
+    font-size: 22px;
+}
+
+.filter-sidebar.tablet-friendly label {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.filter-sidebar.tablet-friendly .br-range-info {
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.filter-option.tablet-option {
+    margin-bottom: 16px;
+    padding: 8px 0;
+}
+
+.filter-option.tablet-option .option-label {
+    font-size: 16px;
+    margin-left: 12px;
+}
+
+.tablet-ranks-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.filter-sidebar.tablet-friendly .ant-collapse-header {
+    font-size: 18px;
+    padding: 16px 0 !important;
+}
+
+.filter-sidebar.tablet-friendly .br-slider .ant-slider-handle {
+    width: 36px;
+    height: 36px;
+    margin-top: -13px;
+    border-width: 3px;
+}
+
+.filter-sidebar.tablet-friendly .sort-by label,
+.filter-sidebar.tablet-friendly .sort-order label {
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+/* Enhanced touch targets for tablet */
+.filter-sidebar.tablet-friendly .ant-checkbox-wrapper {
+    padding: 6px;
+}
+
+.filter-sidebar.tablet-friendly .ant-checkbox {
+    transform: scale(1.2);
+}
+
+.filter-sidebar.tablet-friendly .ant-radio-button-wrapper {
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+}
+
 /* Mobile styles */
 @media (max-width: 768px) {
     .filter-sidebar {
@@ -160,4 +317,43 @@
     .filter-header h2 {
         font-size: 16px;
     }
+
+    /* Еще более увеличенный слайдер для мобильных */
+    .br-slider.enlarged-slider .ant-slider-rail,
+    .br-slider.enlarged-slider .ant-slider-track {
+        height: 12px !important;
+    }
+
+    .br-slider.enlarged-slider .ant-slider-handle {
+        width: 36px;
+        height: 36px;
+        margin-top: -12px;
+        border-width: 4px;
+    }
+
+    .slider-wrapper {
+        padding: 20px 0; /* Еще больше увеличиваем область касания */
+    }
+}
+
+/* Улучшенная прокрутка для сенсорных устройств */
+.filter-sidebar .filter-options {
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch; /* Лучшая прокрутка на iOS */
+}
+
+.filter-sidebar .filter-options::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.filter-sidebar .filter-options::-webkit-scrollbar-thumb {
+    background: #424242;
+    border-radius: 4px;
+}
+
+.filter-sidebar.tablet-friendly .filter-options::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 6px;
+    min-height: 60px; /* Больше область для захвата на планшетах */
 }
