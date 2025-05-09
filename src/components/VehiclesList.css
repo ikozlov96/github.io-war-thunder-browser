@@ -25,6 +25,16 @@
     flex: 1;
 }
 
+/* Добавляем эффект клика для карточек */
+.vehicles-list .ant-col > div {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.vehicles-list .ant-col > div:active {
+    transform: scale(0.98);
+}
+
 .vehicles-pagination {
     margin-top: 32px;
     display: flex;

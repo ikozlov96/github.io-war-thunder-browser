@@ -1,12 +1,19 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Layout, Button, message, ConfigProvider, theme, Badge } from 'antd';
-import { MenuOutlined, GithubOutlined, FilterOutlined } from '@ant-design/icons';
+import { Layout, Button, message, ConfigProvider, theme, Badge, Tooltip } from 'antd';
+import {
+  GithubOutlined,
+  FilterOutlined,
+  SettingOutlined,
+  LoginOutlined
+} from '@ant-design/icons';
 import { orderBy } from 'lodash';
 import FilterSidebar from './components/FilterSidebar';
 import VehiclesList from './components/VehiclesList';
 import MobileFilterDrawer from './components/MobileFilterDrawer';
 import ScrollToTop from './components/ScrollToTop';
-import { filterVehicle } from './utils';
+import VehicleDetailModal from './components/VehicleDetailModal';
+import AdminPanel from './components/AdminPanel';
+import { filterVehicle, getTypePriority } from './utils';
 import './App.css';
 
 const { Header, Sider, Content, Footer } = Layout;
@@ -103,7 +110,6 @@ function App() {
   // State for available BR values and filter options
   const [availableFilters, setAvailableFilters] = useState({
     countries: [],
-    ranks: [],
     types: [],
     brValues: [], // доступные значения BR из JSON
   });
@@ -112,7 +118,6 @@ function App() {
   const defaultFilters = {
     nameFilter: '',
     countryFilter: [],
-    rankFilter: [],
     typeFilter: [],
     brValue: 6.0,      // выбранное значение BR
     brFilterActive: false,  // флаг активации фильтра BR
@@ -127,12 +132,13 @@ function App() {
   // Временные фильтры для мобильной версии
   const [tempFilters, setTempFilters] = useState({...filters});
 
-  // State for sorting
+  // State for sorting (default: BR desc, then by type priority)
   const [sort, setSort] = useState(() => {
     const savedSort = localStorage.getItem(STORAGE_KEY + '_sort');
     return savedSort ? JSON.parse(savedSort) : {
       field: 'br',
-      order: 'asc',
+      order: 'desc',
+      customSort: true, // Флаг для кастомной сортировки
     };
   });
 
@@ -145,6 +151,13 @@ function App() {
 
   // State for mobile drawer (for filters on mobile)
   const [mobileDrawerVisible, setMobileDrawerVisible] = useState(false);
+
+  // State for vehicle detail modal
+  const [selectedVehicle, setSelectedVehicle] = useState(null);
+  const [detailModalVisible, setDetailModalVisible] = useState(false);
+
+  // State for admin panel
+  const [adminMode, setAdminMode] = useState(false);
 
   // Сохраняем фильтры в localStorage при их изменении
   useEffect(() => {
@@ -161,7 +174,6 @@ function App() {
     let count = 0;
     if (filters.nameFilter) count++;
     if (filters.countryFilter.length > 0) count++;
-    if (filters.rankFilter.length > 0) count++;
     if (filters.typeFilter.length > 0) count++;
     if (filters.brFilterActive) count++;
     return count;
@@ -191,7 +203,6 @@ function App() {
 
         setAvailableFilters({
           countries: [...new Set(data.vehicles.map(v => v.country))].sort(),
-          ranks: [...new Set(data.vehicles.map(v => v.rank))].sort((a, b) => a - b),
           types: [...new Set(data.vehicles.map(v => v.type))].sort(),
           brValues: brValues,
         });
@@ -226,22 +237,41 @@ function App() {
     // First apply all filters
     const filtered = vehicles.filter(vehicle => filterVehicle(vehicle, filterWithBrRange));
 
-    // Then sort the results
-    const sorted = orderBy(
-        filtered,
-        [(vehicle) => {
-          // Special handling for BR which is stored as string
-          if (sort.field === 'br') {
-            return parseFloat(vehicle.br);
-          }
-          // Special handling for name to make sort case-insensitive
-          if (sort.field === 'name') {
-            return vehicle.name ? vehicle.name.toLowerCase() : '';
-          }
-          return vehicle[sort.field];
-        }],
-        [sort.order]
-    );
+    // Применяем сортировку в зависимости от настроек
+    let sorted;
+
+    if (sort.customSort) {
+      // Первичная сортировка по BR (desc), затем по типу техники
+      sorted = [...filtered].sort((a, b) => {
+        // Сначала по BR (по убыванию)
+        const brA = parseFloat(a.br);
+        const brB = parseFloat(b.br);
+
+        if (brA !== brB) {
+          return brB - brA; // По убыванию (desc)
+        }
+
+        // Если BR одинаковый, сортируем по типу техники в нужном порядке
+        return getTypePriority(a.type) - getTypePriority(b.type);
+      });
+    } else {
+      // Стандартная сортировка по выбранному полю
+      sorted = orderBy(
+          filtered,
+          [(vehicle) => {
+            // Special handling for BR which is stored as string
+            if (sort.field === 'br') {
+              return parseFloat(vehicle.br);
+            }
+            // Special handling for name to make sort case-insensitive
+            if (sort.field === 'name') {
+              return vehicle.name ? vehicle.name.toLowerCase() : '';
+            }
+            return vehicle[sort.field];
+          }],
+          [sort.order]
+      );
+    }
 
     // Update pagination total count
     setPagination(prev => ({
@@ -297,9 +327,12 @@ function App() {
 
   // Function to handle sort changes
   const handleSortChange = (property, value) => {
+    // Если пользователь выбирает поле или порядок сортировки,
+    // отключаем кастомную сортировку
     setSort(prev => ({
       ...prev,
       [property]: value,
+      customSort: property === 'customSort' ? value : false, // Отключаем кастомную сортировку при явном выборе
     }));
   };
 
@@ -308,7 +341,6 @@ function App() {
     const emptyFilters = {
       nameFilter: '',
       countryFilter: [],
-      rankFilter: [],
       typeFilter: [],
       brValue: 6.0,
       brFilterActive: false, // Деактивируем фильтр BR при сбросе
@@ -320,6 +352,13 @@ function App() {
     } else {
       setFilters(emptyFilters);
     }
+
+    // Возвращаем сортировку к значению по умолчанию
+    setSort({
+      field: 'br',
+      order: 'desc',
+      customSort: true,
+    });
 
     message.success('All filters cleared');
   };
@@ -355,11 +394,47 @@ function App() {
     message.success('Фильтры применены');
   };
 
+  // Открытие модального окна с деталями техники
+  const handleVehicleSelect = (vehicle) => {
+    setSelectedVehicle(vehicle);
+    setDetailModalVisible(true);
+  };
+
+  // Закрытие модального окна с деталями
+  const handleDetailModalClose = () => {
+    setDetailModalVisible(false);
+    setSelectedVehicle(null);
+  };
+
+  // Обработка изменений данных в админке
+  const handleSaveVehicleData = (updatedVehicles) => {
+    setVehicles(updatedVehicles);
+    // В реальном приложении здесь должна быть отправка данных на сервер
+  };
+
+  // Переключение между обычным режимом и админкой
+  const toggleAdminMode = () => {
+    setAdminMode(!adminMode);
+  };
+
   // Определяем, является ли устройство планшетом
   const isTablet = useMemo(() => {
     // Базовая проверка размера экрана для планшетов
     return window.innerWidth >= 768 && window.innerWidth <= 1024;
   }, []);
+
+  // Если открыт режим администратора, показываем admin panel
+  if (adminMode) {
+    return (
+        <ConfigProvider theme={materialDarkTheme}>
+          <AdminPanel
+              vehicles={vehicles}
+              onSave={handleSaveVehicleData}
+              onClose={toggleAdminMode}
+          />
+        </ConfigProvider>
+    );
+  }
 
   return (
       <ConfigProvider theme={materialDarkTheme}>
@@ -370,6 +445,15 @@ function App() {
             </div>
 
             <div className="header-actions">
+              <Tooltip title="Admin Mode">
+                <Button
+                    type="text"
+                    icon={adminMode ? <LoginOutlined /> : <SettingOutlined />}
+                    onClick={toggleAdminMode}
+                    className="admin-button"
+                />
+              </Tooltip>
+
               <Button
                   type="text"
                   icon={<GithubOutlined />}
@@ -432,6 +516,7 @@ function App() {
                   error={error}
                   pagination={pagination}
                   onPageChange={handlePageChange}
+                  onVehicleSelect={handleVehicleSelect}
               />
             </Content>
           </Layout>
@@ -443,6 +528,13 @@ function App() {
 
           {/* Кнопка прокрутки наверх */}
           <ScrollToTop />
+
+          {/* Модальное окно с деталями техники */}
+          <VehicleDetailModal
+              visible={detailModalVisible}
+              vehicle={selectedVehicle}
+              onClose={handleDetailModalClose}
+          />
         </Layout>
       </ConfigProvider>
   );

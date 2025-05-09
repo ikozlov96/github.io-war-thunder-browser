@@ -1,5 +1,5 @@
 import React from 'react';
-import { getImagePath, getCountryName, getTypeName, getCountryColor, formatBR } from '../utils';
+import { getImagePath, getCountryName, getTypeName, getCountryColor, formatBR, getTypeIcon } from '../utils';
 import { Card, Tag, Tooltip } from 'antd';
 import './VehicleCard.css';
 
@@ -49,7 +49,10 @@ const VehicleCard = ({ vehicle }) => {
 
                     <div className="vehicle-type">
                         <span className="label">Type:</span>
-                        <span className="value">{getTypeName(vehicle.type)}</span>
+                        <span className="value">
+                            <span className="card-type-icon" dangerouslySetInnerHTML={{ __html: getTypeIcon(vehicle.type) }}></span>
+                            {getTypeName(vehicle.type)}
+                        </span>
                     </div>
                 </div>
             </div>

@@ -120,6 +120,24 @@
 .vehicle-type .value {
     font-weight: 500;
     color: rgba(255, 255, 255, 0.87);
+    display: flex;
+    align-items: center;
+}
+
+/* Стили для иконки типа техники в карточке */
+.card-type-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+}
+
+.card-type-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
 }
 
 /* Material ripple effect */

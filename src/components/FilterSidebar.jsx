@@ -1,7 +1,7 @@
 import React from 'react';
-import {Button, Checkbox, Collapse, Input, Radio, Slider} from 'antd';
-import {ClearOutlined, FilterOutlined, SearchOutlined, SortAscendingOutlined} from '@ant-design/icons';
-import {getCountryColor, getCountryName, getTypeName, formatBR} from '../utils';
+import {Button, Checkbox, Collapse, Input, Radio, Slider, Tooltip} from 'antd';
+import {ClearOutlined, FilterOutlined, SearchOutlined, SortAscendingOutlined, InfoCircleOutlined} from '@ant-design/icons';
+import {getCountryColor, getCountryName, getTypeName, formatBR, getTypeIcon} from '../utils';
 import './FilterSidebar.css';
 
 const {Panel} = Collapse;
@@ -15,8 +15,8 @@ const FilterSidebar = ({
                            sort,
                            isTablet = false
                        }) => {
-    const {nameFilter, countryFilter, rankFilter, typeFilter, brValue, brFilterActive} = filters;
-    const {countries, ranks, types, brValues} = availableFilters;
+    const {nameFilter, countryFilter, typeFilter, brValue, brFilterActive} = filters;
+    const {countries, types, brValues} = availableFilters;
 
     // Handle name filter change
     const handleNameChange = (e) => {
@@ -39,15 +39,6 @@ const FilterSidebar = ({
             : [...countryFilter, country];
 
         onFilterChange('countryFilter', updatedFilter);
-    };
-
-    // Handle rank selection
-    const handleRankChange = (rank) => {
-        const updatedFilter = rankFilter.includes(rank)
-            ? rankFilter.filter(r => r !== rank)
-            : [...rankFilter, rank];
-
-        onFilterChange('rankFilter', updatedFilter);
     };
 
     // Handle type selection
@@ -120,7 +111,7 @@ const FilterSidebar = ({
                         <span className="br-filter-status">Inactive</span>
                     }
                 </label>
-                <p className="br-range-info">
+                <p className="br-range-info no-select">
                     {brFilterActive ?
                         `Showing vehicles from ${formatBR(minBR)} to ${formatBR(maxBR)}` :
                         'Filter inactive - showing all BR values'
@@ -145,13 +136,13 @@ const FilterSidebar = ({
                         className={`br-slider ${isTablet || window.innerWidth <= 768 ? 'enlarged-slider' : ''}`}
                     />
                 </div>
-                <div className="slider-labels">
+                <div className="slider-labels no-select">
                     <span>0.0</span>
                     <span>12.0</span>
                 </div>
             </div>
 
-            <Collapse defaultActiveKey={['countries', 'ranks', 'types', 'sort']}>
+            <Collapse defaultActiveKey={['countries', 'types', 'sort']}>
                 <Panel header="Nations" key="countries">
                     <div className="filter-options">
                         {countries.map(country => (
@@ -172,21 +163,6 @@ const FilterSidebar = ({
                     </div>
                 </Panel>
 
-                <Panel header="Ranks" key="ranks">
-                    <div className={`filter-options ranks-grid ${isTablet ? 'tablet-ranks-grid' : ''}`}>
-                        {ranks.map(rank => (
-                            <div key={rank} className={`filter-option ${isTablet ? 'tablet-option' : ''}`}>
-                                <Checkbox
-                                    checked={rankFilter.includes(rank)}
-                                    onChange={() => handleRankChange(rank)}
-                                    size={isTablet ? "large" : "default"}
-                                />
-                                <span className="option-label">{rank}</span>
-                            </div>
-                        ))}
-                    </div>
-                </Panel>
-
                 <Panel header="Vehicle Types" key="types">
                     <div className="filter-options">
                         {types.map(type => (
@@ -196,38 +172,65 @@ const FilterSidebar = ({
                                     onChange={() => handleTypeChange(type)}
                                     size={isTablet ? "large" : "default"}
                                 />
-                                <span className="option-label">{getTypeName(type)}</span>
+                                <span className="option-label">
+                                    <span className="type-icon" dangerouslySetInnerHTML={{ __html: getTypeIcon(type) }}></span>
+                                    {getTypeName(type)}
+                                </span>
                             </div>
                         ))}
                     </div>
                 </Panel>
 
-                <Panel header={<span><SortAscendingOutlined/> Sorting</span>} key="sort">
+                <Panel
+                    header={
+                        <span>
+                            <SortAscendingOutlined/> Sorting
+                            {sort.customSort && (
+                                <Tooltip title="Using default sort: BR (descending), then by vehicle type (Heavy → Medium → TD → Light → AA)">
+                                    <span className="custom-sort-indicator">
+                                        <InfoCircleOutlined /> Custom
+                                    </span>
+                                </Tooltip>
+                            )}
+                        </span>
+                    }
+                    key="sort"
+                >
                     <div className="sort-section">
                         <div className="sort-by">
                             <label>Sort By:</label>
                             <Radio.Group
-                                value={sort.field}
-                                onChange={(e) => onSortChange('field', e.target.value)}
+                                value={sort.customSort ? 'custom' : sort.field}
+                                onChange={(e) => {
+                                    if (e.target.value === 'custom') {
+                                        // Включаем кастомную сортировку
+                                        onSortChange('customSort', true);
+                                    } else {
+                                        // Используем обычную сортировку
+                                        onSortChange('field', e.target.value);
+                                    }
+                                }}
                                 size={isTablet ? "large" : "default"}
                             >
+                                <Radio.Button value="custom">Default</Radio.Button>
                                 <Radio.Button value="name">Name</Radio.Button>
                                 <Radio.Button value="br">BR</Radio.Button>
-                                <Radio.Button value="rank">Rank</Radio.Button>
                             </Radio.Group>
                         </div>
 
-                        <div className="sort-order">
-                            <label>Direction:</label>
-                            <Radio.Group
-                                value={sort.order}
-                                onChange={(e) => onSortChange('order', e.target.value)}
-                                size={isTablet ? "large" : "default"}
-                            >
-                                <Radio.Button value="asc">Ascending</Radio.Button>
-                                <Radio.Button value="desc">Descending</Radio.Button>
-                            </Radio.Group>
-                        </div>
+                        {!sort.customSort && (
+                            <div className="sort-order">
+                                <label>Direction:</label>
+                                <Radio.Group
+                                    value={sort.order}
+                                    onChange={(e) => onSortChange('order', e.target.value)}
+                                    size={isTablet ? "large" : "default"}
+                                >
+                                    <Radio.Button value="asc">Ascending</Radio.Button>
+                                    <Radio.Button value="desc">Descending</Radio.Button>
+                                </Radio.Group>
+                            </div>
+                        )}
                     </div>
                 </Panel>
             </Collapse>

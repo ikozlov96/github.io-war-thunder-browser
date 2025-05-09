@@ -66,9 +66,40 @@ export const formatBR = (br) => {
     return numBR.toFixed(1);
 };
 
+// Получить приоритет типа техники для сортировки
+// 1 - Тяжелые танки (наивысший приоритет)
+// 2 - Средние танки
+// 3 - ПТ (противотанковые)
+// 4 - Легкие танки
+// 5 - Зенитки (низший приоритет)
+export const getTypePriority = (type) => {
+    const priorities = {
+        heavy_tank: 1,       // Тяжелые танки (наивысший приоритет)
+        medium_tank: 2,      // Средние танки
+        tank_destroyer: 3,   // ПТ (противотанковые)
+        light_tank: 4,       // Легкие танки
+        spaa: 5              // Зенитки (низший приоритет)
+    };
+
+    return priorities[type] || 99; // Если тип неизвестен, ставим его в конец
+};
+
+// Получить SVG иконку для типа техники
+export const getTypeIcon = (type) => {
+    const icons = {
+        light_tank: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 0 1862 2048"><path fill="currentColor" d="M185 650h1482v477h-1482v-477z"/></svg>',
+        medium_tank: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 0 1862 2048"><path fill="currentColor" d="M594 1319h-409v-618h1482v618h-411v-246h-662v246z"/></svg>',
+        heavy_tank: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 0 1862 2048"><path fill="currentColor" d="M591 1466h-406v-617h406v-245l137 -126h392l137 126v245h410v617h-410v-249h-666v249z"/></svg>',
+        tank_destroyer: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 0 1794 2048"><path fill="currentColor" d="M1599 1467h-1414v-368l946 -854h398l-929 854h999v368z"/></svg>',
+        spaa: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="-10 0 1862 2048"><path fill="currentColor" d="M1667 1467h-1482v-326h303v-811h221v811h437v-811h216v811h305v326z"/></svg>'
+    };
+
+    return icons[type] || '';
+};
+
 // Check if vehicle matches all active filters
 export const filterVehicle = (vehicle, filters) => {
-    const { nameFilter, countryFilter, rankFilter, typeFilter, brRange } = filters;
+    const { nameFilter, countryFilter, typeFilter, brRange } = filters;
 
     // Проверяем, определено ли имя техники
     if (!vehicle.name) {
@@ -82,11 +113,6 @@ export const filterVehicle = (vehicle, filters) => {
 
     // Filter by selected countries
     if (countryFilter.length > 0 && !countryFilter.includes(vehicle.country)) {
-        return false;
-    }
-
-    // Filter by selected ranks
-    if (rankFilter.length > 0 && !rankFilter.includes(vehicle.rank)) {
         return false;
     }
 

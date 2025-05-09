@@ -1,0 +1,321 @@
+/* Admin Panel Styles */
+.admin-layout {
+    min-height: 100vh;
+    background-color: #121212;
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+    color: rgba(255, 255, 255, 0.87);
+    padding: 0 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+}
+
+.admin-title {
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.admin-title .anticon {
+    margin-right: 10px;
+    color: #bb86fc;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.admin-content-layout {
+    height: calc(100vh - 64px);
+}
+
+.admin-sider {
+    background-color: #1e1e1e;
+    border-right: 1px solid #333;
+}
+
+.admin-sider .ant-menu {
+    background-color: #1e1e1e;
+    border-right: none;
+}
+
+.admin-sider .ant-menu-item {
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+}
+
+.admin-sider .ant-menu-item:hover {
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.admin-sider .ant-menu-item-selected {
+    background-color: rgba(187, 134, 252, 0.16);
+    color: #bb86fc;
+}
+
+.admin-sider .ant-menu-item-selected::after {
+    border-right: 3px solid #bb86fc;
+}
+
+.admin-sider .ant-menu-item .anticon {
+    font-size: 16px;
+}
+
+.admin-content {
+    padding: 24px;
+    overflow-y: auto;
+    background-color: #121212;
+}
+
+.admin-toolbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    align-items: center;
+}
+
+/* Table styles */
+.admin-table {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.admin-table .ant-table {
+    background-color: transparent;
+}
+
+.admin-table .ant-table-thead > tr > th {
+    background-color: #242424;
+    color: rgba(255, 255, 255, 0.87);
+    border-bottom: 1px solid #333;
+}
+
+.admin-table .ant-table-tbody > tr > td {
+    border-bottom: 1px solid #333;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.admin-table .ant-table-tbody > tr:hover > td {
+    background-color: rgba(187, 134, 252, 0.08);
+}
+
+.admin-table .ant-pagination {
+    margin-top: 16px;
+}
+
+.admin-table .ant-table-filter-trigger {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.admin-table .ant-table-filter-trigger:hover {
+    color: #bb86fc;
+}
+
+.vehicle-name-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vehicle-name-cell .ant-badge-status-dot {
+    background-color: #03dac6;
+}
+
+/* Form in drawer */
+.ant-drawer-content {
+    background-color: #1e1e1e;
+}
+
+.ant-drawer-header {
+    background-color: #242424;
+    border-bottom: 1px solid #333;
+}
+
+.ant-drawer-title {
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.ant-drawer-close {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.ant-drawer-body {
+    padding: 24px;
+}
+
+.ant-form-item-label > label {
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.ant-input,
+.ant-select-selector,
+.ant-input-number,
+.ant-input-number-input {
+    background-color: #242424 !important;
+    border-color: #333 !important;
+    color: rgba(255, 255, 255, 0.87) !important;
+}
+
+.ant-input:focus,
+.ant-select-focused .ant-select-selector,
+.ant-input-number-focused {
+    border-color: #bb86fc !important;
+    box-shadow: 0 0 0 2px rgba(187, 134, 252, 0.2) !important;
+}
+
+.ant-select-arrow,
+.ant-input-number-handler {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Modal styles */
+.ant-modal-content {
+    background-color: #1e1e1e;
+}
+
+.ant-modal-header {
+    background-color: #242424;
+    border-bottom: 1px solid #333;
+}
+
+.ant-modal-title {
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.ant-modal-close {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.ant-modal-close:hover {
+    color: #bb86fc;
+}
+
+.ant-modal-body {
+    padding: 24px;
+}
+
+.ant-modal-footer {
+    border-top: 1px solid #333;
+}
+
+/* Upload area */
+.ant-upload.ant-upload-drag {
+    background-color: #242424;
+    border: 1px dashed #333;
+}
+
+.ant-upload.ant-upload-drag:hover {
+    border-color: #bb86fc;
+}
+
+.ant-upload.ant-upload-drag p.ant-upload-drag-icon .anticon {
+    color: #bb86fc;
+}
+
+.ant-upload.ant-upload-drag p.ant-upload-text {
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.ant-upload.ant-upload-drag p.ant-upload-hint {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Tabs in modal */
+.ant-tabs-nav-list {
+    border-bottom: 1px solid #333;
+}
+
+.ant-tabs-tab {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.ant-tabs-tab:hover {
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #bb86fc;
+}
+
+.ant-tabs-ink-bar {
+    background-color: #bb86fc;
+}
+
+/* Image grid */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.image-grid .ant-empty {
+    grid-column: 1 / -1;
+    padding: 40px 0;
+}
+
+.image-grid .ant-empty-description {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Empty state */
+.admin-settings {
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    padding: 24px;
+    border: 1px solid #333;
+}
+
+.admin-settings h2 {
+    color: rgba(255, 255, 255, 0.87);
+    margin-bottom: 16px;
+}
+
+.admin-settings p {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .admin-header {
+        padding: 0 16px;
+    }
+
+    .admin-content {
+        padding: 16px;
+    }
+
+    .admin-toolbar {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+    }
+
+    .admin-sider {
+        width: 60px !important;
+        min-width: 60px !important;
+        max-width: 60px !important;
+    }
+
+    .admin-sider .ant-menu-item {
+        padding: 0 !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .admin-sider .ant-menu-item .anticon {
+        margin-right: 0;
+    }
+
+    .admin-sider .ant-menu-item-only-child {
+        padding-left: 0 !important;
+    }
+}

@@ -68,6 +68,32 @@
     margin-bottom: 12px;
 }
 
+/* Индикатор кастомной сортировки */
+.custom-sort-indicator {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 10px;
+    font-size: 12px;
+    color: #bb86fc;
+    background: rgba(187, 134, 252, 0.15);
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.custom-sort-indicator .anticon {
+    margin-right: 4px;
+    font-size: 12px;
+}
+
+/* Предотвращение выделения текста */
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
 .slider-labels {
     display: flex;
     justify-content: space-between;
@@ -153,22 +179,34 @@
     font-size: 14px;
     color: rgba(255, 255, 255, 0.87);
     transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
 }
 
 .filter-option:hover .option-label {
     color: #bb86fc;
 }
 
+/* Стили для иконок типов техники */
+.type-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.type-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
 /* Flag emoji styling */
 .country-flag-emoji {
     margin-right: 4px;
     font-size: 16px;
-}
-
-.ranks-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
 }
 
 .sort-section {
@@ -266,9 +304,15 @@
     margin-left: 12px;
 }
 
-.tablet-ranks-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+.filter-option.tablet-option .type-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.filter-option.tablet-option .type-icon svg {
+    width: 24px;
+    height: 24px;
 }
 
 .filter-sidebar.tablet-friendly .ant-collapse-header {
@@ -310,10 +354,6 @@
         padding: 12px;
     }
 
-    .ranks-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
     .filter-header h2 {
         font-size: 16px;
     }
@@ -333,6 +373,21 @@
 
     .slider-wrapper {
         padding: 20px 0; /* Еще больше увеличиваем область касания */
+    }
+
+    .type-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .type-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .custom-sort-indicator {
+        font-size: 10px;
+        padding: 2px 6px;
     }
 }
 
