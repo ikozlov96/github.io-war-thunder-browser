@@ -1,38 +1,215 @@
-.App {
-  text-align: center;
+/* Material Dark Theme Colors */
+:root {
+  --dark-background: #121212;
+  --dark-paper: #1e1e1e;
+  --dark-card: #242424;
+  --dark-elevation: #2d2d2d;
+  --dark-border: #333333;
+
+  --primary-main: #bb86fc;
+  --primary-dark: #9d4edd;
+  --primary-light: #e0b1ff;
+
+  --secondary-main: #03dac6;
+  --secondary-dark: #018786;
+  --secondary-light: #84ffff;
+
+  --error-main: #cf6679;
+
+  --text-primary: rgba(255, 255, 255, 0.87);
+  --text-secondary: rgba(255, 255, 255, 0.6);
+  --text-disabled: rgba(255, 255, 255, 0.38);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Global styles */
+body {
+  background-color: var(--dark-background);
+  color: var(--text-primary);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* App Layout */
+.app-layout {
   min-height: 100vh;
+  background-color: var(--dark-background);
+}
+
+.app-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0 24px;
+  background: var(--dark-paper);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  height: 64px;
 }
 
-.App-link {
-  color: #61dafb;
+.logo h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 500;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.header-actions .ant-btn {
+  color: var(--text-primary);
+}
+
+.mobile-filter-button {
+  display: none;
+  background-color: var(--primary-main) !important;
+  border-color: var(--primary-main) !important;
+}
+
+.mobile-filter-button:hover {
+  background-color: var(--primary-dark) !important;
+  border-color: var(--primary-dark) !important;
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
+}
+
+.filter-sider {
+  height: calc(100vh - 64px);
+  position: sticky;
+  top: 64px;
+  overflow: auto;
+  background-color: var(--dark-paper) !important;
+  border-right: 1px solid var(--dark-border);
+}
+
+.main-content {
+  padding: 24px;
+  background: var(--dark-background);
+  min-height: calc(100vh - 64px - 70px);
+}
+
+.app-footer {
+  text-align: center;
+  padding: 16px;
+  background: var(--dark-paper);
+  color: var(--text-secondary);
+  border-top: 1px solid var(--dark-border);
+}
+
+.copyright {
+  font-size: 12px;
+  margin-top: 4px;
+  color: var(--text-disabled);
+}
+
+/* Override Ant Design components for dark theme */
+.ant-layout {
+  background: var(--dark-background);
+}
+
+.ant-layout-header {
+  background: var(--dark-paper);
+}
+
+.ant-layout-footer {
+  background: var(--dark-paper);
+}
+
+.ant-layout-sider {
+  background: var(--dark-paper);
+}
+
+.ant-btn-primary {
+  background-color: var(--primary-main);
+  border-color: var(--primary-main);
+}
+
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+.ant-btn-default {
+  background-color: transparent;
+  border-color: var(--dark-border);
+  color: var(--text-primary);
+}
+
+.ant-btn-default:hover,
+.ant-btn-default:focus {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--primary-main);
+  color: var(--primary-main);
+}
+
+.ant-btn-text {
+  color: var(--text-primary);
+}
+
+.ant-btn-text:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--primary-light);
+}
+
+.ant-drawer-content {
+  background-color: var(--dark-paper);
+}
+
+.ant-drawer-header {
+  background-color: var(--dark-paper);
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.ant-drawer-title {
+  color: var(--text-primary);
+}
+
+.ant-drawer-close {
+  color: var(--text-primary);
+}
+
+.ant-modal-content {
+  background-color: var(--dark-paper);
+}
+
+.ant-modal-header {
+  background-color: var(--dark-paper);
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.ant-modal-title {
+  color: var(--text-primary);
+}
+
+.ant-modal-close-x {
+  color: var(--text-primary);
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .mobile-filter-button {
+    display: flex;
   }
-  to {
-    transform: rotate(360deg);
+
+  .desktop-only {
+    display: none !important;
+  }
+
+  .main-content {
+    padding: 16px;
+  }
+
+  .logo h1 {
+    font-size: 16px;
+  }
+
+  .app-header {
+    padding: 0 16px;
   }
 }

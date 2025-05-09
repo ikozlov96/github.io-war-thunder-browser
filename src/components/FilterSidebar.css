@@ -1,0 +1,163 @@
+.filter-sidebar {
+    padding: 16px;
+    height: 100%;
+    overflow-y: auto;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter-header h2 {
+    margin: 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.filter-header h2 .anticon {
+    margin-right: 8px;
+    color: #bb86fc;
+}
+
+.search-filter,
+.br-filter {
+    margin-bottom: 24px;
+}
+
+.search-filter label,
+.br-filter label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.filter-options {
+    max-height: 200px;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.option-label {
+    margin-left: 8px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.87);
+    transition: color 0.3s ease;
+}
+
+.filter-option:hover .option-label {
+    color: #bb86fc;
+}
+
+/* Flag emoji styling */
+.country-flag-emoji {
+    margin-right: 4px;
+    font-size: 16px;
+}
+
+.ranks-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.sort-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.sort-by label,
+.sort-order label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+/* Material Design Collapse Override */
+.ant-collapse {
+    background-color: transparent;
+    border: none;
+}
+
+.ant-collapse > .ant-collapse-item {
+    border-bottom: 1px solid #333;
+}
+
+.ant-collapse > .ant-collapse-item:last-child {
+    border-bottom: none;
+}
+
+.ant-collapse-header {
+    color: rgba(255, 255, 255, 0.87) !important;
+    background-color: transparent;
+    padding: 12px 0 !important;
+    font-weight: 500;
+}
+
+.ant-collapse-content {
+    background-color: transparent;
+    border-top: none;
+}
+
+.ant-collapse-arrow {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.ant-collapse-header:hover {
+    color: #bb86fc !important;
+}
+
+.ant-collapse-header:hover .ant-collapse-arrow {
+    color: #bb86fc !important;
+}
+
+.filter-sidebar .ant-radio-button-wrapper {
+    margin-right: 0;
+}
+
+.filter-sidebar .ant-radio-group {
+    display: flex;
+    width: 100%;
+}
+
+.filter-sidebar .ant-radio-button-wrapper {
+    flex: 1;
+    text-align: center;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .filter-sidebar {
+        padding: 12px;
+    }
+
+    .ranks-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .filter-header h2 {
+        font-size: 16px;
+    }
+}

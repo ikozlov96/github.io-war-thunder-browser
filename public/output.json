@@ -1,0 +1,7270 @@
+{
+  "vehicles": [
+    {
+      "name": "M2A4",
+      "country": "usa",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "M3 Stuart",
+      "country": "usa",
+      "rank": 1,
+      "br": "2.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "M3A1 Stuart",
+      "country": "usa",
+      "rank": 1,
+      "br": "2.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "M5A1",
+      "country": "usa",
+      "rank": 2,
+      "br": "2.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "M24",
+      "country": "usa",
+      "rank": 2,
+      "br": "3.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "M18 GMC",
+      "country": "usa",
+      "rank": 3,
+      "br": "6.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "M41A1",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "T92",
+      "country": "usa",
+      "rank": 4,
+      "br": "7.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "XM800T",
+      "country": "usa",
+      "rank": 5,
+      "br": "8.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "M551",
+      "country": "usa",
+      "rank": 6,
+      "br": "8.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "M3 Bradley",
+      "country": "usa",
+      "rank": 6,
+      "br": "8.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "M3A3 Bradley",
+      "country": "usa",
+      "rank": 7,
+      "br": "10.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "HSTV-L",
+      "country": "usa",
+      "rank": 7,
+      "br": "11.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "M2",
+      "country": "usa",
+      "rank": 1,
+      "br": "1.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M3 Lee",
+      "country": "usa",
+      "rank": 2,
+      "br": "2.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M4A1",
+      "country": "usa",
+      "rank": 2,
+      "br": "3.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M4",
+      "country": "usa",
+      "rank": 2,
+      "br": "3.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M4A2",
+      "country": "usa",
+      "rank": 2,
+      "br": "4.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M4A1 (76) W",
+      "country": "usa",
+      "rank": 3,
+      "br": "5.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M4A2 (76) W",
+      "country": "usa",
+      "rank": 3,
+      "br": "5.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M4A3 (76) W",
+      "country": "usa",
+      "rank": 3,
+      "br": "5.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M4/T26",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T25",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M26",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M46",
+      "country": "usa",
+      "rank": 4,
+      "br": "7.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M47",
+      "country": "usa",
+      "rank": 5,
+      "br": "7.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M48A1",
+      "country": "usa",
+      "rank": 5,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M60",
+      "country": "usa",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M60A1 (AOS)",
+      "country": "usa",
+      "rank": 6,
+      "br": "8.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M60A1 RISE (P)",
+      "country": "usa",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M60A3 TTS",
+      "country": "usa",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "120S",
+      "country": "usa",
+      "rank": 7,
+      "br": "10.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M1A1 HC",
+      "country": "usa",
+      "rank": 7,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "LVT(A)(1)",
+      "country": "usa",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "M22",
+      "country": "usa",
+      "rank": 1,
+      "br": "2.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "M6A1",
+      "country": "usa",
+      "rank": 3,
+      "br": "5.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "T1E1",
+      "country": "usa",
+      "rank": 3,
+      "br": "5.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "M4A3E2",
+      "country": "usa",
+      "rank": 3,
+      "br": "5.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "T1E1 (90)",
+      "country": "usa",
+      "rank": 3,
+      "br": "5.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "M4A3E2 (76) W",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "T26E5",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "T26E1-1",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "T34",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "T32",
+      "country": "usa",
+      "rank": 5,
+      "br": "7.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "T32E1",
+      "country": "usa",
+      "rank": 5,
+      "br": "7.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "M103",
+      "country": "usa",
+      "rank": 5,
+      "br": "7.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "T95E1",
+      "country": "usa",
+      "rank": 6,
+      "br": "8.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "XM803",
+      "country": "usa",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "MBT-70",
+      "country": "usa",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M1 Abrams",
+      "country": "usa",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M1A1",
+      "country": "usa",
+      "rank": 7,
+      "br": "11.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "IPM1",
+      "country": "usa",
+      "rank": 7,
+      "br": "11.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M1A2 Abrams",
+      "country": "usa",
+      "rank": 8,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M1A2 SEP",
+      "country": "usa",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M1A2 SEP V2",
+      "country": "usa",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M13 MGMC",
+      "country": "usa",
+      "rank": 1,
+      "br": "1.7",
+      "type": "spaa"
+    },
+    {
+      "name": "M15 CGMC",
+      "country": "usa",
+      "rank": 1,
+      "br": "1.7",
+      "type": "spaa"
+    },
+    {
+      "name": "M16 MGMC",
+      "country": "usa",
+      "rank": 2,
+      "br": "2.7",
+      "type": "spaa"
+    },
+    {
+      "name": "M19A1",
+      "country": "usa",
+      "rank": 3,
+      "br": "4.0",
+      "type": "spaa"
+    },
+    {
+      "name": "M42",
+      "country": "usa",
+      "rank": 3,
+      "br": "4.0",
+      "type": "spaa"
+    },
+    {
+      "name": "M163",
+      "country": "usa",
+      "rank": 5,
+      "br": "7.3",
+      "type": "spaa"
+    },
+    {
+      "name": "M247",
+      "country": "usa",
+      "rank": 6,
+      "br": "9.0",
+      "type": "spaa"
+    },
+    {
+      "name": "Imp.Chaparral",
+      "country": "usa",
+      "rank": 6,
+      "br": "9.0",
+      "type": "spaa"
+    },
+    {
+      "name": "LAV-AD",
+      "country": "usa",
+      "rank": 7,
+      "br": "10.0",
+      "type": "spaa"
+    },
+    {
+      "name": "XM975",
+      "country": "usa",
+      "rank": 7,
+      "br": "10.3",
+      "type": "spaa"
+    },
+    {
+      "name": "ADATS",
+      "country": "usa",
+      "rank": 8,
+      "br": "11.7",
+      "type": "spaa"
+    },
+    {
+      "name": "M2A2",
+      "country": "usa",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "M8 HMC",
+      "country": "usa",
+      "rank": 1,
+      "br": "1.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "M3 GMC",
+      "country": "usa",
+      "rank": 1,
+      "br": "1.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "M4A3 (105)",
+      "country": "usa",
+      "rank": 2,
+      "br": "3.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M10 GMC",
+      "country": "usa",
+      "rank": 2,
+      "br": "3.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "M36 GMC",
+      "country": "usa",
+      "rank": 3,
+      "br": "5.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "M36B2",
+      "country": "usa",
+      "rank": 3,
+      "br": "5.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "M109A1",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "M56",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "M50",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "T95",
+      "country": "usa",
+      "rank": 5,
+      "br": "7.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "M60A2",
+      "country": "usa",
+      "rank": 6,
+      "br": "8.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M1128",
+      "country": "usa",
+      "rank": 7,
+      "br": "10.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "M2A4 (1st Arm.Div.)",
+      "country": "usa",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "LVT(A)(4)",
+      "country": "usa",
+      "rank": 1,
+      "br": "1.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "M3A1 (USMC)",
+      "country": "usa",
+      "rank": 1,
+      "br": "2.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "▃Stuart VI (5th CAD)",
+      "country": "usa",
+      "rank": 2,
+      "br": "2.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "▃Grant I",
+      "country": "usa",
+      "rank": 2,
+      "br": "2.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M4A5",
+      "country": "usa",
+      "rank": 2,
+      "br": "3.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M24 (TL)",
+      "country": "usa",
+      "rank": 2,
+      "br": "3.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "M4",
+      "country": "usa",
+      "rank": 2,
+      "br": "3.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Calliope",
+      "country": "usa",
+      "rank": 3,
+      "br": "4.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T14",
+      "country": "usa",
+      "rank": 3,
+      "br": "4.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Cobra King",
+      "country": "usa",
+      "rank": 3,
+      "br": "5.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Super Hellcat",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "T20",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M26 T99",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M26E1",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M46 \"\"Tiger\"\"",
+      "country": "usa",
+      "rank": 4,
+      "br": "7.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M728 CEV",
+      "country": "usa",
+      "rank": 5,
+      "br": "7.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T54E2",
+      "country": "usa",
+      "rank": 5,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T54E1",
+      "country": "usa",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M901",
+      "country": "usa",
+      "rank": 6,
+      "br": "8.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "XM1 (Chrysler)",
+      "country": "usa",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "XM1 (GM)",
+      "country": "usa",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "",
+      "country": "usa",
+      "rank": 6,
+      "br": "8.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "M1128 Wolfpack",
+      "country": "usa",
+      "rank": 7,
+      "br": "10.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "M1 KVT",
+      "country": "usa",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "␙M1A1",
+      "country": "usa",
+      "rank": 7,
+      "br": "11.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M1A1 AIM",
+      "country": "usa",
+      "rank": 7,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M1A1 Click-Bait",
+      "country": "usa",
+      "rank": 7,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "○LVT(A)(1)",
+      "country": "usa",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "M8 LAC",
+      "country": "usa",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "▃LVT(A)(4) (ZIS-2)",
+      "country": "usa",
+      "rank": 2,
+      "br": "2.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "M5A1 TD",
+      "country": "usa",
+      "rank": 2,
+      "br": "2.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "M8A1 GMC",
+      "country": "usa",
+      "rank": 2,
+      "br": "2.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "T18E2",
+      "country": "usa",
+      "rank": 2,
+      "br": "3.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "T55E1",
+      "country": "usa",
+      "rank": 3,
+      "br": "4.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "M18 \"\"Black Cat\"\"",
+      "country": "usa",
+      "rank": 3,
+      "br": "6.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "\"\"Racing\"\" M18",
+      "country": "usa",
+      "rank": 3,
+      "br": "5.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "T28",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "M551(76)",
+      "country": "usa",
+      "rank": 4,
+      "br": "7.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "T30",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "M6A2E1",
+      "country": "usa",
+      "rank": 4,
+      "br": "6.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "T29",
+      "country": "usa",
+      "rank": 4,
+      "br": "7.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "T114",
+      "country": "usa",
+      "rank": 5,
+      "br": "7.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "▃Magach 3 (ERA)",
+      "country": "usa",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▃Merkava Mk.1",
+      "country": "usa",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▃Merkava Mk.2B",
+      "country": "usa",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "XM8",
+      "country": "usa",
+      "rank": 6,
+      "br": "9.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "CCVL",
+      "country": "usa",
+      "rank": 7,
+      "br": "10.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "M60 AMBT",
+      "country": "usa",
+      "rank": 7,
+      "br": "10.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "LOSAT",
+      "country": "usa",
+      "rank": 7,
+      "br": "10.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "AGS",
+      "country": "usa",
+      "rank": 7,
+      "br": "11.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "▃Merkava Mk.3D",
+      "country": "usa",
+      "rank": 7,
+      "br": "11.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pz.35(t)",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Pz.38(t) A",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Pz.38(t) F",
+      "country": "germany",
+      "rank": 1,
+      "br": "2.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Pz.38(t) n.A.",
+      "country": "germany",
+      "rank": 1,
+      "br": "2.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Sd.Kfz.234/2",
+      "country": "germany",
+      "rank": 2,
+      "br": "3.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Dicker Max",
+      "country": "germany",
+      "rank": 2,
+      "br": "3.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Sturer Emil",
+      "country": "germany",
+      "rank": 3,
+      "br": "4.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "8,8 cm Flak 37 Sfl.",
+      "country": "germany",
+      "rank": 3,
+      "br": "4.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Nashorn",
+      "country": "germany",
+      "rank": 3,
+      "br": "5.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Waffenträger",
+      "country": "germany",
+      "rank": 3,
+      "br": "5.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "M109G",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "leKPz M41",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Marder A1-",
+      "country": "germany",
+      "rank": 5,
+      "br": "7.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "SPz BMP-1",
+      "country": "germany",
+      "rank": 5,
+      "br": "8.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Marder 1A3",
+      "country": "germany",
+      "rank": 5,
+      "br": "8.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "DF105",
+      "country": "germany",
+      "rank": 5,
+      "br": "8.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "TAM",
+      "country": "germany",
+      "rank": 6,
+      "br": "9.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "JaPz.K A2",
+      "country": "germany",
+      "rank": 6,
+      "br": "8.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Begleitpanzer 57",
+      "country": "germany",
+      "rank": 6,
+      "br": "9.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Radkampfwagen 90",
+      "country": "germany",
+      "rank": 7,
+      "br": "10.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "TAM 2C",
+      "country": "germany",
+      "rank": 7,
+      "br": "10.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "PUMA",
+      "country": "germany",
+      "rank": 7,
+      "br": "10.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "PUMA VJTF",
+      "country": "germany",
+      "rank": 7,
+      "br": "11.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Pz.III E",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pz.III B",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pz.III F",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pz.III J",
+      "country": "germany",
+      "rank": 1,
+      "br": "2.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pz.III J1",
+      "country": "germany",
+      "rank": 2,
+      "br": "2.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pz.III L",
+      "country": "germany",
+      "rank": 2,
+      "br": "3.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pz.III M",
+      "country": "germany",
+      "rank": 2,
+      "br": "3.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Tiger H1",
+      "country": "germany",
+      "rank": 3,
+      "br": "5.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Tiger E",
+      "country": "germany",
+      "rank": 3,
+      "br": "6.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Tiger II (P)",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Tiger II (H)",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "M48A2 C",
+      "country": "germany",
+      "rank": 5,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M48A2 G A2",
+      "country": "germany",
+      "rank": 6,
+      "br": "8.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "KPz-70",
+      "country": "germany",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M48 Super",
+      "country": "germany",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "◊T-72M1",
+      "country": "germany",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leopard 2K",
+      "country": "germany",
+      "rank": 7,
+      "br": "10.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pz.IV C",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pz.II C",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Pz.II F",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Pz.IV E",
+      "country": "germany",
+      "rank": 1,
+      "br": "2.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pz.IV F1",
+      "country": "germany",
+      "rank": 1,
+      "br": "2.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pz.IV F2",
+      "country": "germany",
+      "rank": 2,
+      "br": "3.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pz.IV G",
+      "country": "germany",
+      "rank": 2,
+      "br": "3.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pz.IV H",
+      "country": "germany",
+      "rank": 2,
+      "br": "3.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pz.IV J",
+      "country": "germany",
+      "rank": 2,
+      "br": "3.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "VK 3002 (M)",
+      "country": "germany",
+      "rank": 3,
+      "br": "5.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Panther D",
+      "country": "germany",
+      "rank": 3,
+      "br": "5.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Panther A",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Panther G",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Panther F",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leopard I",
+      "country": "germany",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leopard A1A1",
+      "country": "germany",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leopard 1A5",
+      "country": "germany",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leopard 2A4",
+      "country": "germany",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leopard 2A5",
+      "country": "germany",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leopard 2A6",
+      "country": "germany",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leopard 2 PSO",
+      "country": "germany",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leopard 2A7V",
+      "country": "germany",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Flakpanzer I",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Flakpanzer 38",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.7",
+      "type": "spaa"
+    },
+    {
+      "name": "Sd.Kfz.222",
+      "country": "germany",
+      "rank": 1,
+      "br": "2.0",
+      "type": "spaa"
+    },
+    {
+      "name": "Sd.Kfz. 6/2",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.7",
+      "type": "spaa"
+    },
+    {
+      "name": "Sd.Kfz.251/21",
+      "country": "germany",
+      "rank": 2,
+      "br": "3.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Ostwind",
+      "country": "germany",
+      "rank": 3,
+      "br": "3.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Wirbelwind",
+      "country": "germany",
+      "rank": 3,
+      "br": "3.7",
+      "type": "spaa"
+    },
+    {
+      "name": "Ostwind II",
+      "country": "germany",
+      "rank": 4,
+      "br": "5.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Zerstörer 45",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.0",
+      "type": "spaa"
+    },
+    {
+      "name": "Kugelblitz",
+      "country": "germany",
+      "rank": 4,
+      "br": "7.0",
+      "type": "spaa"
+    },
+    {
+      "name": "Wiesel 1A4",
+      "country": "germany",
+      "rank": 5,
+      "br": "7.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Gepard",
+      "country": "germany",
+      "rank": 6,
+      "br": "8.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Ozelot",
+      "country": "germany",
+      "rank": 7,
+      "br": "9.7",
+      "type": "spaa"
+    },
+    {
+      "name": "Gepard 1A2",
+      "country": "germany",
+      "rank": 7,
+      "br": "9.7",
+      "type": "spaa"
+    },
+    {
+      "name": "FlaRakPz 1",
+      "country": "germany",
+      "rank": 7,
+      "br": "10.3",
+      "type": "spaa"
+    },
+    {
+      "name": "FlaRakRad",
+      "country": "germany",
+      "rank": 8,
+      "br": "11.7",
+      "type": "spaa"
+    },
+    {
+      "name": "15cm sIG 33 B Sfl",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Sd.Kfz.221 (s.Pz.B.41)",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Panzerjäger I",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Sd.Kfz.251/9",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Marder III",
+      "country": "germany",
+      "rank": 1,
+      "br": "2.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "StuG III A",
+      "country": "germany",
+      "rank": 1,
+      "br": "2.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Marder III H",
+      "country": "germany",
+      "rank": 2,
+      "br": "3.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "StuH 42 G",
+      "country": "germany",
+      "rank": 2,
+      "br": "3.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "StuG III F",
+      "country": "germany",
+      "rank": 2,
+      "br": "3.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "StuG III G",
+      "country": "germany",
+      "rank": 2,
+      "br": "4.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Jagdpanzer IV",
+      "country": "germany",
+      "rank": 3,
+      "br": "4.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Jagdpanzer 38(t)",
+      "country": "germany",
+      "rank": 3,
+      "br": "4.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Panzer IV/70(V)",
+      "country": "germany",
+      "rank": 3,
+      "br": "5.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Jagdpanther G1",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "JPz 4-5",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Ferdinand",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Jagdtiger",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Raketenautomat",
+      "country": "germany",
+      "rank": 5,
+      "br": "8.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "RakJPz 2",
+      "country": "germany",
+      "rank": 5,
+      "br": "8.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "RakJPz 2 (HOT)",
+      "country": "germany",
+      "rank": 6,
+      "br": "8.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Wiesel 1A2",
+      "country": "germany",
+      "rank": 7,
+      "br": "9.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Pz.35(t) RM",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Pz.II C TD",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Pz.II C (DAK)",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Nb.Fz.",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Sd.Kfz. 140/1",
+      "country": "germany",
+      "rank": 1,
+      "br": "2.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "15 cm Pz.W.42",
+      "country": "germany",
+      "rank": 2,
+      "br": "2.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Pz.III J1 TD",
+      "country": "germany",
+      "rank": 2,
+      "br": "2.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pz.III N",
+      "country": "germany",
+      "rank": 2,
+      "br": "3.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▀KW II 754 (r)",
+      "country": "germany",
+      "rank": 3,
+      "br": "3.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Pz.Bef.Wg.IV J",
+      "country": "germany",
+      "rank": 3,
+      "br": "3.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▀Pz.Kpfw. Churchill",
+      "country": "germany",
+      "rank": 3,
+      "br": "4.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "▀T 34 747 (r)",
+      "country": "germany",
+      "rank": 3,
+      "br": "4.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Brummbär",
+      "country": "germany",
+      "rank": 3,
+      "br": "4.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Panzer IV/70(A)",
+      "country": "germany",
+      "rank": 3,
+      "br": "4.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "▀KW I C 756 (r)",
+      "country": "germany",
+      "rank": 3,
+      "br": "5.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Pz.Bef.Wg.VI P",
+      "country": "germany",
+      "rank": 4,
+      "br": "5.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "38 cm Sturmmörser",
+      "country": "germany",
+      "rank": 4,
+      "br": "5.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Bfw. Jagdpanther G1",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Elefant",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Panther II",
+      "country": "germany",
+      "rank": 4,
+      "br": "7.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "mKPz M47 G",
+      "country": "germany",
+      "rank": 5,
+      "br": "7.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Turm III",
+      "country": "germany",
+      "rank": 5,
+      "br": "8.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "TAM 2IP",
+      "country": "germany",
+      "rank": 6,
+      "br": "9.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Leopard A1A1 (L/44)",
+      "country": "germany",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "C2A1",
+      "country": "germany",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leopard 2 (PzBtl 123)",
+      "country": "germany",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Vilkas",
+      "country": "germany",
+      "rank": 7,
+      "br": "10.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Boxer MGS",
+      "country": "germany",
+      "rank": 7,
+      "br": "10.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Leopard 2A4M",
+      "country": "germany",
+      "rank": 7,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leopard 2 PL",
+      "country": "germany",
+      "rank": 8,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "␙Leopard 2A5",
+      "country": "germany",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Sd.Kfz.251/10",
+      "country": "germany",
+      "rank": 1,
+      "br": "1.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Sd.Kfz.234/1",
+      "country": "germany",
+      "rank": 1,
+      "br": "2.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Sd.Kfz.234/3",
+      "country": "germany",
+      "rank": 1,
+      "br": "2.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Pz.Sp.Wg.P204(f) KwK",
+      "country": "germany",
+      "rank": 1,
+      "br": "2.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Pz.Sfl.Ic",
+      "country": "germany",
+      "rank": 2,
+      "br": "2.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Sd.Kfz.251/22",
+      "country": "germany",
+      "rank": 2,
+      "br": "3.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Sd.Kfz.234/2 TD",
+      "country": "germany",
+      "rank": 2,
+      "br": "3.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "▀M4 748 (a)",
+      "country": "germany",
+      "rank": 3,
+      "br": "4.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▀KV-IB",
+      "country": "germany",
+      "rank": 3,
+      "br": "4.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Sd.Kfz.234/4",
+      "country": "germany",
+      "rank": 3,
+      "br": "4.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "VK 45.01 (P)",
+      "country": "germany",
+      "rank": 3,
+      "br": "5.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "VFW",
+      "country": "germany",
+      "rank": 3,
+      "br": "5.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "␠Tiger",
+      "country": "germany",
+      "rank": 3,
+      "br": "5.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Ersatz M10",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Flakpanzer 341",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.3",
+      "type": "spaa"
+    },
+    {
+      "name": "SPz 12-3 LGS",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Tiger II (H) Sla.16",
+      "country": "germany",
+      "rank": 4,
+      "br": "6.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Tiger II (10.5 cm Kw.K)",
+      "country": "germany",
+      "rank": 4,
+      "br": "7.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Ru 251",
+      "country": "germany",
+      "rank": 4,
+      "br": "7.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "E-100",
+      "country": "germany",
+      "rank": 5,
+      "br": "7.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Maus",
+      "country": "germany",
+      "rank": 5,
+      "br": "7.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "VT1-2",
+      "country": "germany",
+      "rank": 6,
+      "br": "8.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Class 3 (P)",
+      "country": "germany",
+      "rank": 6,
+      "br": "9.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "PT-16/T14 mod.",
+      "country": "germany",
+      "rank": 7,
+      "br": "10.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leopard 2AV",
+      "country": "germany",
+      "rank": 7,
+      "br": "10.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "BT-5",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "BT-7",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "BT-7M",
+      "country": "ussr",
+      "rank": 1,
+      "br": "2.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "T-50",
+      "country": "ussr",
+      "rank": 2,
+      "br": "2.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "T-34 (1940)",
+      "country": "ussr",
+      "rank": 2,
+      "br": "3.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-34 (1941)",
+      "country": "ussr",
+      "rank": 2,
+      "br": "4.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-34 (1942)",
+      "country": "ussr",
+      "rank": 2,
+      "br": "4.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-34E STZ",
+      "country": "ussr",
+      "rank": 2,
+      "br": "4.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-34-57",
+      "country": "ussr",
+      "rank": 3,
+      "br": "4.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-34-85 (D-5T)",
+      "country": "ussr",
+      "rank": 3,
+      "br": "5.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-34-85",
+      "country": "ussr",
+      "rank": 4,
+      "br": "5.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-44",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-44-100",
+      "country": "ussr",
+      "rank": 5,
+      "br": "7.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-54 (1947)",
+      "country": "ussr",
+      "rank": 5,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-54 (1949)",
+      "country": "ussr",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-54 (1951)",
+      "country": "ussr",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-55A",
+      "country": "ussr",
+      "rank": 6,
+      "br": "8.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-55AMD-1",
+      "country": "ussr",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-62",
+      "country": "ussr",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-62M-1",
+      "country": "ussr",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-72A",
+      "country": "ussr",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-72B",
+      "country": "ussr",
+      "rank": 7,
+      "br": "10.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-72B (1989)",
+      "country": "ussr",
+      "rank": 7,
+      "br": "10.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Т-90А",
+      "country": "ussr",
+      "rank": 7,
+      "br": "11.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-72B3",
+      "country": "ussr",
+      "rank": 7,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-90M",
+      "country": "ussr",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-26",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "T-28 (1938)",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-28",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-28E",
+      "country": "ussr",
+      "rank": 2,
+      "br": "2.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "KV-1 (L-11)",
+      "country": "ussr",
+      "rank": 2,
+      "br": "3.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "KV-2 (1939)",
+      "country": "ussr",
+      "rank": 2,
+      "br": "3.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "KV-1S",
+      "country": "ussr",
+      "rank": 2,
+      "br": "4.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "KV-1 (ZiS-5)",
+      "country": "ussr",
+      "rank": 3,
+      "br": "4.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "KV-85",
+      "country": "ussr",
+      "rank": 3,
+      "br": "5.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "IS-1",
+      "country": "ussr",
+      "rank": 3,
+      "br": "5.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "IS-2",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "IS-2 (1944)",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "IS-2 No.321",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "IS-3",
+      "country": "ussr",
+      "rank": 5,
+      "br": "7.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "IS-4M",
+      "country": "ussr",
+      "rank": 5,
+      "br": "7.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "T-10M",
+      "country": "ussr",
+      "rank": 6,
+      "br": "8.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Object 435",
+      "country": "ussr",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-64A (1971)",
+      "country": "ussr",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-64B",
+      "country": "ussr",
+      "rank": 6,
+      "br": "9.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-80B",
+      "country": "ussr",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-80U",
+      "country": "ussr",
+      "rank": 7,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-80BVM",
+      "country": "ussr",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-26-4",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "T-60",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "T-70",
+      "country": "ussr",
+      "rank": 1,
+      "br": "2.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "T-80",
+      "country": "ussr",
+      "rank": 2,
+      "br": "2.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "ASU-57",
+      "country": "ussr",
+      "rank": 3,
+      "br": "4.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "PT-76B",
+      "country": "ussr",
+      "rank": 3,
+      "br": "5.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "ASU-85",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "SU-100P",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "BTR-80A",
+      "country": "ussr",
+      "rank": 5,
+      "br": "7.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "BMP-1",
+      "country": "ussr",
+      "rank": 5,
+      "br": "8.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Object 906",
+      "country": "ussr",
+      "rank": 5,
+      "br": "8.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "BMP-2",
+      "country": "ussr",
+      "rank": 6,
+      "br": "8.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Object 685",
+      "country": "ussr",
+      "rank": 6,
+      "br": "8.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "BMP-3",
+      "country": "ussr",
+      "rank": 6,
+      "br": "9.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "2S25",
+      "country": "ussr",
+      "rank": 6,
+      "br": "9.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "2S25M",
+      "country": "ussr",
+      "rank": 7,
+      "br": "10.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "SU-5-1",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "SU-76M",
+      "country": "ussr",
+      "rank": 1,
+      "br": "2.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "ZiS-30",
+      "country": "ussr",
+      "rank": 2,
+      "br": "2.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "SU-57B",
+      "country": "ussr",
+      "rank": 2,
+      "br": "2.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "SU-122",
+      "country": "ussr",
+      "rank": 2,
+      "br": "2.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "YaG-10 (29-K)",
+      "country": "ussr",
+      "rank": 2,
+      "br": "3.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "SU-152",
+      "country": "ussr",
+      "rank": 3,
+      "br": "4.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "SU-85",
+      "country": "ussr",
+      "rank": 3,
+      "br": "4.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "ISU-152",
+      "country": "ussr",
+      "rank": 3,
+      "br": "4.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "SU-85M",
+      "country": "ussr",
+      "rank": 3,
+      "br": "5.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "ISU-122",
+      "country": "ussr",
+      "rank": 3,
+      "br": "5.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "ISU-122S",
+      "country": "ussr",
+      "rank": 4,
+      "br": "5.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "SU-100",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "2S1",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "2S3M",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "SU-122-54",
+      "country": "ussr",
+      "rank": 5,
+      "br": "6.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Object 268",
+      "country": "ussr",
+      "rank": 5,
+      "br": "7.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "IT-1",
+      "country": "ussr",
+      "rank": 6,
+      "br": "8.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Shturm-S",
+      "country": "ussr",
+      "rank": 6,
+      "br": "8.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Object 775",
+      "country": "ussr",
+      "rank": 6,
+      "br": "9.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Khrizantema-S",
+      "country": "ussr",
+      "rank": 7,
+      "br": "9.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "GAZ-AAA (4M)",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.0",
+      "type": "spaa"
+    },
+    {
+      "name": "GAZ-AAA (DShK)",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.0",
+      "type": "spaa"
+    },
+    {
+      "name": "GAZ-MM (72-K)",
+      "country": "ussr",
+      "rank": 2,
+      "br": "2.3",
+      "type": "spaa"
+    },
+    {
+      "name": "BTR-152A",
+      "country": "ussr",
+      "rank": 2,
+      "br": "2.7",
+      "type": "spaa"
+    },
+    {
+      "name": "ZiS-43",
+      "country": "ussr",
+      "rank": 2,
+      "br": "2.7",
+      "type": "spaa"
+    },
+    {
+      "name": "ZiS-12 (94-KM)",
+      "country": "ussr",
+      "rank": 2,
+      "br": "3.0",
+      "type": "spaa"
+    },
+    {
+      "name": "ZSU-37",
+      "country": "ussr",
+      "rank": 2,
+      "br": "3.3",
+      "type": "spaa"
+    },
+    {
+      "name": "BTR-152D",
+      "country": "ussr",
+      "rank": 3,
+      "br": "4.0",
+      "type": "spaa"
+    },
+    {
+      "name": "BTR-ZD",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.0",
+      "type": "spaa"
+    },
+    {
+      "name": "M53/59",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.3",
+      "type": "spaa"
+    },
+    {
+      "name": "ZSU-57-2",
+      "country": "ussr",
+      "rank": 5,
+      "br": "7.0",
+      "type": "spaa"
+    },
+    {
+      "name": "ZSU-23-4M2",
+      "country": "ussr",
+      "rank": 5,
+      "br": "7.3",
+      "type": "spaa"
+    },
+    {
+      "name": "ZSU-37-2",
+      "country": "ussr",
+      "rank": 5,
+      "br": "7.7",
+      "type": "spaa"
+    },
+    {
+      "name": "ZSU-23-4",
+      "country": "ussr",
+      "rank": 6,
+      "br": "8.0",
+      "type": "spaa"
+    },
+    {
+      "name": "ZSU-23-4M4",
+      "country": "ussr",
+      "rank": 6,
+      "br": "9.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Strela-10M2",
+      "country": "ussr",
+      "rank": 7,
+      "br": "10.3",
+      "type": "spaa"
+    },
+    {
+      "name": "2S6",
+      "country": "ussr",
+      "rank": 7,
+      "br": "10.7",
+      "type": "spaa"
+    },
+    {
+      "name": "Pantsir-S1",
+      "country": "ussr",
+      "rank": 8,
+      "br": "12.0",
+      "type": "spaa"
+    },
+    {
+      "name": "T-26 (1st Gv.T.Br.)",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "BT-7 TD",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "T-35",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "SU-57",
+      "country": "ussr",
+      "rank": 1,
+      "br": "2.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "▂T-III",
+      "country": "ussr",
+      "rank": 1,
+      "br": "2.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "ZUT-37",
+      "country": "ussr",
+      "rank": 2,
+      "br": "2.3",
+      "type": "spaa"
+    },
+    {
+      "name": "T-126",
+      "country": "ussr",
+      "rank": 2,
+      "br": "3.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "T-34 (Prototype)",
+      "country": "ussr",
+      "rank": 2,
+      "br": "3.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "BT-7A (F-32)",
+      "country": "ussr",
+      "rank": 2,
+      "br": "4.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "SMK",
+      "country": "ussr",
+      "rank": 2,
+      "br": "3.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "T-34 (1st Gv.T.Br.)",
+      "country": "ussr",
+      "rank": 2,
+      "br": "4.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-34E",
+      "country": "ussr",
+      "rank": 2,
+      "br": "4.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "BM-31-12",
+      "country": "ussr",
+      "rank": 3,
+      "br": "4.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "T-34-57 (1943)",
+      "country": "ussr",
+      "rank": 3,
+      "br": "4.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▂M4A2",
+      "country": "ussr",
+      "rank": 3,
+      "br": "5.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▂Phòng không T-34",
+      "country": "ussr",
+      "rank": 3,
+      "br": "5.0",
+      "type": "spaa"
+    },
+    {
+      "name": "KV-122",
+      "country": "ussr",
+      "rank": 4,
+      "br": "5.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "T-34-85E",
+      "country": "ussr",
+      "rank": 4,
+      "br": "5.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "SU-122P",
+      "country": "ussr",
+      "rank": 4,
+      "br": "5.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "T-44-122",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-34-100",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "IS-6",
+      "country": "ussr",
+      "rank": 5,
+      "br": "7.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Object 120",
+      "country": "ussr",
+      "rank": 5,
+      "br": "8.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "TO-55",
+      "country": "ussr",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-55AM-1",
+      "country": "ussr",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "BMD-4",
+      "country": "ussr",
+      "rank": 6,
+      "br": "9.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "BMP-2M",
+      "country": "ussr",
+      "rank": 7,
+      "br": "10.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "2S38",
+      "country": "ussr",
+      "rank": 7,
+      "br": "10.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "T-72AV (TURMS-T)",
+      "country": "ussr",
+      "rank": 7,
+      "br": "10.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-80UD",
+      "country": "ussr",
+      "rank": 7,
+      "br": "10.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Т-80U-Е1",
+      "country": "ussr",
+      "rank": 7,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-26E",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "RBT-5",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "BA-11",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "BM-8-24",
+      "country": "ussr",
+      "rank": 1,
+      "br": "1.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "SU-76M (5th Gv.Kav.Corps)",
+      "country": "ussr",
+      "rank": 2,
+      "br": "2.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "SU-76D",
+      "country": "ussr",
+      "rank": 2,
+      "br": "2.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "▂M3 Medium",
+      "country": "ussr",
+      "rank": 2,
+      "br": "2.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "BM-13N",
+      "country": "ussr",
+      "rank": 2,
+      "br": "2.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "▂MK-II \"\"Matilda\"\"",
+      "country": "ussr",
+      "rank": 2,
+      "br": "3.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "▂МК-IX \"\"Valentine\"\"",
+      "country": "ussr",
+      "rank": 2,
+      "br": "3.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "SU-85A",
+      "country": "ussr",
+      "rank": 2,
+      "br": "4.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "KV-2 (1940)",
+      "country": "ussr",
+      "rank": 3,
+      "br": "3.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "KV-1E",
+      "country": "ussr",
+      "rank": 3,
+      "br": "4.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "SU-100Y",
+      "country": "ussr",
+      "rank": 3,
+      "br": "4.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "KV-2 (ZiS-6)",
+      "country": "ussr",
+      "rank": 3,
+      "br": "5.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "KV-220",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "▂T-V",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "IS-2 \"\"Revenge\"\"",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Object 248",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "▂Type 62",
+      "country": "ussr",
+      "rank": 4,
+      "br": "6.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "T-10A",
+      "country": "ussr",
+      "rank": 5,
+      "br": "7.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "PT-76-57",
+      "country": "ussr",
+      "rank": 5,
+      "br": "8.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "IS-7",
+      "country": "ussr",
+      "rank": 6,
+      "br": "8.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Object 279",
+      "country": "ussr",
+      "rank": 6,
+      "br": "9.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "",
+      "country": "ussr",
+      "rank": 6,
+      "br": "8.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Object 292",
+      "country": "ussr",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-72M2 Moderna",
+      "country": "ussr",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "␙T-80U",
+      "country": "ussr",
+      "rank": 7,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-80UM2",
+      "country": "ussr",
+      "rank": 7,
+      "br": "11.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-80UK",
+      "country": "ussr",
+      "rank": 7,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T-80U",
+      "country": "ussr",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "A13 Mk I",
+      "country": "britain",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "A13 Mk II",
+      "country": "britain",
+      "rank": 1,
+      "br": "1.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Crusader II",
+      "country": "britain",
+      "rank": 2,
+      "br": "2.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Crusader III",
+      "country": "britain",
+      "rank": 2,
+      "br": "3.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Cromwell V",
+      "country": "britain",
+      "rank": 2,
+      "br": "3.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Cromwell I",
+      "country": "britain",
+      "rank": 2,
+      "br": "3.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Sherman II",
+      "country": "britain",
+      "rank": 2,
+      "br": "3.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Sherman Firefly",
+      "country": "britain",
+      "rank": 3,
+      "br": "4.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Challenger",
+      "country": "britain",
+      "rank": 3,
+      "br": "5.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Comet I",
+      "country": "britain",
+      "rank": 3,
+      "br": "5.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Centurion Mk 1",
+      "country": "britain",
+      "rank": 4,
+      "br": "6.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Centurion Mk 3",
+      "country": "britain",
+      "rank": 4,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Caernarvon",
+      "country": "britain",
+      "rank": 5,
+      "br": "7.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Conqueror",
+      "country": "britain",
+      "rank": 5,
+      "br": "7.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Centurion Mk 10",
+      "country": "britain",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Chieftain Mk 3",
+      "country": "britain",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Chieftain Mk 5",
+      "country": "britain",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Chieftain Mk 10",
+      "country": "britain",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Challenger Mk.2",
+      "country": "britain",
+      "rank": 7,
+      "br": "10.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Challenger Mk.3",
+      "country": "britain",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Challenger 2",
+      "country": "britain",
+      "rank": 7,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Challenger 2 (2F)",
+      "country": "britain",
+      "rank": 7,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Challenger 2 TES",
+      "country": "britain",
+      "rank": 7,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Black Night",
+      "country": "britain",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Challenger 2E",
+      "country": "britain",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Challenger 3 TD",
+      "country": "britain",
+      "rank": 8,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Stuart I",
+      "country": "britain",
+      "rank": 1,
+      "br": "2.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Stuart III",
+      "country": "britain",
+      "rank": 1,
+      "br": "2.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Valentine I",
+      "country": "britain",
+      "rank": 2,
+      "br": "2.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Valentine XI",
+      "country": "britain",
+      "rank": 2,
+      "br": "2.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Valentine IX",
+      "country": "britain",
+      "rank": 2,
+      "br": "3.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Matilda III",
+      "country": "britain",
+      "rank": 2,
+      "br": "2.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Churchill I",
+      "country": "britain",
+      "rank": 2,
+      "br": "3.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Churchill III",
+      "country": "britain",
+      "rank": 3,
+      "br": "4.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Churchill NA75",
+      "country": "britain",
+      "rank": 3,
+      "br": "4.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Churchill VII",
+      "country": "britain",
+      "rank": 3,
+      "br": "4.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Charioteer Mk VII",
+      "country": "britain",
+      "rank": 4,
+      "br": "6.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "FV4202",
+      "country": "britain",
+      "rank": 4,
+      "br": "7.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Vickers Mk.1",
+      "country": "britain",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Vickers Mk.3",
+      "country": "britain",
+      "rank": 6,
+      "br": "8.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Vickers Mk.11",
+      "country": "britain",
+      "rank": 6,
+      "br": "8.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "VFM5",
+      "country": "britain",
+      "rank": 6,
+      "br": "9.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Vickers Mk.7",
+      "country": "britain",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Tetrarch I",
+      "country": "britain",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Daimler Mk II",
+      "country": "britain",
+      "rank": 1,
+      "br": "1.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Archer",
+      "country": "britain",
+      "rank": 2,
+      "br": "2.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Gun Carrier (3-in)",
+      "country": "britain",
+      "rank": 2,
+      "br": "3.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Achilles",
+      "country": "britain",
+      "rank": 2,
+      "br": "3.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Avenger",
+      "country": "britain",
+      "rank": 3,
+      "br": "4.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "FV4005",
+      "country": "britain",
+      "rank": 4,
+      "br": "6.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "▄M109A1",
+      "country": "britain",
+      "rank": 4,
+      "br": "6.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Tortoise",
+      "country": "britain",
+      "rank": 4,
+      "br": "6.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Conway",
+      "country": "britain",
+      "rank": 4,
+      "br": "7.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Swingfire",
+      "country": "britain",
+      "rank": 5,
+      "br": "8.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Warrior",
+      "country": "britain",
+      "rank": 6,
+      "br": "8.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "ZT3A2",
+      "country": "britain",
+      "rank": 6,
+      "br": "8.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Striker",
+      "country": "britain",
+      "rank": 6,
+      "br": "8.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Desert Warrior",
+      "country": "britain",
+      "rank": 7,
+      "br": "10.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Light AA Mk I",
+      "country": "britain",
+      "rank": 1,
+      "br": "1.0",
+      "type": "spaa"
+    },
+    {
+      "name": "Staghound AA",
+      "country": "britain",
+      "rank": 1,
+      "br": "2.0",
+      "type": "spaa"
+    },
+    {
+      "name": "Crusader AA Mk I",
+      "country": "britain",
+      "rank": 2,
+      "br": "3.0",
+      "type": "spaa"
+    },
+    {
+      "name": "AEC AA",
+      "country": "britain",
+      "rank": 2,
+      "br": "3.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Ystervark",
+      "country": "britain",
+      "rank": 3,
+      "br": "4.0",
+      "type": "spaa"
+    },
+    {
+      "name": "Crusader AA Mk II",
+      "country": "britain",
+      "rank": 3,
+      "br": "4.0",
+      "type": "spaa"
+    },
+    {
+      "name": "Bosvark",
+      "country": "britain",
+      "rank": 3,
+      "br": "5.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Skink",
+      "country": "britain",
+      "rank": 4,
+      "br": "5.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Falcon",
+      "country": "britain",
+      "rank": 5,
+      "br": "8.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Chieftain Marksman",
+      "country": "britain",
+      "rank": 6,
+      "br": "8.3",
+      "type": "spaa"
+    },
+    {
+      "name": "ZA-35",
+      "country": "britain",
+      "rank": 6,
+      "br": "8.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Stormer AD",
+      "country": "britain",
+      "rank": 7,
+      "br": "10.0",
+      "type": "spaa"
+    },
+    {
+      "name": "Stormer HVM",
+      "country": "britain",
+      "rank": 7,
+      "br": "10.3",
+      "type": "spaa"
+    },
+    {
+      "name": "ADATS (M113)",
+      "country": "britain",
+      "rank": 8,
+      "br": "11.7",
+      "type": "spaa"
+    },
+    {
+      "name": "SARC MkIVa",
+      "country": "britain",
+      "rank": 1,
+      "br": "1.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "SARC MkVI (2pdr)",
+      "country": "britain",
+      "rank": 2,
+      "br": "2.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "SARC MkVI (6pdr)",
+      "country": "britain",
+      "rank": 2,
+      "br": "3.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Concept 3",
+      "country": "britain",
+      "rank": 3,
+      "br": "4.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Ratel 90",
+      "country": "britain",
+      "rank": 4,
+      "br": "6.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Ratel 20",
+      "country": "britain",
+      "rank": 4,
+      "br": "6.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "G6",
+      "country": "britain",
+      "rank": 4,
+      "br": "6.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Eland 90 Mk.7",
+      "country": "britain",
+      "rank": 4,
+      "br": "7.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Fox",
+      "country": "britain",
+      "rank": 5,
+      "br": "7.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Rooikat Mk.1D",
+      "country": "britain",
+      "rank": 6,
+      "br": "8.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Olifant Mk.1A",
+      "country": "britain",
+      "rank": 6,
+      "br": "8.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Rooikat MTTD",
+      "country": "britain",
+      "rank": 6,
+      "br": "9.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Olifant Mk.2",
+      "country": "britain",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "TTD",
+      "country": "britain",
+      "rank": 7,
+      "br": "10.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "A13 Mk I (3rd R.T.R.)",
+      "country": "britain",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Independent",
+      "country": "britain",
+      "rank": 1,
+      "br": "1.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Crusader \"\"The Saint\"\"",
+      "country": "britain",
+      "rank": 2,
+      "br": "2.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "AEC Mk II",
+      "country": "britain",
+      "rank": 2,
+      "br": "3.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Cromwell V (RP-3)",
+      "country": "britain",
+      "rank": 2,
+      "br": "3.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Achilles (65 Rg.)",
+      "country": "britain",
+      "rank": 3,
+      "br": "3.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Sherman IC \"\"Trzyniec\"\"",
+      "country": "britain",
+      "rank": 3,
+      "br": "4.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "A.C.IV",
+      "country": "britain",
+      "rank": 3,
+      "br": "5.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "QF 3.7 Ram",
+      "country": "britain",
+      "rank": 3,
+      "br": "5.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "▄Strv 81 (RB 52)",
+      "country": "britain",
+      "rank": 4,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Centurion Action X",
+      "country": "britain",
+      "rank": 4,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Centurion Mk.5 AVRE",
+      "country": "britain",
+      "rank": 5,
+      "br": "7.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Centurion Mk.5/1",
+      "country": "britain",
+      "rank": 5,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Vijayanta",
+      "country": "britain",
+      "rank": 6,
+      "br": "8.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Khalid",
+      "country": "britain",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Challenger DS",
+      "country": "britain",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Challenger 2 OES",
+      "country": "britain",
+      "rank": 7,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "A13 Mk II 1939",
+      "country": "britain",
+      "rank": 1,
+      "br": "1.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Alecto I",
+      "country": "britain",
+      "rank": 1,
+      "br": "1.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Grant I",
+      "country": "britain",
+      "rank": 2,
+      "br": "2.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Matilda Hedgehog",
+      "country": "britain",
+      "rank": 2,
+      "br": "2.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Churchill AVRE Petard",
+      "country": "britain",
+      "rank": 2,
+      "br": "2.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "A.C.I",
+      "country": "britain",
+      "rank": 2,
+      "br": "3.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Excelsior",
+      "country": "britain",
+      "rank": 3,
+      "br": "4.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Churchill Crocodile",
+      "country": "britain",
+      "rank": 3,
+      "br": "4.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Comet I \"\"Iron Duke IV\"\"",
+      "country": "britain",
+      "rank": 3,
+      "br": "5.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "TOG II",
+      "country": "britain",
+      "rank": 3,
+      "br": "5.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Black Prince",
+      "country": "britain",
+      "rank": 4,
+      "br": "6.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Centurion Mk.2",
+      "country": "britain",
+      "rank": 4,
+      "br": "6.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄Sho't Kal Dalet",
+      "country": "britain",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Rooikat 105",
+      "country": "britain",
+      "rank": 6,
+      "br": "9.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Bhishma TWMP",
+      "country": "britain",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "␙Challenger 2",
+      "country": "britain",
+      "rank": 7,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Ha-Go",
+      "country": "japan",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Ke-Ni",
+      "country": "japan",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Ka-Mi",
+      "country": "japan",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "▅M24",
+      "country": "japan",
+      "rank": 3,
+      "br": "3.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "▅M4A3 (76) W",
+      "country": "japan",
+      "rank": 4,
+      "br": "5.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▅M41A1",
+      "country": "japan",
+      "rank": 4,
+      "br": "6.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Type 60 SPRG (C)",
+      "country": "japan",
+      "rank": 4,
+      "br": "6.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Type 60 ATM",
+      "country": "japan",
+      "rank": 4,
+      "br": "6.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Type 87 RCV (P)",
+      "country": "japan",
+      "rank": 5,
+      "br": "7.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Type 87 RCV",
+      "country": "japan",
+      "rank": 6,
+      "br": "9.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Type 89",
+      "country": "japan",
+      "rank": 6,
+      "br": "9.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "TKX (P)",
+      "country": "japan",
+      "rank": 7,
+      "br": "11.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "I-Go Ko",
+      "country": "japan",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Chi-Ha",
+      "country": "japan",
+      "rank": 1,
+      "br": "1.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Ho-I",
+      "country": "japan",
+      "rank": 1,
+      "br": "2.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Chi-Ha Kai",
+      "country": "japan",
+      "rank": 2,
+      "br": "2.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Chi-He",
+      "country": "japan",
+      "rank": 2,
+      "br": "2.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Chi-Nu",
+      "country": "japan",
+      "rank": 3,
+      "br": "3.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Chi-To",
+      "country": "japan",
+      "rank": 3,
+      "br": "4.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Chi-To Late",
+      "country": "japan",
+      "rank": 3,
+      "br": "4.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Chi-Ri II",
+      "country": "japan",
+      "rank": 3,
+      "br": "5.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "ST-A1",
+      "country": "japan",
+      "rank": 4,
+      "br": "6.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "ST-A2",
+      "country": "japan",
+      "rank": 4,
+      "br": "6.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Type 61",
+      "country": "japan",
+      "rank": 4,
+      "br": "6.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "ST-A3",
+      "country": "japan",
+      "rank": 4,
+      "br": "6.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▅M47",
+      "country": "japan",
+      "rank": 5,
+      "br": "7.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "STB-2",
+      "country": "japan",
+      "rank": 5,
+      "br": "8.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Type 74 (C)",
+      "country": "japan",
+      "rank": 5,
+      "br": "8.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Type 74 (E)",
+      "country": "japan",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Type 74 (F)",
+      "country": "japan",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Type 90",
+      "country": "japan",
+      "rank": 7,
+      "br": "11.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Type 90 (B)",
+      "country": "japan",
+      "rank": 7,
+      "br": "11.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Type 10",
+      "country": "japan",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "TKX",
+      "country": "japan",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Ho-Ro",
+      "country": "japan",
+      "rank": 1,
+      "br": "1.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Ro-Go Exp.",
+      "country": "japan",
+      "rank": 1,
+      "br": "1.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Ho-Ni I",
+      "country": "japan",
+      "rank": 2,
+      "br": "2.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Ho-Ni III",
+      "country": "japan",
+      "rank": 2,
+      "br": "2.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Chi-Ha LG",
+      "country": "japan",
+      "rank": 2,
+      "br": "2.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Na-To",
+      "country": "japan",
+      "rank": 3,
+      "br": "3.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "▅M36",
+      "country": "japan",
+      "rank": 4,
+      "br": "5.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Type 75 SPH",
+      "country": "japan",
+      "rank": 4,
+      "br": "6.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Type 99",
+      "country": "japan",
+      "rank": 5,
+      "br": "7.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Ho-Ri Production",
+      "country": "japan",
+      "rank": 5,
+      "br": "7.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Type 16 (P)",
+      "country": "japan",
+      "rank": 6,
+      "br": "9.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Type 16",
+      "country": "japan",
+      "rank": 7,
+      "br": "9.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Type 94",
+      "country": "japan",
+      "rank": 1,
+      "br": "1.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Ta-Se",
+      "country": "japan",
+      "rank": 1,
+      "br": "1.7",
+      "type": "spaa"
+    },
+    {
+      "name": "▅M16 MGMC",
+      "country": "japan",
+      "rank": 2,
+      "br": "2.7",
+      "type": "spaa"
+    },
+    {
+      "name": "So-Ki",
+      "country": "japan",
+      "rank": 2,
+      "br": "3.0",
+      "type": "spaa"
+    },
+    {
+      "name": "▅M19A1",
+      "country": "japan",
+      "rank": 3,
+      "br": "4.0",
+      "type": "spaa"
+    },
+    {
+      "name": "▅M42",
+      "country": "japan",
+      "rank": 3,
+      "br": "4.0",
+      "type": "spaa"
+    },
+    {
+      "name": "SUB-I-II",
+      "country": "japan",
+      "rank": 4,
+      "br": "5.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Type 87",
+      "country": "japan",
+      "rank": 6,
+      "br": "8.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Type 93",
+      "country": "japan",
+      "rank": 7,
+      "br": "9.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Type 81 (C)",
+      "country": "japan",
+      "rank": 7,
+      "br": "11.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Ha-Go Commander",
+      "country": "japan",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Ro-Go",
+      "country": "japan",
+      "rank": 1,
+      "br": "1.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Chi-Ha Short Gun",
+      "country": "japan",
+      "rank": 2,
+      "br": "1.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Chi-He (5th Regiment)",
+      "country": "japan",
+      "rank": 2,
+      "br": "2.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Chi-Nu II",
+      "country": "japan",
+      "rank": 3,
+      "br": "4.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▅Heavy Tank No.6",
+      "country": "japan",
+      "rank": 4,
+      "br": "6.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Ho-Ri Prototype",
+      "country": "japan",
+      "rank": 4,
+      "br": "6.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Type 75 MLRS",
+      "country": "japan",
+      "rank": 5,
+      "br": "7.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Type 16 (FPS)",
+      "country": "japan",
+      "rank": 6,
+      "br": "9.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "CTWV RCV",
+      "country": "japan",
+      "rank": 7,
+      "br": "9.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Type 90 (B) \"\"Fuji\"\"",
+      "country": "japan",
+      "rank": 7,
+      "br": "11.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Ka-Chi",
+      "country": "japan",
+      "rank": 1,
+      "br": "2.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Chi-Ha Kai TD",
+      "country": "japan",
+      "rank": 2,
+      "br": "2.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Type 74 (G)",
+      "country": "japan",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "␗M8 LAC",
+      "country": "china",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "␗M3A3 Stuart",
+      "country": "china",
+      "rank": 2,
+      "br": "2.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "␗M5A1",
+      "country": "china",
+      "rank": 2,
+      "br": "2.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "␗M24",
+      "country": "china",
+      "rank": 2,
+      "br": "3.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Object 211",
+      "country": "china",
+      "rank": 3,
+      "br": "5.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "␗PT-76",
+      "country": "china",
+      "rank": 3,
+      "br": "5.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "␗M18 GMC",
+      "country": "china",
+      "rank": 4,
+      "br": "6.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Type 63",
+      "country": "china",
+      "rank": 4,
+      "br": "6.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Type 62",
+      "country": "china",
+      "rank": 4,
+      "br": "6.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "ZTS63",
+      "country": "china",
+      "rank": 5,
+      "br": "7.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "ZBD86",
+      "country": "china",
+      "rank": 5,
+      "br": "8.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "M41D",
+      "country": "china",
+      "rank": 6,
+      "br": "8.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "␗M60A3 TTS",
+      "country": "china",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "CM11",
+      "country": "china",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "MBT-2000",
+      "country": "china",
+      "rank": 7,
+      "br": "11.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "WZ1001(E) LCT",
+      "country": "china",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "VT4A1",
+      "country": "china",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "␗T-26",
+      "country": "china",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "␗Chi-Ha",
+      "country": "china",
+      "rank": 1,
+      "br": "1.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "␗Chi-Ha Kai",
+      "country": "china",
+      "rank": 2,
+      "br": "2.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "␗M4A4",
+      "country": "china",
+      "rank": 2,
+      "br": "3.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "␗T-34 (1943)",
+      "country": "china",
+      "rank": 3,
+      "br": "4.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "␗M4A1 (75) W",
+      "country": "china",
+      "rank": 3,
+      "br": "4.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "␗Т-34-85 (S-53)",
+      "country": "china",
+      "rank": 4,
+      "br": "5.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Т-34-85 Gai",
+      "country": "china",
+      "rank": 4,
+      "br": "5.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "␗IS-2",
+      "country": "china",
+      "rank": 4,
+      "br": "6.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "␗IS-2 (1944)",
+      "country": "china",
+      "rank": 4,
+      "br": "6.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "␗M48A1",
+      "country": "china",
+      "rank": 5,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Type 59",
+      "country": "china",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Type 69",
+      "country": "china",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "ZTZ59D1",
+      "country": "china",
+      "rank": 6,
+      "br": "8.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "ZTZ88B",
+      "country": "china",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "ZTZ88A",
+      "country": "china",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "ZTZ96",
+      "country": "china",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "ZTZ96A",
+      "country": "china",
+      "rank": 7,
+      "br": "10.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "ZTZ99-II",
+      "country": "china",
+      "rank": 7,
+      "br": "11.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "ZTZ99-III",
+      "country": "china",
+      "rank": 7,
+      "br": "11.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "ZTZ99A",
+      "country": "china",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "␗Sd.Kfz.222",
+      "country": "china",
+      "rank": 1,
+      "br": "1.3",
+      "type": "spaa"
+    },
+    {
+      "name": "CCKW 353 (M45)",
+      "country": "china",
+      "rank": 2,
+      "br": "2.3",
+      "type": "spaa"
+    },
+    {
+      "name": "␗M42",
+      "country": "china",
+      "rank": 3,
+      "br": "4.0",
+      "type": "spaa"
+    },
+    {
+      "name": "ZSD63/PG87",
+      "country": "china",
+      "rank": 3,
+      "br": "5.0",
+      "type": "spaa"
+    },
+    {
+      "name": "Phòng không T-34",
+      "country": "china",
+      "rank": 4,
+      "br": "5.0",
+      "type": "spaa"
+    },
+    {
+      "name": "ZSL92",
+      "country": "china",
+      "rank": 4,
+      "br": "6.3",
+      "type": "spaa"
+    },
+    {
+      "name": "WZ305",
+      "country": "china",
+      "rank": 5,
+      "br": "8.0",
+      "type": "spaa"
+    },
+    {
+      "name": "PGZ09",
+      "country": "china",
+      "rank": 6,
+      "br": "8.3",
+      "type": "spaa"
+    },
+    {
+      "name": "PGZ04A",
+      "country": "china",
+      "rank": 7,
+      "br": "9.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Antelope",
+      "country": "china",
+      "rank": 7,
+      "br": "10.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Tor-M1",
+      "country": "china",
+      "rank": 8,
+      "br": "11.7",
+      "type": "spaa"
+    },
+    {
+      "name": "␗M8 HMC",
+      "country": "china",
+      "rank": 1,
+      "br": "1.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "␗SU-76M",
+      "country": "china",
+      "rank": 1,
+      "br": "2.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "LVT(A)(4) (ZiS-2)",
+      "country": "china",
+      "rank": 2,
+      "br": "2.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "␗M10 GMC",
+      "country": "china",
+      "rank": 2,
+      "br": "3.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "␗ISU-152",
+      "country": "china",
+      "rank": 3,
+      "br": "4.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "␗M36 GMC",
+      "country": "china",
+      "rank": 4,
+      "br": "5.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "␗ISU-122",
+      "country": "china",
+      "rank": 4,
+      "br": "5.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "␗SU-100",
+      "country": "china",
+      "rank": 4,
+      "br": "6.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "PLZ83",
+      "country": "china",
+      "rank": 4,
+      "br": "6.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "␗M113A1 (TOW)",
+      "country": "china",
+      "rank": 5,
+      "br": "8.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "CM25",
+      "country": "china",
+      "rank": 6,
+      "br": "8.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "PTZ89",
+      "country": "china",
+      "rank": 6,
+      "br": "9.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "PTL02",
+      "country": "china",
+      "rank": 6,
+      "br": "9.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "AFT09",
+      "country": "china",
+      "rank": 6,
+      "br": "9.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "ZBD04A",
+      "country": "china",
+      "rank": 7,
+      "br": "10.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "ZLT11",
+      "country": "china",
+      "rank": 7,
+      "br": "9.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "T-26 No.531",
+      "country": "china",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "␗M3A3 (1st PTG)",
+      "country": "china",
+      "rank": 2,
+      "br": "2.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "␗M4A4 (1st PTG)",
+      "country": "china",
+      "rank": 2,
+      "br": "3.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "␗M41A3",
+      "country": "china",
+      "rank": 3,
+      "br": "5.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "M64",
+      "country": "china",
+      "rank": 4,
+      "br": "6.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "T-34-85 No.215",
+      "country": "china",
+      "rank": 4,
+      "br": "5.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "IS-2 No.402",
+      "country": "china",
+      "rank": 4,
+      "br": "6.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "ZTZ59A",
+      "country": "china",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Type 69-IIa",
+      "country": "china",
+      "rank": 5,
+      "br": "8.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Object 122MT \"\"MC\"\"",
+      "country": "china",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "WMA301",
+      "country": "china",
+      "rank": 6,
+      "br": "9.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "T-69 II G",
+      "country": "china",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "ZTZ96A (P)",
+      "country": "china",
+      "rank": 7,
+      "br": "10.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "QN506",
+      "country": "china",
+      "rank": 7,
+      "br": "10.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "BT-5",
+      "country": "china",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Ha-Go",
+      "country": "china",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "PLZ83-130",
+      "country": "china",
+      "rank": 5,
+      "br": "7.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Т-62 №545",
+      "country": "china",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "ZTZ96A",
+      "country": "china",
+      "rank": 6,
+      "br": "9.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Al-Khalid-I",
+      "country": "china",
+      "rank": 7,
+      "br": "11.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "AB 41",
+      "country": "italy",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "M11/39",
+      "country": "italy",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "AS 42/47",
+      "country": "italy",
+      "rank": 1,
+      "br": "2.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "AB 43",
+      "country": "italy",
+      "rank": 2,
+      "br": "2.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "▄M3A3",
+      "country": "italy",
+      "rank": 2,
+      "br": "2.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "▄M24",
+      "country": "italy",
+      "rank": 3,
+      "br": "3.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Breda 501",
+      "country": "italy",
+      "rank": 3,
+      "br": "5.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "▄M18",
+      "country": "italy",
+      "rank": 4,
+      "br": "6.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "AUBL/74",
+      "country": "italy",
+      "rank": 4,
+      "br": "6.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "FIAT 6614",
+      "country": "italy",
+      "rank": 4,
+      "br": "6.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "C13 T90",
+      "country": "italy",
+      "rank": 5,
+      "br": "7.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "R3 T106 FA",
+      "country": "italy",
+      "rank": 5,
+      "br": "8.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "VCC-80/60",
+      "country": "italy",
+      "rank": 6,
+      "br": "9.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Centauro I 105",
+      "country": "italy",
+      "rank": 6,
+      "br": "9.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Centauro I 105 R",
+      "country": "italy",
+      "rank": 6,
+      "br": "9.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Centauro I 120",
+      "country": "italy",
+      "rank": 7,
+      "br": "11.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "L6/40",
+      "country": "italy",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "M13/40 (I)",
+      "country": "italy",
+      "rank": 1,
+      "br": "1.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M13/40 (III)",
+      "country": "italy",
+      "rank": 1,
+      "br": "2.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M14/41",
+      "country": "italy",
+      "rank": 1,
+      "br": "2.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M15/42",
+      "country": "italy",
+      "rank": 2,
+      "br": "2.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄Pz.III N",
+      "country": "italy",
+      "rank": 2,
+      "br": "3.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "P40",
+      "country": "italy",
+      "rank": 2,
+      "br": "3.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄Sherman V",
+      "country": "italy",
+      "rank": 3,
+      "br": "3.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Sherman Ic",
+      "country": "italy",
+      "rank": 3,
+      "br": "4.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄Sherman Vc",
+      "country": "italy",
+      "rank": 4,
+      "br": "5.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M26A1",
+      "country": "italy",
+      "rank": 4,
+      "br": "6.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M47 (105/55)",
+      "country": "italy",
+      "rank": 5,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "OF-40",
+      "country": "italy",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "OF-40 Mk.2A",
+      "country": "italy",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄Leopard 1A5",
+      "country": "italy",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Ariete (P)",
+      "country": "italy",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Ariete PSO",
+      "country": "italy",
+      "rank": 7,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Ariete",
+      "country": "italy",
+      "rank": 7,
+      "br": "11.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Ariete AMV",
+      "country": "italy",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "AS 42",
+      "country": "italy",
+      "rank": 1,
+      "br": "1.3",
+      "type": "spaa"
+    },
+    {
+      "name": "CM52",
+      "country": "italy",
+      "rank": 2,
+      "br": "2.3",
+      "type": "spaa"
+    },
+    {
+      "name": "M42 Contraereo",
+      "country": "italy",
+      "rank": 3,
+      "br": "3.7",
+      "type": "spaa"
+    },
+    {
+      "name": "Leopard 40/70",
+      "country": "italy",
+      "rank": 4,
+      "br": "6.0",
+      "type": "spaa"
+    },
+    {
+      "name": "R3 T20 FA-HS",
+      "country": "italy",
+      "rank": 4,
+      "br": "6.0",
+      "type": "spaa"
+    },
+    {
+      "name": "◔ZSU-57-2",
+      "country": "italy",
+      "rank": 5,
+      "br": "7.0",
+      "type": "spaa"
+    },
+    {
+      "name": "◔ZSU-23-4",
+      "country": "italy",
+      "rank": 6,
+      "br": "8.0",
+      "type": "spaa"
+    },
+    {
+      "name": "SIDAM 25",
+      "country": "italy",
+      "rank": 6,
+      "br": "8.3",
+      "type": "spaa"
+    },
+    {
+      "name": "SIDAM 25 (Mistral)",
+      "country": "italy",
+      "rank": 7,
+      "br": "9.7",
+      "type": "spaa"
+    },
+    {
+      "name": "OTOMATIC",
+      "country": "italy",
+      "rank": 7,
+      "br": "11.3",
+      "type": "spaa"
+    },
+    {
+      "name": "L3/33 CC",
+      "country": "italy",
+      "rank": 1,
+      "br": "1.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "47/32 L40",
+      "country": "italy",
+      "rank": 1,
+      "br": "1.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Lancia 3Ro (100/17)",
+      "country": "italy",
+      "rank": 1,
+      "br": "1.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "75/18 M41",
+      "country": "italy",
+      "rank": 2,
+      "br": "2.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "75/32 M41",
+      "country": "italy",
+      "rank": 2,
+      "br": "2.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "75/34 M42",
+      "country": "italy",
+      "rank": 2,
+      "br": "2.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "105/25 M43",
+      "country": "italy",
+      "rank": 2,
+      "br": "3.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "75/34 M43",
+      "country": "italy",
+      "rank": 2,
+      "br": "3.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "90/53 M41M",
+      "country": "italy",
+      "rank": 3,
+      "br": "3.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "▄StuG III G",
+      "country": "italy",
+      "rank": 3,
+      "br": "4.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "75/46 M43",
+      "country": "italy",
+      "rank": 3,
+      "br": "4.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "M36B1",
+      "country": "italy",
+      "rank": 4,
+      "br": "5.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "▄M109G",
+      "country": "italy",
+      "rank": 4,
+      "br": "6.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "M113A1 (TOW)",
+      "country": "italy",
+      "rank": 6,
+      "br": "8.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "VBC (PT2)",
+      "country": "italy",
+      "rank": 6,
+      "br": "9.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Dardo",
+      "country": "italy",
+      "rank": 7,
+      "br": "10.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "VCC-80/30",
+      "country": "italy",
+      "rank": 7,
+      "br": "10.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Freccia",
+      "country": "italy",
+      "rank": 7,
+      "br": "10.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Csaba",
+      "country": "italy",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Turan I",
+      "country": "italy",
+      "rank": 2,
+      "br": "2.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Zrinyi II",
+      "country": "italy",
+      "rank": 2,
+      "br": "2.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Turan III",
+      "country": "italy",
+      "rank": 3,
+      "br": "4.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "◔2S1",
+      "country": "italy",
+      "rank": 4,
+      "br": "6.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "◔BTR-80A",
+      "country": "italy",
+      "rank": 5,
+      "br": "7.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "◔T-72M1",
+      "country": "italy",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "◔Leopard 2A4",
+      "country": "italy",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "KF41",
+      "country": "italy",
+      "rank": 7,
+      "br": "11.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Leopard 2A7HU",
+      "country": "italy",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "L6/40 (31 Rgt.)",
+      "country": "italy",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "M13/40 (II)",
+      "country": "italy",
+      "rank": 1,
+      "br": "2.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M14/41 (47/40)",
+      "country": "italy",
+      "rank": 2,
+      "br": "2.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Celere Sahariano",
+      "country": "italy",
+      "rank": 2,
+      "br": "2.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M43 \"\"G.C.Leoncello\"\"",
+      "country": "italy",
+      "rank": 3,
+      "br": "3.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "▄Sherman I Composito",
+      "country": "italy",
+      "rank": 3,
+      "br": "3.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄Pz.IV G",
+      "country": "italy",
+      "rank": 3,
+      "br": "3.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Tigris",
+      "country": "italy",
+      "rank": 4,
+      "br": "6.0",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "M26 \"\"D.C.Ariete\"\"",
+      "country": "italy",
+      "rank": 4,
+      "br": "6.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M60A1 \"\"D.C.Ariete\"\"",
+      "country": "italy",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "AUBL/74 HVG",
+      "country": "italy",
+      "rank": 5,
+      "br": "8.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "OF-40 (MTCA)",
+      "country": "italy",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "VRCC",
+      "country": "italy",
+      "rank": 6,
+      "br": "9.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Centauro RGO",
+      "country": "italy",
+      "rank": 7,
+      "br": "11.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Toldi IIA",
+      "country": "italy",
+      "rank": 1,
+      "br": "1.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Turan II",
+      "country": "italy",
+      "rank": 2,
+      "br": "2.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "P40 \"\"G.C. Leoncello\"\"",
+      "country": "italy",
+      "rank": 2,
+      "br": "3.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Zrinyi I",
+      "country": "italy",
+      "rank": 3,
+      "br": "4.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Breda 90/53",
+      "country": "italy",
+      "rank": 3,
+      "br": "4.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "AMC.34 YR",
+      "country": "france",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "AMD.35",
+      "country": "france",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "AMC.35 (ACG.1)",
+      "country": "france",
+      "rank": 1,
+      "br": "1.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "▄Crusader Mk.II",
+      "country": "france",
+      "rank": 2,
+      "br": "2.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "AMX-13 (FL11)",
+      "country": "france",
+      "rank": 3,
+      "br": "4.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "E.B.R. (1951)",
+      "country": "france",
+      "rank": 3,
+      "br": "5.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "AMX-13",
+      "country": "france",
+      "rank": 4,
+      "br": "6.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "AML-90",
+      "country": "france",
+      "rank": 5,
+      "br": "7.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "AMX-13-90",
+      "country": "france",
+      "rank": 5,
+      "br": "7.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "MARS 15",
+      "country": "france",
+      "rank": 6,
+      "br": "8.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "AMX-13 (HOT)",
+      "country": "france",
+      "rank": 6,
+      "br": "8.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "AMX-10RC",
+      "country": "france",
+      "rank": 6,
+      "br": "8.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "SK-105A2",
+      "country": "france",
+      "rank": 6,
+      "br": "8.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Vextra 105",
+      "country": "france",
+      "rank": 6,
+      "br": "9.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "H.35",
+      "country": "france",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "H.39",
+      "country": "france",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "S.35",
+      "country": "france",
+      "rank": 1,
+      "br": "1.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄M3A3 Stuart",
+      "country": "france",
+      "rank": 2,
+      "br": "2.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "▄M4A1",
+      "country": "france",
+      "rank": 2,
+      "br": "3.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄M4A4",
+      "country": "france",
+      "rank": 3,
+      "br": "3.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "M4A4 (SA50)",
+      "country": "france",
+      "rank": 3,
+      "br": "5.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄M26",
+      "country": "france",
+      "rank": 4,
+      "br": "6.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Lorraine 40t",
+      "country": "france",
+      "rank": 5,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Char 25t",
+      "country": "france",
+      "rank": 5,
+      "br": "8.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "AMX-30 (1972)",
+      "country": "france",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "AMX-30B2",
+      "country": "france",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "AMX-30B2 BRENUS",
+      "country": "france",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leclerc",
+      "country": "france",
+      "rank": 7,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leclerc S2",
+      "country": "france",
+      "rank": 7,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leclerc SXXI",
+      "country": "france",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leclerc AZUR",
+      "country": "france",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "FCM.36",
+      "country": "france",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "R.35 (SA38)",
+      "country": "france",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "D2",
+      "country": "france",
+      "rank": 1,
+      "br": "1.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "B1 bis",
+      "country": "france",
+      "rank": 2,
+      "br": "2.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "2C",
+      "country": "france",
+      "rank": 2,
+      "br": "2.3",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "ARL-44 (ACL-1)",
+      "country": "france",
+      "rank": 3,
+      "br": "3.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "▄M4A3E2",
+      "country": "france",
+      "rank": 3,
+      "br": "5.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "AMX M4",
+      "country": "france",
+      "rank": 4,
+      "br": "6.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "AMX-50 (TOA100)",
+      "country": "france",
+      "rank": 5,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "AMX-50 Surbaissé",
+      "country": "france",
+      "rank": 5,
+      "br": "7.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "AMX-32 (105)",
+      "country": "france",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "AMX-32",
+      "country": "france",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "AMX-40",
+      "country": "france",
+      "rank": 6,
+      "br": "9.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "P.7.T AA",
+      "country": "france",
+      "rank": 1,
+      "br": "1.3",
+      "type": "spaa"
+    },
+    {
+      "name": "CCKW 353 AA",
+      "country": "france",
+      "rank": 2,
+      "br": "2.0",
+      "type": "spaa"
+    },
+    {
+      "name": "VTT DCA",
+      "country": "france",
+      "rank": 2,
+      "br": "3.0",
+      "type": "spaa"
+    },
+    {
+      "name": "AMX-13 DCA 40",
+      "country": "france",
+      "rank": 3,
+      "br": "5.0",
+      "type": "spaa"
+    },
+    {
+      "name": "TPK 6.41",
+      "country": "france",
+      "rank": 3,
+      "br": "5.7",
+      "type": "spaa"
+    },
+    {
+      "name": "AMX-10P",
+      "country": "france",
+      "rank": 4,
+      "br": "6.3",
+      "type": "spaa"
+    },
+    {
+      "name": "AMX-30 S DCA",
+      "country": "france",
+      "rank": 6,
+      "br": "8.7",
+      "type": "spaa"
+    },
+    {
+      "name": "SANTAL",
+      "country": "france",
+      "rank": 6,
+      "br": "9.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Roland 1",
+      "country": "france",
+      "rank": 7,
+      "br": "9.7",
+      "type": "spaa"
+    },
+    {
+      "name": "▄ItO 90M",
+      "country": "france",
+      "rank": 8,
+      "br": "12.0",
+      "type": "spaa"
+    },
+    {
+      "name": "AMR.35 ZT3",
+      "country": "france",
+      "rank": 1,
+      "br": "1.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Lorraine 37L",
+      "country": "france",
+      "rank": 1,
+      "br": "1.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "SAu 40",
+      "country": "france",
+      "rank": 1,
+      "br": "1.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "▄M4A3 (105)",
+      "country": "france",
+      "rank": 2,
+      "br": "3.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄M10 GMC",
+      "country": "france",
+      "rank": 2,
+      "br": "3.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "ARL-44",
+      "country": "france",
+      "rank": 3,
+      "br": "5.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "▄M36B2",
+      "country": "france",
+      "rank": 3,
+      "br": "5.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "CA Lorraine",
+      "country": "france",
+      "rank": 4,
+      "br": "6.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "ELC bis",
+      "country": "france",
+      "rank": 4,
+      "br": "6.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "AuF1",
+      "country": "france",
+      "rank": 5,
+      "br": "7.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "AMX-10M",
+      "country": "france",
+      "rank": 5,
+      "br": "7.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "AMX-50 Foch",
+      "country": "france",
+      "rank": 5,
+      "br": "7.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "AMX-30 ACRA",
+      "country": "france",
+      "rank": 6,
+      "br": "8.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "MEPHISTO",
+      "country": "france",
+      "rank": 6,
+      "br": "8.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "H.39 \"\"Cambronne\"\"",
+      "country": "france",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "2C bis",
+      "country": "france",
+      "rank": 1,
+      "br": "1.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "B1 ter",
+      "country": "france",
+      "rank": 2,
+      "br": "2.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "AMX-13-M24",
+      "country": "france",
+      "rank": 2,
+      "br": "3.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "M4A1 (FL10)",
+      "country": "france",
+      "rank": 3,
+      "br": "5.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Panther \"\"Dauphiné\"\"",
+      "country": "france",
+      "rank": 4,
+      "br": "6.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "AMX-13 (SS.11)",
+      "country": "france",
+      "rank": 4,
+      "br": "6.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Somua SM",
+      "country": "france",
+      "rank": 5,
+      "br": "7.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "AMX-30",
+      "country": "france",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "AMX-50 (TO90/930)",
+      "country": "france",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "AMX-30 Super",
+      "country": "france",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "VBCI-2 (MCT30)",
+      "country": "france",
+      "rank": 6,
+      "br": "9.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "AMD.35 (SA35)",
+      "country": "france",
+      "rank": 1,
+      "br": "1.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "LVT-4/40",
+      "country": "france",
+      "rank": 2,
+      "br": "3.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Lorraine 155 Mle.50",
+      "country": "france",
+      "rank": 3,
+      "br": "4.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "E.B.R. (1954)",
+      "country": "france",
+      "rank": 4,
+      "br": "6.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "E.B.R. (1963)",
+      "country": "france",
+      "rank": 5,
+      "br": "7.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "AMX-50 Surblindé",
+      "country": "france",
+      "rank": 5,
+      "br": "7.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "CV 9035NL",
+      "country": "france",
+      "rank": 7,
+      "br": "9.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Strv m/31",
+      "country": "sweden",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "BT-42",
+      "country": "sweden",
+      "rank": 1,
+      "br": "1.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Strv m/41 S-II",
+      "country": "sweden",
+      "rank": 2,
+      "br": "2.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Pvkv III",
+      "country": "sweden",
+      "rank": 2,
+      "br": "3.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Pvkv II",
+      "country": "sweden",
+      "rank": 3,
+      "br": "4.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Pbv 501",
+      "country": "sweden",
+      "rank": 4,
+      "br": "6.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Ikv 91",
+      "country": "sweden",
+      "rank": 5,
+      "br": "8.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "U-SH 405",
+      "country": "sweden",
+      "rank": 5,
+      "br": "8.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Ikv 91-105",
+      "country": "sweden",
+      "rank": 6,
+      "br": "8.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "CV 9030FIN",
+      "country": "sweden",
+      "rank": 6,
+      "br": "9.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Strf 9040B",
+      "country": "sweden",
+      "rank": 6,
+      "br": "9.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Strf 9040C",
+      "country": "sweden",
+      "rank": 7,
+      "br": "10.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "CV 90120",
+      "country": "sweden",
+      "rank": 8,
+      "br": "11.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Strv m/38",
+      "country": "sweden",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Strv m/40L",
+      "country": "sweden",
+      "rank": 1,
+      "br": "2.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Lago I",
+      "country": "sweden",
+      "rank": 2,
+      "br": "2.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Strv m/42 EH",
+      "country": "sweden",
+      "rank": 2,
+      "br": "2.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pvkv IV",
+      "country": "sweden",
+      "rank": 3,
+      "br": "3.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Strv m/42 DT",
+      "country": "sweden",
+      "rank": 3,
+      "br": "5.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Strv 74",
+      "country": "sweden",
+      "rank": 4,
+      "br": "5.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Strv 81",
+      "country": "sweden",
+      "rank": 5,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Strv 101",
+      "country": "sweden",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Strv 103A",
+      "country": "sweden",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Strv 104",
+      "country": "sweden",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Strv 103С",
+      "country": "sweden",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Strv 105",
+      "country": "sweden",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Strv 121",
+      "country": "sweden",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Strv 122A",
+      "country": "sweden",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Strv 122B PLSS",
+      "country": "sweden",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Strv 122B+",
+      "country": "sweden",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Pvlvv fm/42",
+      "country": "sweden",
+      "rank": 1,
+      "br": "1.7",
+      "type": "spaa"
+    },
+    {
+      "name": "Pbv 301",
+      "country": "sweden",
+      "rank": 2,
+      "br": "2.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Lvtdgb m/40",
+      "country": "sweden",
+      "rank": 2,
+      "br": "2.7",
+      "type": "spaa"
+    },
+    {
+      "name": "L-62 ANTI II",
+      "country": "sweden",
+      "rank": 3,
+      "br": "3.0",
+      "type": "spaa"
+    },
+    {
+      "name": "Lvkv 42",
+      "country": "sweden",
+      "rank": 4,
+      "br": "4.3",
+      "type": "spaa"
+    },
+    {
+      "name": "U-SH 204 GK",
+      "country": "sweden",
+      "rank": 4,
+      "br": "5.3",
+      "type": "spaa"
+    },
+    {
+      "name": "▄ZSU-57-2",
+      "country": "sweden",
+      "rank": 5,
+      "br": "7.0",
+      "type": "spaa"
+    },
+    {
+      "name": "VEAK 40",
+      "country": "sweden",
+      "rank": 5,
+      "br": "7.7",
+      "type": "spaa"
+    },
+    {
+      "name": "ItPsV Leopard",
+      "country": "sweden",
+      "rank": 6,
+      "br": "8.7",
+      "type": "spaa"
+    },
+    {
+      "name": "Lvrbv 701",
+      "country": "sweden",
+      "rank": 6,
+      "br": "9.7",
+      "type": "spaa"
+    },
+    {
+      "name": "Lvkv 9040C",
+      "country": "sweden",
+      "rank": 7,
+      "br": "10.3",
+      "type": "spaa"
+    },
+    {
+      "name": "ASRAD-R",
+      "country": "sweden",
+      "rank": 7,
+      "br": "10.3",
+      "type": "spaa"
+    },
+    {
+      "name": "ItO 90M",
+      "country": "sweden",
+      "rank": 8,
+      "br": "12.0",
+      "type": "spaa"
+    },
+    {
+      "name": "Ikv 72",
+      "country": "sweden",
+      "rank": 1,
+      "br": "1.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Sav m/43 (1944)",
+      "country": "sweden",
+      "rank": 1,
+      "br": "1.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Spj fm/43-44",
+      "country": "sweden",
+      "rank": 2,
+      "br": "1.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Sav m/43 (1946)",
+      "country": "sweden",
+      "rank": 2,
+      "br": "3.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Pvkv m/43 (1946)",
+      "country": "sweden",
+      "rank": 3,
+      "br": "4.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Ikv 103",
+      "country": "sweden",
+      "rank": 3,
+      "br": "4.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Pvkv m/43 (1963)",
+      "country": "sweden",
+      "rank": 3,
+      "br": "5.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Bkan 1C",
+      "country": "sweden",
+      "rank": 4,
+      "br": "6.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Pvrbv 551",
+      "country": "sweden",
+      "rank": 5,
+      "br": "8.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "UDES 33",
+      "country": "sweden",
+      "rank": 6,
+      "br": "8.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Pbv 302 (BILL)",
+      "country": "sweden",
+      "rank": 6,
+      "br": "8.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Strf 9040 BILL",
+      "country": "sweden",
+      "rank": 7,
+      "br": "10.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Vickers Mk.E",
+      "country": "sweden",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "▄T-28",
+      "country": "sweden",
+      "rank": 1,
+      "br": "1.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄T-34",
+      "country": "sweden",
+      "rank": 3,
+      "br": "4.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄Pz.IV",
+      "country": "sweden",
+      "rank": 3,
+      "br": "3.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄PT-76",
+      "country": "sweden",
+      "rank": 3,
+      "br": "5.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "▄Comet I",
+      "country": "sweden",
+      "rank": 3,
+      "br": "5.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄T-34-85",
+      "country": "sweden",
+      "rank": 4,
+      "br": "5.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄Charioteer Mk VII",
+      "country": "sweden",
+      "rank": 4,
+      "br": "6.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄T-54",
+      "country": "sweden",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄T-55M",
+      "country": "sweden",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄T-72M1",
+      "country": "sweden",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄Leopard 2A4",
+      "country": "sweden",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "▄Leopard 2A6",
+      "country": "sweden",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Strv m/39",
+      "country": "sweden",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "▄T-26E",
+      "country": "sweden",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Strv m/41 S-I",
+      "country": "sweden",
+      "rank": 2,
+      "br": "2.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Ikv 73",
+      "country": "sweden",
+      "rank": 2,
+      "br": "2.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "SAV 20.12.48",
+      "country": "sweden",
+      "rank": 3,
+      "br": "3.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Sherman III/IV",
+      "country": "sweden",
+      "rank": 3,
+      "br": "3.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Kungstiger",
+      "country": "sweden",
+      "rank": 4,
+      "br": "6.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "Strv 81 (RB 52)",
+      "country": "sweden",
+      "rank": 5,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Strv 103-0",
+      "country": "sweden",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Leopard 1A5NO2",
+      "country": "sweden",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "CV 9035DK",
+      "country": "sweden",
+      "rank": 6,
+      "br": "9.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "CV 90105",
+      "country": "sweden",
+      "rank": 7,
+      "br": "10.3",
+      "type": "light_tank"
+    },
+    {
+      "name": "Christian II",
+      "country": "sweden",
+      "rank": 7,
+      "br": "10.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "T 80 U",
+      "country": "sweden",
+      "rank": 8,
+      "br": "11.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Strv m/39 TD",
+      "country": "sweden",
+      "rank": 1,
+      "br": "1.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "Pbil m/40",
+      "country": "sweden",
+      "rank": 1,
+      "br": "2.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "▄KV-1 m1942",
+      "country": "sweden",
+      "rank": 3,
+      "br": "4.7",
+      "type": "heavy_tank"
+    },
+    {
+      "name": "VIDAR",
+      "country": "sweden",
+      "rank": 5,
+      "br": "8.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "CT-CV 105HP",
+      "country": "sweden",
+      "rank": 7,
+      "br": "10.0",
+      "type": "light_tank"
+    },
+    {
+      "name": "M-51",
+      "country": "israel",
+      "rank": 4,
+      "br": "6.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Magach 1",
+      "country": "israel",
+      "rank": 4,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Magach 2",
+      "country": "israel",
+      "rank": 4,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Magach 3",
+      "country": "israel",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Magach 6",
+      "country": "israel",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Magach 6A",
+      "country": "israel",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Magach 5",
+      "country": "israel",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Magach 6R",
+      "country": "israel",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Magach 6B",
+      "country": "israel",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Magach Hydra",
+      "country": "israel",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Magach 6M",
+      "country": "israel",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Magach 6C",
+      "country": "israel",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Gal Batash",
+      "country": "israel",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Magach 7C",
+      "country": "israel",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "AMX-13",
+      "country": "israel",
+      "rank": 4,
+      "br": "6.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "AML-90",
+      "country": "israel",
+      "rank": 4,
+      "br": "7.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "Sho't",
+      "country": "israel",
+      "rank": 4,
+      "br": "7.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Tiran 4",
+      "country": "israel",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Tiran 4S",
+      "country": "israel",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Sho't Kal Alef",
+      "country": "israel",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Sho't Kal Gimel",
+      "country": "israel",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Tiran 6",
+      "country": "israel",
+      "rank": 6,
+      "br": "8.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Merkava Mk.1B",
+      "country": "israel",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Merkava Mk.2B",
+      "country": "israel",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Merkava Mk.3B",
+      "country": "israel",
+      "rank": 7,
+      "br": "11.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Merkava Mk.3C",
+      "country": "israel",
+      "rank": 7,
+      "br": "11.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Merkava Mk.4B",
+      "country": "israel",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Merkava Mk.4 LIC",
+      "country": "israel",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Merkava Mk.4M",
+      "country": "israel",
+      "rank": 8,
+      "br": "12.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "TCM-20",
+      "country": "israel",
+      "rank": 4,
+      "br": "4.3",
+      "type": "spaa"
+    },
+    {
+      "name": "ZSU-57-2",
+      "country": "israel",
+      "rank": 4,
+      "br": "7.0",
+      "type": "spaa"
+    },
+    {
+      "name": "Hovet",
+      "country": "israel",
+      "rank": 5,
+      "br": "7.3",
+      "type": "spaa"
+    },
+    {
+      "name": "ZSU-23-4",
+      "country": "israel",
+      "rank": 6,
+      "br": "8.0",
+      "type": "spaa"
+    },
+    {
+      "name": "Machbet",
+      "country": "israel",
+      "rank": 6,
+      "br": "9.3",
+      "type": "spaa"
+    },
+    {
+      "name": "Imp.Chaparral",
+      "country": "israel",
+      "rank": 7,
+      "br": "10.0",
+      "type": "spaa"
+    },
+    {
+      "name": "M109",
+      "country": "israel",
+      "rank": 4,
+      "br": "6.0",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Rochev",
+      "country": "israel",
+      "rank": 4,
+      "br": "6.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Zachlam Tager",
+      "country": "israel",
+      "rank": 4,
+      "br": "6.7",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Giraf",
+      "country": "israel",
+      "rank": 6,
+      "br": "8.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Namer 30",
+      "country": "israel",
+      "rank": 7,
+      "br": "10.7",
+      "type": "light_tank"
+    },
+    {
+      "name": "M-51 (W)",
+      "country": "israel",
+      "rank": 4,
+      "br": "6.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Sholef",
+      "country": "israel",
+      "rank": 4,
+      "br": "7.3",
+      "type": "tank_destroyer"
+    },
+    {
+      "name": "Magach 3 (ERA)",
+      "country": "israel",
+      "rank": 5,
+      "br": "8.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Sho't Kal Dalet",
+      "country": "israel",
+      "rank": 6,
+      "br": "9.0",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Magach 6B Gal",
+      "country": "israel",
+      "rank": 6,
+      "br": "9.3",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Merkava Mk.2D",
+      "country": "israel",
+      "rank": 6,
+      "br": "9.7",
+      "type": "medium_tank"
+    },
+    {
+      "name": "Ra'am Sagol",
+      "country": "israel",
+      "rank": 7,
+      "br": "11.3",
+      "type": "medium_tank"
+    }
+  ]
+}
