@@ -1,59 +1,65 @@
 import React from 'react';
-import { getImagePath, getCountryName, getTypeName, getCountryColor, formatBR, getTypeIcon } from '../utils';
-import { Card, Tag, Tooltip } from 'antd';
+import { Card, Badge } from 'antd';
+import { getCountryName, getTypeIcon } from '../utils';
+import { getCountryFlag } from '../countryFlags';
+
 import './VehicleCard.css';
 
-const VehicleCard = ({ vehicle }) => {
-    if (!vehicle.name) return null;
+const VehicleCard = ({ vehicle, onDetails }) => {
+    const { name, country, br, hasImages, images, type } = vehicle;
 
-    const countryColor = getCountryColor(vehicle.country);
-    const countryDisplayName = getCountryName(vehicle.country);
+    // Выбираем первое изображение или null, если изображений нет
+    const thumbnailImage = images && images.length > 0 ? images[0].url : null;
 
-    // Split country name to separate emoji and text
-    const countryParts = countryDisplayName.split(' ');
-    const flagEmoji = countryParts[0];
-    const countryText = countryParts.slice(1).join(' ');
+    // Получаем иконку типа
+    const typeIconSvg = getTypeIcon(type);
+    const countryFlagSvg = getCountryFlag(country);
+
+    // Получаем флаг страны
+    const countryWithFlag = getCountryName(country);
+    const flagOnly = countryWithFlag ? countryWithFlag.split(' ')[0] : '';
 
     return (
         <Card
-            className="vehicle-card"
             hoverable
+            className="vehicle-card"
+            onClick={() => onDetails && onDetails(vehicle)}
+            bodyStyle={{ padding: 0 }}
         >
-            <div className="vehicle-card-content">
-                <div className="vehicle-image-container">
+            {/* Изображение */}
+            <div className="vehicle-image-container">
+                {thumbnailImage ? (
                     <img
-                        src={getImagePath(vehicle.country, vehicle.type)}
-                        alt={vehicle.name}
+                        src={thumbnailImage}
+                        alt={name}
                         className="vehicle-image"
                     />
-                </div>
-
-                <div className="vehicle-details">
-                    <Tooltip title={vehicle.name}>
-                        <h3 className="vehicle-name">{vehicle.name}</h3>
-                    </Tooltip>
-
-                    <div className="vehicle-tags">
-                        <Tag color={countryColor} className="country-tag">
-                            <span className="flag-emoji">{flagEmoji}</span> {countryText}
-                        </Tag>
-
-                        <Tag color="blue" className="br-tag">
-                            BR {formatBR(vehicle.br)}
-                        </Tag>
-
-                        <Tag color="gold" className="rank-tag">
-                            Rank {vehicle.rank}
-                        </Tag>
+                ) : (
+                    <div className="vehicle-no-image">
+                        <div className="vehicle-type-icon-large" dangerouslySetInnerHTML={{ __html: typeIconSvg }} />
                     </div>
+                )}
 
-                    <div className="vehicle-type">
-                        <span className="label">Type:</span>
-                        <span className="value">
-                            <span className="card-type-icon" dangerouslySetInnerHTML={{ __html: getTypeIcon(vehicle.type) }}></span>
-                            {getTypeName(vehicle.type)}
-                        </span>
-                    </div>
+                {/* Бейдж для количества изображений */}
+                {hasImages && images && images.length > 1 && (
+                    <Badge
+                        count={images.length}
+                        className="image-counter"
+                    />
+                )}
+            </div>
+
+            {/* Информационная панель внизу */}
+            <div className="vehicle-info-panel">
+        <span
+            className="country-flag-svg"
+            data-country={country.toLowerCase()}
+            dangerouslySetInnerHTML={{ __html: countryFlagSvg }}
+        />
+                <span className="vehicle-name">{name}</span>
+                <div className="vehicle-specs">
+                    <span className="vehicle-br">{br}</span>
+                    <span className="vehicle-type-icon" dangerouslySetInnerHTML={{ __html: typeIconSvg }} />
                 </div>
             </div>
         </Card>

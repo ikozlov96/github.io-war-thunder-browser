@@ -3,7 +3,7 @@ import { Row, Col, Empty, Spin, Pagination } from 'antd';
 import VehicleCard from './VehicleCard';
 import './VehiclesList.css';
 
-const VehiclesList = ({ vehicles, loading, error, pagination, onPageChange, onVehicleSelect }) => {
+const VehiclesList = ({ vehicles, loading, error, pagination, onPageChange, onVehicleSelect, onVehicleDetails }) => {
     const { current, pageSize, total } = pagination;
 
     // Calculate current page of vehicles
@@ -55,7 +55,10 @@ const VehiclesList = ({ vehicles, loading, error, pagination, onPageChange, onVe
                 {paginatedVehicles.map((vehicle, index) => (
                     <Col xs={24} sm={12} md={8} lg={6} key={`${vehicle.name}-${index}`}>
                         <div onClick={() => onVehicleSelect && onVehicleSelect(vehicle)}>
-                            <VehicleCard vehicle={vehicle} />
+                            <VehicleCard
+                                vehicle={vehicle}
+                                onDetails={onVehicleDetails || onVehicleSelect}
+                            />
                         </div>
                     </Col>
                 ))}

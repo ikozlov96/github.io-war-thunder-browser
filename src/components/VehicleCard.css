@@ -1,192 +1,231 @@
+/* Основные стили карточки */
 .vehicle-card {
-    height: 100%;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    background-color: #242424 !important;
-    border: 1px solid #333 !important;
-    border-radius: 8px !important;
+    width: 100%;
+    transition: all 0.3s;
     overflow: hidden;
+    height: 180px; /* Уменьшенный размер карточки */
+    position: relative;
+    margin-bottom: 16px;
+    background-color: #242424; /* Темный фон карточки */
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .vehicle-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
-    border-color: rgba(187, 134, 252, 0.5) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
-.vehicle-card-content {
-    display: flex;
-    align-items: flex-start;
-}
-
+/* Контейнер изображения */
 .vehicle-image-container {
-    flex-shrink: 0;
-    margin-right: 12px;
-    border-radius: 4px;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.vehicle-card:hover .vehicle-image-container {
-    transform: scale(1.05);
+    width: 100%;
+    height: 140px; /* Уменьшенная высота изображения */
+    position: relative;
+    background-color: #1a1a1a; /* Темный фон для изображения */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .vehicle-image {
-    width: 64px;
-    height: 64px;
-    object-fit: cover;
-    display: block;
-}
-
-.vehicle-details {
-    flex: 1;
-    min-width: 0;
-}
-
-.vehicle-name {
-    margin: 0 0 10px;
-    font-size: 16px;
-    font-weight: 500;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: rgba(255, 255, 255, 0.87);
-    line-height: 1.2;
-}
-
-.vehicle-tags {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
-    gap: 6px;
-}
-
-.country-tag {
-    margin-right: 0 !important;
-    margin-bottom: 0 !important;
-    border: none !important;
-    padding: 0 8px !important;
-    height: 22px !important;
-    line-height: 22px !important;
-    font-size: 12px !important;
-    border-radius: 4px !important;
-}
-
-.flag-emoji {
-    font-size: 14px;
-    margin-right: 2px;
-    position: relative;
-    top: 0;
-}
-
-.br-tag {
-    margin-right: 0 !important;
-    margin-bottom: 0 !important;
-    background-color: rgba(3, 218, 198, 0.15) !important;
-    color: #03dac6 !important;
-    border: none !important;
-    padding: 0 8px !important;
-    height: 22px !important;
-    line-height: 22px !important;
-    font-size: 12px !important;
-    border-radius: 4px !important;
-}
-
-.rank-tag {
-    margin-right: 0 !important;
-    margin-bottom: 0 !important;
-    background-color: rgba(255, 215, 64, 0.15) !important;
-    color: #ffd740 !important;
-    border: none !important;
-    padding: 0 8px !important;
-    height: 22px !important;
-    line-height: 22px !important;
-    font-size: 12px !important;
-    border-radius: 4px !important;
-}
-
-.vehicle-type {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
-    padding-top: 8px;
-    border-top: 1px solid #333;
-}
-
-.vehicle-type .label {
-    color: rgba(255, 255, 255, 0.5);
-}
-
-.vehicle-type .value {
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.87);
-    display: flex;
-    align-items: center;
-}
-
-/* Стили для иконки типа техники в карточке */
-.card-type-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-    margin-right: 6px;
-}
-
-.card-type-icon svg {
-    width: 16px;
-    height: 16px;
-    fill: currentColor;
-}
-
-/* Material ripple effect */
-.vehicle-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.vehicle-card:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.1);
+    object-fit: cover;
+}
+
+.vehicle-no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    height: 100%;
+    width: 100%;
+}
+
+.vehicle-type-icon-large {
+    width: 48px;
+    height: 48px;
+}
+
+.vehicle-type-icon-large svg {
+    width: 100%;
+    height: 100%;
+    fill: #999;
+}
+
+/* Информационная панель в одну строку */
+.vehicle-info-panel {
+    display: flex;
+    align-items: center;
+    height: 40px; /* Фиксированная высота */
+    padding: 0 10px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7); /* Более контрастный фон */
+    position: relative;
+    z-index: 5;
+    backdrop-filter: blur(2px); /* Добавляем размытие для современных браузеров */
+}
+
+/* Стилизация SVG флага - УВЕЛИЧЕННЫЕ РАЗМЕРЫ */
+.country-flag-svg {
+    width: 28px; /* Увеличили с 24px */
+    height: 18px; /* Увеличили с 16px */
+    margin-right: 10px; /* Увеличили отступ справа */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Обрезаем содержимое по границам */
+    border-radius: 2px; /* Небольшое скругление */
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15); /* Тонкая рамка для визуального выделения */
+    flex-shrink: 0; /* Предотвращает сжатие флагов */
+    background-color: rgba(0, 0, 0, 0.2); /* Фон для флагов с прозрачностью */
+}
+
+.country-flag-svg svg {
+    width: 100%;
+    height: 100%;
+    display: block; /* Устраняем проблемы с inline-block */
+    object-fit: contain; /* Сохраняем пропорции SVG */
+    max-width: 100%; /* Ограничиваем максимальную ширину */
+    max-height: 100%; /* Ограничиваем максимальную высоту */
+}
+
+/* Специальные стили для сложных флагов */
+.country-flag-svg [id^="flag"] {
+    transform-origin: center center;
+}
+
+/* Специфичные исправления для флагов с проблемами */
+.country-flag-svg svg[id^="flagWarDERoot"] {
+    transform: scale(0.8); /* Слегка уменьшаем сложный флаг Германии */
+}
+
+/* Название транспортного средства */
+.vehicle-name {
+    font-size: 14px;
+    font-weight: 500;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 8px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Тень для лучшей читаемости */
+}
+
+/* Контейнер для BR и иконки типа */
+.vehicle-specs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Стилизованный BR с контуром */
+.vehicle-br {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4CCCFF; /* Голубой цвет для BR */
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #4CCCFF; /* Контур */
+    background-color: rgba(0, 0, 0, 0.3); /* Полупрозрачный фон */
+}
+
+/* Стилизованная иконка типа с контуром */
+.vehicle-type-icon {
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Светлый контур */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.3); /* Полупрозрачный фон */
+}
+
+.vehicle-type-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: #fff;
+}
+
+/* Счетчик изображений */
+.image-counter {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 5;
+}
+
+/* Иконка просмотра деталей */
+.view-details-icon {
+    position: absolute;
+    bottom: 50px; /* Размещение над информационной панелью */
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
     opacity: 0;
-    transition: all 0.3s;
-    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 5;
 }
 
-.vehicle-card:active:after {
+.vehicle-card:hover .view-details-icon {
     opacity: 1;
-    transition: 0s;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .vehicle-card-content {
-        flex-direction: column;
+/* Адаптивность */
+@media (max-width: 576px) {
+    .vehicle-card {
+        height: 160px;
     }
 
     .vehicle-image-container {
-        margin-right: 0;
-        margin-bottom: 12px;
-        width: 100%;
+        height: 120px;
     }
 
-    .vehicle-image {
-        width: 100%;
-        height: auto;
-        max-height: 120px;
+    .vehicle-info-panel {
+        height: 36px;
+    }
+
+    .country-flag-svg {
+        width: 24px;
+        height: 16px;
+        margin-right: 6px;
     }
 
     .vehicle-name {
-        font-size: 15px;
-        margin-bottom: 8px;
+        font-size: 13px;
+    }
+
+    .vehicle-br {
+        font-size: 12px;
+        padding: 1px 4px;
+    }
+
+    .vehicle-type-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Дополнительные стили для темной темы */
+@media (prefers-color-scheme: dark) {
+    .vehicle-card {
+        background-color: #1a1a1a;
+    }
+
+    .vehicle-image-container {
+        background-color: #121212;
+    }
+
+    .vehicle-info-panel {
+        background-color: rgba(0, 0, 0, 0.8);
     }
 }

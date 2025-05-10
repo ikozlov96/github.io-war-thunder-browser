@@ -4,8 +4,16 @@
       "name": "M2A4",
       "country": "usa",
       "rank": 1,
-      "br": "1.0",
-      "type": "light_tank"
+      "br": "1",
+      "type": "light_tank",
+      "images": [
+        {
+          "id": 1746888643361,
+          "url": "/images/usa/us_m2a4-1746888643358-799821796.png",
+          "caption": "us_m2a4.png"
+        }
+      ],
+      "hasImages": true
     },
     {
       "name": "M3 Stuart",

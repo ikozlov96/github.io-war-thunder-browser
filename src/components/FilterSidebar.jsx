@@ -1,7 +1,8 @@
 import React from 'react';
-import {Button, Checkbox, Collapse, Input, Radio, Slider, Tooltip} from 'antd';
+import {Button, Collapse, Input, Radio, Slider, Tooltip} from 'antd';
 import {ClearOutlined, FilterOutlined, SearchOutlined, SortAscendingOutlined, InfoCircleOutlined} from '@ant-design/icons';
-import {getCountryColor, getCountryName, getTypeName, formatBR, getTypeIcon} from '../utils';
+import {getCountryColor, getTypeName, formatBR, getTypeIcon} from '../utils';
+import {getCountryFlag} from '../countryFlags'; // Импортируем функцию для получения SVG флагов
 import './FilterSidebar.css';
 
 const {Panel} = Collapse;
@@ -143,39 +144,39 @@ const FilterSidebar = ({
             </div>
 
             <Collapse defaultActiveKey={['countries', 'types', 'sort']}>
+                {/* Секция стран с SVG-флагами вместо чекбоксов */}
                 <Panel header="Nations" key="countries">
-                    <div className="filter-options">
+                    <div className="filter-flags-grid">
                         {countries.map(country => (
-                            <div key={country} className={`filter-option ${isTablet ? 'tablet-option' : ''}`}>
-                                <Checkbox
-                                    checked={countryFilter.includes(country)}
-                                    onChange={() => handleCountryChange(country)}
-                                    size={isTablet ? "large" : "default"}
+                            <div
+                                key={country}
+                                className={`filter-flag-item ${countryFilter.includes(country) ? 'active' : ''}`}
+                                onClick={() => handleCountryChange(country)}
+                            >
+                                <div
+                                    className="country-flag-filter"
+                                    dangerouslySetInnerHTML={{ __html: getCountryFlag(country) }}
+                                    title={country.toUpperCase()}
                                 />
-                                <span
-                                    className="option-label"
-                                    style={{color: getCountryColor(country)}}
-                                >
-                                    {getCountryName(country)}
-                                </span>
                             </div>
                         ))}
                     </div>
                 </Panel>
 
+                {/* Секция типов техники только с иконками */}
                 <Panel header="Vehicle Types" key="types">
-                    <div className="filter-options">
+                    <div className="filter-types-grid">
                         {types.map(type => (
-                            <div key={type} className={`filter-option ${isTablet ? 'tablet-option' : ''}`}>
-                                <Checkbox
-                                    checked={typeFilter.includes(type)}
-                                    onChange={() => handleTypeChange(type)}
-                                    size={isTablet ? "large" : "default"}
+                            <div
+                                key={type}
+                                className={`filter-type-item ${typeFilter.includes(type) ? 'active' : ''}`}
+                                onClick={() => handleTypeChange(type)}
+                            >
+                                <div
+                                    className="vehicle-type-filter"
+                                    dangerouslySetInnerHTML={{ __html: getTypeIcon(type) }}
+                                    title={getTypeName(type)}
                                 />
-                                <span className="option-label">
-                                    <span className="type-icon" dangerouslySetInnerHTML={{ __html: getTypeIcon(type) }}></span>
-                                    {getTypeName(type)}
-                                </span>
                             </div>
                         ))}
                     </div>

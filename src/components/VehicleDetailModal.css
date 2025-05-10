@@ -43,7 +43,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 
 /* Tabs */
@@ -234,6 +234,6 @@
 
     .vehicle-detail-modal .ant-modal-body {
         max-height: calc(100vh - 110px);
-        overflow-y: auto;
+        /*overflow-y: auto;*/
     }
 }

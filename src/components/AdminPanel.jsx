@@ -3,7 +3,8 @@ import {
     Badge,
     Button,
     Divider,
-    Drawer, Empty,
+    Drawer,
+    Empty,
     Form,
     Input,
     InputNumber,
@@ -15,7 +16,8 @@ import {
     Space,
     Table,
     Tabs,
-    Upload
+    Upload,
+    Alert,
 } from 'antd';
 import {
     DashboardOutlined,
@@ -25,30 +27,27 @@ import {
     PictureOutlined,
     PlusOutlined,
     SearchOutlined,
-    SettingOutlined
+    SettingOutlined,
+    DownloadOutlined,
+    DeleteOutlined
 } from '@ant-design/icons';
 import {formatBR, getCountryName, getTypeName} from '../utils';
 import './AdminPanel.css';
+import api from '../api'; // Импортируем API клиент
+import ImageUploader from './ImageUploader';
 
 const {Header, Sider, Content} = Layout;
 const {Option} = Select;
 const {TabPane} = Tabs;
 const {Dragger} = Upload;
 
-// Иконка для брони
-const ArmorIcon = props => <svg viewBox="0 0 24 24" width="1em" height="1em" {...props}>
-    <path
-        d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.67-3.13 8.96-7 10.15-3.87-1.2-7-5.48-7-10.15V6.3l7-3.12z"
-        fill="currentColor"/>
-</svg>;
-
 const AdminPanel = ({vehicles, onSave, onClose}) => {
     const [activeTab, setActiveTab] = useState('vehicles');
     const [editingVehicle, setEditingVehicle] = useState(null);
     const [imageUploadVisible, setImageUploadVisible] = useState(false);
-    const [armorUploadVisible, setArmorUploadVisible] = useState(false);
     const [searchText, setSearchText] = useState('');
     const [form] = Form.useForm();
+    const [tempImages, setTempImages] = useState([]); // Состояние для временных изображений
 
     // Обработка поиска
     const handleSearch = value => {
@@ -79,55 +78,193 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
     };
 
     // Сохранить изменения
-    const handleSave = values => {
-        // Здесь будет вызов API для сохранения данных
-        console.log('Saving vehicle data:', values);
+    const handleSave = async (values) => {
+        try {
+            console.log('Saving vehicle data:', values);
 
-        // Обновить локальный список техники
-        const updatedVehicles = vehicles.map(vehicle => {
-            if (vehicle.name === editingVehicle.name) {
-                return {...vehicle, ...values, br: values.br.toString()};
+            // Вызываем API для обновления данных в dev режиме
+            if (process.env.NODE_ENV !== 'production') {
+                await api.updateVehicle(editingVehicle.name, {
+                    ...values,
+                    br: values.br.toString()
+                });
             }
-            return vehicle;
-        });
 
-        onSave(updatedVehicles);
-        message.success('Vehicle data saved successfully');
-        handleCancelEdit();
+            // Обновить локальный список техники
+            const updatedVehicles = vehicles.map(vehicle => {
+                if (vehicle.name === editingVehicle.name) {
+                    return {...vehicle, ...values, br: values.br.toString()};
+                }
+                return vehicle;
+            });
+
+            onSave(updatedVehicles);
+            message.success('Vehicle data saved successfully');
+            handleCancelEdit();
+        } catch (error) {
+            console.error('Error saving vehicle:', error);
+            message.error('Failed to save vehicle data');
+        }
     };
 
     // Обработка открытия модального окна для загрузки изображений
     const handleImageUpload = vehicle => {
+        console.log("handleImageUpload вызван с vehicle:", vehicle);
+        console.log("- country:", vehicle.country);
         setEditingVehicle(vehicle);
+        setTempImages([]); // Очищаем временные изображения
         setImageUploadVisible(true);
     };
 
-    // Обработка открытия модального окна для загрузки схем брони
-    const handleArmorUpload = vehicle => {
-        setEditingVehicle(vehicle);
-        setArmorUploadVisible(true);
+    // Функция экспорта JSON
+    const handleExportJson = () => {
+        // Create a blob with the JSON data
+        const jsonString = JSON.stringify({vehicles: vehicles}, null, 2);
+        const blob = new Blob([jsonString], {type: 'application/json'});
+
+        // Create a download link
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'output.json';
+
+        // Trigger the download
+        document.body.appendChild(a);
+        a.click();
+
+        // Clean up
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        message.success('JSON данные экспортированы. Замените этим файлом output.json в папке public вашего проекта.');
+    };
+
+    // Функция для обработки загрузки изображений
+    const handleImageUploadRequest = async (options) => {
+        const { file, onSuccess, onError, onProgress } = options;
+
+        console.log("Начинаем загрузку файла:", file.name);
+        console.log("Для техники:", editingVehicle?.name);
+        console.log("Страна:", editingVehicle?.country);
+
+        // Проверяем, что у нас есть необходимые данные
+        if (!editingVehicle || !editingVehicle.country) {
+            message.error("Не удалось определить страну техники");
+            onError(new Error("Country not specified"));
+            return;
+        }
+
+        try {
+            // Эмулируем прогресс загрузки
+            let percent = 0;
+            const interval = setInterval(() => {
+                percent += 20;
+                onProgress({ percent: Math.min(percent, 99) });
+                if (percent >= 99) {
+                    clearInterval(interval);
+                }
+            }, 200);
+
+            // Загружаем изображение через API
+            const result = await api.uploadImage(
+                editingVehicle.name,
+                editingVehicle.country,
+                file,
+                file.name
+            );
+
+            clearInterval(interval);
+
+            console.log("Результат загрузки:", result);
+
+            if (result && result.success) {
+                // Добавляем изображение во временное хранилище
+                const newImage = result.image;
+
+                setTempImages(prev => {
+                    const newTempImages = [...prev, newImage];
+                    console.log("tempImages обновлены:", newTempImages);
+                    return newTempImages;
+                });
+
+                onSuccess(result);
+                message.success(`${file.name} загружен. Нажмите "Save Images" для сохранения.`);
+            } else {
+                onError(new Error("Ошибка при загрузке изображения"));
+                message.error(`${file.name} не удалось загрузить.`);
+            }
+        } catch (error) {
+            console.error("Ошибка загрузки:", error);
+            onError(error);
+            message.error(`${file.name} не удалось загрузить: ${error.message}`);
+        }
+    };
+
+    // Функция для сохранения изображений
+    const handleSaveImages = () => {
+        console.log("handleSaveImages вызван");
+        console.log("tempImages:", tempImages);
+
+        if (tempImages.length === 0) {
+            message.warning("Нет новых изображений для сохранения");
+            return;
+        }
+
+        // Обновляем список техники с новыми изображениями
+        const updatedVehicles = vehicles.map(vehicle => {
+            if (vehicle.name === editingVehicle.name) {
+                const currentImages = vehicle.images || [];
+                return {
+                    ...vehicle,
+                    images: [...currentImages, ...tempImages],
+                    hasImages: true
+                };
+            }
+            return vehicle;
+        });
+
+        // Сохраняем изменения через колбэк
+        onSave(updatedVehicles);
+
+        // Обновляем текущую редактируемую технику
+        setEditingVehicle(prev => ({
+            ...prev,
+            images: [...(prev.images || []), ...tempImages],
+            hasImages: true
+        }));
+
+        // Очищаем временные изображения
+        setTempImages([]);
+
+        message.success(`${tempImages.length} изображений сохранено`);
     };
 
     // Настройки загрузки файлов
     const uploadProps = {
-        name: 'file',
+        name: 'image',
         multiple: true,
-        action: '//jsonplaceholder.typicode.com/posts/', // Mock API endpoint
-        onChange(info) {
-            const {status} = info.file;
-            if (status === 'done') {
-                message.success(`${info.file.name} uploaded successfully.`);
-            } else if (status === 'error') {
-                message.error(`${info.file.name} upload failed.`);
-            }
-        },
-        beforeUpload(file) {
+        showUploadList: true,
+        customRequest: handleImageUploadRequest,
+        beforeUpload: (file) => {
             const isImage = file.type.startsWith('image/');
             if (!isImage) {
-                message.error('You can only upload image files!');
+                message.error('Можно загружать только изображения!');
+                return Upload.LIST_IGNORE;
             }
-            return isImage || Upload.LIST_IGNORE;
+            // Предотвращаем автоматическую отправку
+            return false;
         },
+        // Важно: предотвращаем перезагрузку страницы
+        action: ''
+    };
+
+    // Функция для удаления временного изображения
+    const removeTempImage = (index) => {
+        setTempImages(prev => {
+            const newArray = prev.filter((_, i) => i !== index);
+            console.log("После удаления:", newArray);
+            return newArray;
+        });
     };
 
     // Колонки для таблицы техники
@@ -193,11 +330,6 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
                         onClick={() => handleImageUpload(record)}
                         size="small"
                     />
-                    <Button
-                        icon={<ArmorIcon/>}
-                        onClick={() => handleArmorUpload(record)}
-                        size="small"
-                    />
                 </Space>
             ),
         },
@@ -210,6 +342,13 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
                     <DashboardOutlined/> Admin Panel
                 </div>
                 <div className="admin-actions">
+                    <Button
+                        icon={<DownloadOutlined />}
+                        onClick={handleExportJson}
+                        style={{marginRight: 8}}
+                    >
+                        Export JSON
+                    </Button>
                     <Button icon={<LogoutOutlined/>} onClick={onClose}>Exit</Button>
                 </div>
             </Header>
@@ -271,7 +410,7 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
                 width={500}
                 placement="right"
                 onClose={handleCancelEdit}
-                visible={!!editingVehicle}
+                open={!!editingVehicle}
                 extra={
                     <Space>
                         <Button onClick={handleCancelEdit}>Cancel</Button>
@@ -361,75 +500,74 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
                 )}
             </Drawer>
 
-            {/* Modal for image upload */}
             <Modal
-                title="Upload Vehicle Images"
-                visible={imageUploadVisible}
+                title={`Upload Images for ${editingVehicle?.name || ''}`}
+                open={imageUploadVisible}
                 onCancel={() => setImageUploadVisible(false)}
                 footer={[
                     <Button key="back" onClick={() => setImageUploadVisible(false)}>
                         Close
-                    </Button>,
-                    <Button key="submit" type="primary" onClick={() => {
-                        message.success('Images uploaded successfully');
-                        setImageUploadVisible(false);
-                    }}>
-                        Submit
-                    </Button>,
+                    </Button>
                 ]}
+                width={800}
             >
                 <Tabs defaultActiveKey="upload">
                     <TabPane tab="Upload" key="upload">
-                        <Dragger {...uploadProps}>
-                            <p className="ant-upload-drag-icon">
-                                <InboxOutlined/>
-                            </p>
-                            <p className="ant-upload-text">Click or drag files to this area to upload</p>
-                            <p className="ant-upload-hint">
-                                Support for multiple file upload. Only image files are allowed.
-                            </p>
-                        </Dragger>
+                        <div>
+                            <Alert
+                                message="Instructions"
+                                description="Select images, then click 'Upload and Save' to add them to the vehicle."
+                                type="info"
+                                showIcon
+                                style={{ marginBottom: 16 }}
+                            />
+
+                            {/* Новый компонент загрузки изображений */}
+                            <ImageUploader
+                                vehicle={editingVehicle}
+                                onImagesAdded={(newImages) => {
+                                    console.log("Received new images:", newImages);
+
+                                    // Обновляем список техники с новыми изображениями
+                                    const updatedVehicles = vehicles.map(vehicle => {
+                                        if (vehicle.name === editingVehicle.name) {
+                                            const currentImages = vehicle.images || [];
+                                            return {
+                                                ...vehicle,
+                                                images: [...currentImages, ...newImages],
+                                                hasImages: true
+                                            };
+                                        }
+                                        return vehicle;
+                                    });
+
+                                    // Сохраняем изменения через колбэк
+                                    onSave(updatedVehicles);
+
+                                    // Обновляем текущую редактируемую технику
+                                    setEditingVehicle(prev => ({
+                                        ...prev,
+                                        images: [...(prev.images || []), ...newImages],
+                                        hasImages: true
+                                    }));
+                                }}
+                            />
+                        </div>
                     </TabPane>
                     <TabPane tab="Current Images" key="current">
                         <div className="image-grid">
-                            <Empty description="No images uploaded yet"/>
-                        </div>
-                    </TabPane>
-                </Tabs>
-            </Modal>
-
-            {/* Modal for armor diagram upload */}
-            <Modal
-                title="Upload Armor Diagrams"
-                visible={armorUploadVisible}
-                onCancel={() => setArmorUploadVisible(false)}
-                footer={[
-                    <Button key="back" onClick={() => setArmorUploadVisible(false)}>
-                        Close
-                    </Button>,
-                    <Button key="submit" type="primary" onClick={() => {
-                        message.success('Armor diagrams uploaded successfully');
-                        setArmorUploadVisible(false);
-                    }}>
-                        Submit
-                    </Button>,
-                ]}
-            >
-                <Tabs defaultActiveKey="upload">
-                    <TabPane tab="Upload" key="upload">
-                        <Dragger {...uploadProps}>
-                            <p className="ant-upload-drag-icon">
-                                <InboxOutlined/>
-                            </p>
-                            <p className="ant-upload-text">Click or drag armor diagram images to this area</p>
-                            <p className="ant-upload-hint">
-                                Please upload images showing armor penetration zones.
-                            </p>
-                        </Dragger>
-                    </TabPane>
-                    <TabPane tab="Current Diagrams" key="current">
-                        <div className="image-grid">
-                            <Empty description="No armor diagrams uploaded yet"/>
+                            {editingVehicle && editingVehicle.images && editingVehicle.images.length > 0 ? (
+                                <div className="current-images">
+                                    {editingVehicle.images.map(image => (
+                                        <div key={image.id} className="image-item">
+                                            <img src={image.url} alt={image.caption || 'Vehicle image'}/>
+                                            <div className="image-caption">{image.caption}</div>
+                                        </div>
+                                    ))}
+                                </div>
+                            ) : (
+                                <Empty description="No images uploaded yet"/>
+                            )}
                         </div>
                     </TabPane>
                 </Tabs>

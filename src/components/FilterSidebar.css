@@ -162,51 +162,123 @@
     color: rgba(255, 255, 255, 0.87);
 }
 
-.filter-options {
-    max-height: 200px;
-    overflow-y: auto;
-    padding-right: 8px;
+/* НОВЫЕ СТИЛИ ДЛЯ ФЛАГОВ В ФИЛЬТРАХ */
+
+/* Сетка для флагов стран */
+.filter-flags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    gap: 10px;
+    padding: 5px 0;
 }
 
-.filter-option {
+/* Элемент с флагом */
+.filter-flag-item {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+    position: relative;
 }
 
-.option-label {
-    margin-left: 8px;
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.87);
-    transition: color 0.3s ease;
+.filter-flag-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.filter-flag-item.active {
+    background-color: rgba(187, 134, 252, 0.2);
+    box-shadow: 0 0 0 2px #bb86fc;
+}
+
+/* Стили для SVG-флагов в фильтрах */
+.country-flag-filter {
+    width: 36px;
+    height: 24px;
     display: flex;
-    align-items: center;
-}
-
-.filter-option:hover .option-label {
-    color: #bb86fc;
-}
-
-/* Стили для иконок типов техники */
-.type-icon {
-    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
 }
 
-.type-icon svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
+.country-flag-filter svg {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
-/* Flag emoji styling */
-.country-flag-emoji {
-    margin-right: 4px;
-    font-size: 16px;
+/* Сетка для типов техники */
+.filter-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 10px;
+    padding: 5px 0;
+}
+
+/* Элемент с типом техники */
+.filter-type-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    transition: all 0.2s ease;
+}
+
+.filter-type-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.filter-type-item.active {
+    background-color: rgba(187, 134, 252, 0.2);
+    box-shadow: 0 0 0 2px #bb86fc;
+}
+
+/* Стили для иконок типов техники в фильтрах */
+.vehicle-type-filter {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vehicle-type-filter svg {
+    width: 32px;
+    height: 32px;
+    fill: rgba(255, 255, 255, 0.8);
+    transition: fill 0.2s ease;
+}
+
+.filter-type-item.active .vehicle-type-filter svg {
+    fill: #bb86fc;
+}
+
+.filter-type-item:hover .vehicle-type-filter svg {
+    fill: white;
+}
+
+/* Индикатор активного состояния */
+.filter-flag-item.active::after,
+.filter-type-item.active::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #bb86fc;
 }
 
 .sort-section {
@@ -294,25 +366,30 @@
     margin-bottom: 16px;
 }
 
-.filter-option.tablet-option {
-    margin-bottom: 16px;
-    padding: 8px 0;
+/* Увеличенные стили для флагов и типов на планшетах */
+.filter-sidebar.tablet-friendly .filter-flags-grid,
+.filter-sidebar.tablet-friendly .filter-types-grid {
+    gap: 15px;
 }
 
-.filter-option.tablet-option .option-label {
-    font-size: 16px;
-    margin-left: 12px;
+.filter-sidebar.tablet-friendly .country-flag-filter {
+    width: 48px;
+    height: 32px;
 }
 
-.filter-option.tablet-option .type-icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+.filter-sidebar.tablet-friendly .vehicle-type-filter {
+    width: 48px;
+    height: 48px;
 }
 
-.filter-option.tablet-option .type-icon svg {
-    width: 24px;
-    height: 24px;
+.filter-sidebar.tablet-friendly .vehicle-type-filter svg {
+    width: 42px;
+    height: 42px;
+}
+
+.filter-sidebar.tablet-friendly .filter-flag-item,
+.filter-sidebar.tablet-friendly .filter-type-item {
+    padding: 12px;
 }
 
 .filter-sidebar.tablet-friendly .ant-collapse-header {
@@ -334,14 +411,6 @@
 }
 
 /* Enhanced touch targets for tablet */
-.filter-sidebar.tablet-friendly .ant-checkbox-wrapper {
-    padding: 6px;
-}
-
-.filter-sidebar.tablet-friendly .ant-checkbox {
-    transform: scale(1.2);
-}
-
 .filter-sidebar.tablet-friendly .ant-radio-button-wrapper {
     height: 40px;
     line-height: 40px;
@@ -375,14 +444,35 @@
         padding: 20px 0; /* Еще больше увеличиваем область касания */
     }
 
-    .type-icon {
-        width: 28px;
-        height: 28px;
+    /* Адаптивные сетки для мобильных */
+    .filter-flags-grid {
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+        gap: 8px;
     }
 
-    .type-icon svg {
-        width: 22px;
-        height: 22px;
+    .filter-types-grid {
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        gap: 8px;
+    }
+
+    .country-flag-filter {
+        width: 32px;
+        height: 20px;
+    }
+
+    .vehicle-type-filter {
+        width: 30px;
+        height: 30px;
+    }
+
+    .vehicle-type-filter svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .filter-flag-item,
+    .filter-type-item {
+        padding: 6px;
     }
 
     .custom-sort-indicator {
@@ -392,23 +482,49 @@
 }
 
 /* Улучшенная прокрутка для сенсорных устройств */
-.filter-sidebar .filter-options {
+.filter-sidebar .filter-options,
+.filter-sidebar .filter-flags-grid,
+.filter-sidebar .filter-types-grid {
     scrollbar-width: thin;
     -webkit-overflow-scrolling: touch; /* Лучшая прокрутка на iOS */
 }
 
-.filter-sidebar .filter-options::-webkit-scrollbar {
+.filter-sidebar .filter-options::-webkit-scrollbar,
+.filter-sidebar .filter-flags-grid::-webkit-scrollbar,
+.filter-sidebar .filter-types-grid::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
 
-.filter-sidebar .filter-options::-webkit-scrollbar-thumb {
+.filter-sidebar .filter-options::-webkit-scrollbar-thumb,
+.filter-sidebar .filter-flags-grid::-webkit-scrollbar-thumb,
+.filter-sidebar .filter-types-grid::-webkit-scrollbar-thumb {
     background: #424242;
     border-radius: 4px;
 }
 
-.filter-sidebar.tablet-friendly .filter-options::-webkit-scrollbar-thumb {
+.filter-sidebar.tablet-friendly .filter-options::-webkit-scrollbar-thumb,
+.filter-sidebar.tablet-friendly .filter-flags-grid::-webkit-scrollbar-thumb,
+.filter-sidebar.tablet-friendly .filter-types-grid::-webkit-scrollbar-thumb {
     background: #555;
     border-radius: 6px;
     min-height: 60px; /* Больше область для захвата на планшетах */
+}
+
+/* Анимация выбора фильтров */
+.filter-flag-item.active,
+.filter-type-item.active {
+    animation: pulse 1s ease-out;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(187, 134, 252, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 6px rgba(187, 134, 252, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(187, 134, 252, 0);
+    }
 }
