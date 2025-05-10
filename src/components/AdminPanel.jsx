@@ -499,7 +499,6 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
                     </Form>
                 )}
             </Drawer>
-
             <Modal
                 title={`Upload Images for ${editingVehicle?.name || ''}`}
                 open={imageUploadVisible}
@@ -510,6 +509,7 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
                     </Button>
                 ]}
                 width={800}
+                maskClosable={false}
             >
                 <Tabs defaultActiveKey="upload">
                     <TabPane tab="Upload" key="upload">
@@ -522,7 +522,7 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
                                 style={{ marginBottom: 16 }}
                             />
 
-                            {/* Новый компонент загрузки изображений */}
+                            {/* Keep using your existing ImageUploader component */}
                             <ImageUploader
                                 vehicle={editingVehicle}
                                 onImagesAdded={(newImages) => {
@@ -550,6 +550,17 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
                                         images: [...(prev.images || []), ...newImages],
                                         hasImages: true
                                     }));
+
+                                    // Switch to "Current Images" tab to show the newly uploaded images
+                                    setTimeout(() => {
+                                        const tabElements = document.querySelectorAll('.ant-tabs-tab');
+                                        for (let tab of tabElements) {
+                                            if (tab.textContent.includes('Current Images')) {
+                                                tab.click();
+                                                break;
+                                            }
+                                        }
+                                    }, 300);
                                 }}
                             />
                         </div>

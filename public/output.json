@@ -174,7 +174,15 @@
       "country": "usa",
       "rank": 4,
       "br": "6.7",
-      "type": "medium_tank"
+      "type": "medium_tank",
+      "images": [
+        {
+          "id": 1746904492227,
+          "url": "/images/usa/Screenshot_2025-05-10_at_65627PM-1746904492203.png",
+          "caption": "Screenshot 2025-05-10 at 6.56.27 PM.png"
+        }
+      ],
+      "hasImages": true
     },
     {
       "name": "M46",

@@ -82,103 +82,52 @@ const api = {
         }
     },
 
-    // Загрузить изображение
-    // В api.js
+
+    // ПРАВИЛЬНОЕ исправление для api.js
     uploadImage: async (name, country, file, caption) => {
         console.log("uploadImage вызван:");
         console.log("- name:", name);
         console.log("- country:", country);
         console.log("- file name:", file.name);
 
-        // В режиме разработки без сервера или в production используем base64
-        if (isProduction || !(await checkServerAvailability())) {
-            console.log("Base64 режим активирован");
-
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onload = () => {
-                    const result = {
-                        success: true,
-                        image: {
-                            id: Date.now(),
-                            url: reader.result,
-                            caption: caption || file.name
-                        }
-                    };
-                    console.log("Изображение загружено как base64");
-                    resolve(result);
-                };
-                reader.onerror = (error) => {
-                    console.error("Ошибка чтения файла:", error);
-                    reject({
-                        success: false,
-                        message: 'Не удалось прочитать файл'
-                    });
-                };
-            });
-        }
-
-        // Используем сервер для загрузки
         try {
-            console.log("Начинаем загрузку на сервер");
+            // Создаем правильный FormData
             const formData = new FormData();
+
+            // ПЕРВЫМ добавляем country, чтобы гарантировать его передачу
+            formData.append('country', country);
+
+            // Затем добавляем файл и подпись
             formData.append('image', file);
-            formData.append('country', country || 'unknown');
             formData.append('caption', caption || file.name);
+
+            // Проверяем, что formData содержит все необходимые данные
+            console.log("FormData содержит country:", formData.get('country'));
+            console.log("FormData содержит image:", formData.get('image').name);
 
             const url = `${API_URL}/vehicles/${encodeURIComponent(name)}/images`;
             console.log("URL для загрузки:", url);
 
+            // НИКАКИХ дополнительных заголовков - они могут мешать передаче multipart/form-data
             const response = await fetch(url, {
                 method: 'POST',
                 body: formData
             });
 
-            const responseText = await response.text();
-            console.log("Ответ сервера (текст):", responseText);
-
-            let result;
-            try {
-                result = JSON.parse(responseText);
-            } catch (e) {
-                console.error("Ошибка парсинга JSON ответа:", e);
-                throw new Error("Сервер вернул неверный JSON: " + responseText);
+            // Обрабатываем ответ
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error("Ошибка сервера:", errorText);
+                throw new Error(`Ошибка сервера ${response.status}: ${response.statusText}`);
             }
 
-            if (!result.success) {
-                throw new Error(result.error || "Неизвестная ошибка сервера");
-            }
+            const result = await response.json();
+            console.log("Результат загрузки:", result);
 
-            console.log("Успешно загружено на сервер!");
             return result;
         } catch (error) {
-            console.error("Ошибка загрузки на сервер:", error);
-
-            // При ошибке используем base64
-            console.log("Используем base64 из-за ошибки сервера");
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onload = () => {
-                    const result = {
-                        success: true,
-                        image: {
-                            id: Date.now(),
-                            url: reader.result,
-                            caption: caption || file.name
-                        }
-                    };
-                    console.log("Изображение загружено как base64 после ошибки сервера");
-                    resolve(result);
-                };
-                reader.onerror = (e) => {
-                    reject({
-                        success: false,
-                        message: 'Не удалось прочитать файл после ошибки сервера: ' + e.message
-                    });
-                };
-            });
+            console.error("Ошибка загрузки:", error.message);
+            throw error;
         }
     },
 

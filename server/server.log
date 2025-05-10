@@ -2,3 +2,11 @@
 [2025-05-10T14:50:43.357Z] Body: {"country":"usa","caption":"us_m2a4.png"}
 [2025-05-10T14:50:43.357Z] Params: {"name":"M2A4"}
 [2025-05-10T14:50:43.357Z] File: us_m2a4.png
+[2025-05-10T18:53:43.218Z] === Image Upload ===
+[2025-05-10T18:53:43.224Z] Body: {"country":"usa","caption":"Screenshot 2025-05-10 at 6.56.27 PM.png"}
+[2025-05-10T18:53:43.224Z] Params: {"name":"M26"}
+[2025-05-10T18:53:43.224Z] File: Screenshot 2025-05-10 at 6.56.27â¯PM.png
+[2025-05-10T19:00:02.091Z] === Загрузка изображения ===
+[2025-05-10T19:00:02.095Z] Body: {"country":"usa","caption":"Screenshot 2025-05-10 at 6.59.21 PM.png"}
+[2025-05-10T19:00:02.095Z] Params: {"name":"M26"}
+[2025-05-10T19:00:02.095Z] File: Screenshot 2025-05-10 at 6.59.21â¯PM.png

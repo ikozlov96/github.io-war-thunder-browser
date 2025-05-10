@@ -283,6 +283,43 @@
     color: rgba(255, 255, 255, 0.6);
 }
 
+.current-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.image-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #242424;
+    border: 1px solid #333;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 4/3;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+}
+
+.image-caption {
+    padding: 8px 12px;
+    color: rgba(255, 255, 255, 0.87);
+    font-size: 12px;
+    background-color: #1e1e1e;
+    border-top: 1px solid #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .admin-header {
