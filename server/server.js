@@ -1,4 +1,4 @@
-// Optimized server.js image upload logic
+// Optimized server.js with batch upload support
 const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
@@ -114,10 +114,14 @@ app.put('/api/vehicles/:name', (req, res) => {
     }
 });
 
-// 3. Upload image
+// 3. Upload image (включая пакетную загрузку)
 app.post('/api/vehicles/:name/images', (req, res) => {
     // Добавляем country в query parameters для multer
     const country = req.query.country || 'unknown';
+    const vehicleName = req.params.name;
+
+    // Проверяем, является ли это пакетной загрузкой
+    const isBatchUpload = vehicleName === 'batch';
 
     // Используем одноразовый upload для этого запроса
     const singleUpload = upload.single('image');
@@ -132,7 +136,6 @@ app.post('/api/vehicles/:name/images', (req, res) => {
             console.log("Body после загрузки:", req.body);
             console.log("Query параметры:", req.query);
 
-            const vehicleName = req.params.name;
             const file = req.file;
 
             if (!file) {
@@ -149,37 +152,39 @@ app.post('/api/vehicles/:name/images', (req, res) => {
             const imagePath = `/images/${country}/${file.filename}`;
             console.log('Путь изображения для JSON:', imagePath);
 
-            // Обновляем данные в JSON
-            const jsonData = JSON.parse(fs.readFileSync(jsonFilePath, 'utf-8'));
-            const vehicles = jsonData.vehicles || [];
+            // Если это не пакетная загрузка, обновляем данные в JSON
+            if (!isBatchUpload) {
+                const jsonData = JSON.parse(fs.readFileSync(jsonFilePath, 'utf-8'));
+                const vehicles = jsonData.vehicles || [];
 
-            // Находим технику и добавляем изображение
-            const updatedVehicles = vehicles.map(vehicle => {
-                if (vehicle.name === vehicleName) {
-                    const images = vehicle.images || [];
-                    const newImage = {
-                        id: Date.now(),
-                        url: imagePath,
-                        caption: req.body.caption || file.originalname
-                    };
+                // Находим технику и добавляем изображение
+                const updatedVehicles = vehicles.map(vehicle => {
+                    if (vehicle.name === vehicleName) {
+                        const images = vehicle.images || [];
+                        const newImage = {
+                            id: Date.now(),
+                            url: imagePath,
+                            caption: req.body.caption || file.originalname
+                        };
 
-                    return {
-                        ...vehicle,
-                        images: [...images, newImage],
-                        hasImages: true
-                    };
-                }
-                return vehicle;
-            });
+                        return {
+                            ...vehicle,
+                            images: [...images, newImage],
+                            hasImages: true
+                        };
+                    }
+                    return vehicle;
+                });
 
-            // Сохраняем обновленные данные
-            jsonData.vehicles = updatedVehicles;
-            fs.writeFileSync(jsonFilePath, JSON.stringify(jsonData, null, 2));
+                // Сохраняем обновленные данные
+                jsonData.vehicles = updatedVehicles;
+                fs.writeFileSync(jsonFilePath, JSON.stringify(jsonData, null, 2));
+            }
 
             res.json({
                 success: true,
                 image: {
-                    id: Date.now(),
+                    id: Date.now() + Math.random(), // Генерируем уникальный ID для каждого изображения
                     url: imagePath,
                     caption: req.body.caption || file.originalname
                 }
@@ -195,6 +200,7 @@ app.post('/api/vehicles/:name/images', (req, res) => {
     });
 });
 
+// 4. Сохранение всех данных
 app.post('/api/save', (req, res) => {
     try {
         const jsonData = {vehicles: req.body};

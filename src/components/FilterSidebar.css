@@ -528,3 +528,69 @@
         box-shadow: 0 0 0 0 rgba(187, 134, 252, 0);
     }
 }
+
+/* Improved touch targets for mobile devices */
+.touch-friendly .filter-flags-grid,
+.touch-friendly .filter-types-grid {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 16px;
+    padding: 10px 0;
+}
+
+.touch-friendly .filter-flag-item,
+.touch-friendly .filter-type-item {
+    padding: 16px;
+    min-height: 70px;
+}
+
+.touch-friendly .country-flag-filter {
+    width: 44px;
+    height: 32px;
+}
+
+.touch-friendly .vehicle-type-filter {
+    width: 44px;
+    height: 44px;
+}
+
+.touch-friendly .vehicle-type-filter svg {
+    width: 40px;
+    height: 40px;
+}
+
+/* Add + and - buttons for BR slider */
+.br-touch-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+}
+
+.br-current-value {
+    font-size: 20px;
+    font-weight: 500;
+    color: #bb86fc;
+}
+
+/* Improve slider handle for touch */
+.enlarged-slider .ant-slider-handle {
+    width: 36px !important;
+    height: 36px !important;
+    margin-top: -16px !important;
+    border-width: 3px !important;
+    touch-action: none;
+}
+
+.enlarged-slider .ant-slider-rail,
+.enlarged-slider .ant-slider-track {
+    height: 12px !important;
+}
+
+/* Optimize mobile filter drawer */
+.mobile-filter-drawer .ant-drawer-body {
+    padding: 0;
+}
+
+.mobile-filter-drawer .mobile-filter-content {
+    padding-bottom: 100px; /* More space for the buttons */
+}

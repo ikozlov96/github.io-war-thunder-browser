@@ -1,3 +1,4 @@
+// Modified VehicleCard.jsx with better mobile UX
 import React from 'react';
 import { Card, Badge } from 'antd';
 import { getCountryName, getTypeIcon } from '../utils';
@@ -8,61 +9,74 @@ import './VehicleCard.css';
 const VehicleCard = ({ vehicle, onDetails }) => {
     const { name, country, br, hasImages, images, type } = vehicle;
 
-    // Выбираем первое изображение или null, если изображений нет
+    // Get the first image or null if there are none
     const thumbnailImage = images && images.length > 0 ? images[0].url : null;
 
-    // Получаем иконку типа
+    // Get type icon and country flag
     const typeIconSvg = getTypeIcon(type);
     const countryFlagSvg = getCountryFlag(country);
 
-    // Получаем флаг страны
+    // Get country name
     const countryWithFlag = getCountryName(country);
-    const flagOnly = countryWithFlag ? countryWithFlag.split(' ')[0] : '';
+
+    // Handle tap/click on the card
+    const handleCardClick = () => {
+        if (onDetails) {
+            onDetails(vehicle);
+        }
+    };
 
     return (
-        <Card
-            hoverable
-            className="vehicle-card"
-            onClick={() => onDetails && onDetails(vehicle)}
-            bodyStyle={{ padding: 0 }}
-        >
-            {/* Изображение */}
-            <div className="vehicle-image-container">
-                {thumbnailImage ? (
-                    <img
-                        src={thumbnailImage}
-                        alt={name}
-                        className="vehicle-image"
-                    />
-                ) : (
-                    <div className="vehicle-no-image">
-                        <div className="vehicle-type-icon-large" dangerouslySetInnerHTML={{ __html: typeIconSvg }} />
-                    </div>
-                )}
+        <div className="vehicle-card-clickable" onClick={handleCardClick}>
+            <Card
+                className="vehicle-card"
+                bodyStyle={{ padding: 0 }}
+            >
+                {/* Image container with aspect ratio */}
+                <div className="vehicle-image-container">
+                    {thumbnailImage ? (
+                        <img
+                            src={thumbnailImage}
+                            alt={name}
+                            className="vehicle-image"
+                            loading="lazy" // Add lazy loading for better mobile performance
+                        />
+                    ) : (
+                        <div className="vehicle-no-image">
+                            <div className="vehicle-type-icon-large" dangerouslySetInnerHTML={{ __html: typeIconSvg }} />
+                        </div>
+                    )}
 
-                {/* Бейдж для количества изображений */}
-                {hasImages && images && images.length > 1 && (
-                    <Badge
-                        count={images.length}
-                        className="image-counter"
-                    />
-                )}
-            </div>
-
-            {/* Информационная панель внизу */}
-            <div className="vehicle-info-panel">
-        <span
-            className="country-flag-svg"
-            data-country={country.toLowerCase()}
-            dangerouslySetInnerHTML={{ __html: countryFlagSvg }}
-        />
-                <span className="vehicle-name">{name}</span>
-                <div className="vehicle-specs">
-                    <span className="vehicle-br">{br}</span>
-                    <span className="vehicle-type-icon" dangerouslySetInnerHTML={{ __html: typeIconSvg }} />
+                    {/* Badge for number of images */}
+                    {hasImages && images && images.length > 1 && (
+                        <Badge
+                            count={images.length}
+                            className="image-counter"
+                            size="large" // Larger badge for better visibility
+                        />
+                    )}
                 </div>
-            </div>
-        </Card>
+
+                {/* Information panel with better spacing */}
+                <div className="vehicle-info-panel">
+                    <span
+                        className="country-flag-svg"
+                        data-country={country.toLowerCase()}
+                        dangerouslySetInnerHTML={{ __html: countryFlagSvg }}
+                        title={countryWithFlag} // Add title for accessibility
+                    />
+                    <span className="vehicle-name">{name}</span>
+                    <div className="vehicle-specs">
+                        <span className="vehicle-br" title="Battle Rating">{br}</span>
+                        <span
+                            className="vehicle-type-icon"
+                            dangerouslySetInnerHTML={{ __html: typeIconSvg }}
+                            title={type.replace('_', ' ')} // Add title for accessibility
+                        />
+                    </div>
+                </div>
+            </Card>
+        </div>
     );
 };
 

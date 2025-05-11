@@ -1,3 +1,7 @@
+.vehicle-detail-modal {
+    max-width: 95vw;
+}
+
 .vehicle-detail-modal .ant-modal-content {
     background-color: #1e1e1e;
     border-radius: 12px;
@@ -235,5 +239,124 @@
     .vehicle-detail-modal .ant-modal-body {
         max-height: calc(100vh - 110px);
         /*overflow-y: auto;*/
+    }
+}
+
+/* Full screen modal on mobile */
+@media (max-width: 768px) {
+    .vehicle-detail-modal {
+        width: 100vw !important;
+        max-width: 100vw;
+        margin: 0;
+        top: 0;
+        padding-bottom: 0;
+    }
+
+    .vehicle-detail-modal .ant-modal-content {
+        min-height: 100vh;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vehicle-detail-modal .ant-modal-body {
+        flex: 1;
+        padding: 0;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Make the close button larger and more visible */
+    .vehicle-detail-modal .ant-modal-close {
+        top: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .vehicle-detail-modal .ant-modal-close-x {
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+    }
+}
+
+/* Improved carousel controls for touch */
+.carousel-container .ant-carousel .slick-prev,
+.carousel-container .ant-carousel .slick-next {
+    width: 44px;
+    height: 44px;
+    z-index: 10;
+}
+
+.carousel-container .ant-carousel .slick-prev {
+    left: 12px;
+}
+
+.carousel-container .ant-carousel .slick-next {
+    right: 12px;
+}
+
+/* Larger buttons for mobile carousel navigation */
+.carousel-controls {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px;
+    z-index: 15;
+}
+
+.carousel-controls button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+/* Swipeable carousel area */
+.carousel-swipe-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+}
+
+/* Optimized image display */
+.carousel-item img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+    touch-action: none;
+}
+
+/* Adaptive carousel height */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 60vh;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .carousel-item {
+        height: 65vh;
     }
 }

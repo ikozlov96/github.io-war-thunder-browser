@@ -27,6 +27,11 @@ body {
   color: var(--text-primary);
 }
 
+/* Global improvements for touch devices */
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 /* App Layout */
 .app-layout {
   min-height: 100vh;
@@ -191,6 +196,33 @@ body {
   color: var(--text-primary);
 }
 
+/* Improved pagination controls for touch */
+.vehicles-pagination {
+  padding: 16px 0;
+}
+
+.vehicles-pagination .ant-pagination-prev button,
+.vehicles-pagination .ant-pagination-next button,
+.vehicles-pagination .ant-pagination-item {
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vehicles-pagination .ant-pagination-options {
+  margin-left: 16px;
+}
+
+/* Improved scroll to top button */
+.scroll-to-top-button {
+  width: 56px;
+  height: 56px;
+  bottom: 24px;
+  right: 24px;
+}
+
 /* Планшетные стили (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
   .mobile-filter-button {
@@ -205,10 +237,39 @@ body {
   .main-content {
     padding: 20px;
   }
+
+  .vehicles-pagination .ant-pagination-options {
+    margin-left: 12px;
+  }
 }
 
 /* Мобильные стили (до 768px) */
 @media (max-width: 768px) {
+  .app-header {
+    padding: 0 12px;
+    height: 56px; /* Smaller header on mobile */
+  }
+
+  .logo h1 {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+  }
+
+  .header-actions {
+    gap: 8px;
+  }
+
+  .header-actions .ant-btn {
+    width: 44px; /* Larger touch target */
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .mobile-filter-button {
     display: flex;
   }
@@ -218,15 +279,49 @@ body {
   }
 
   .main-content {
-    padding: 16px;
+    padding: 12px;
   }
 
-  .logo h1 {
-    font-size: 16px;
+  /* Adjust content to account for smaller header */
+  .main-layout {
+    min-height: calc(100vh - 56px - 60px);
   }
 
-  .app-header {
-    padding: 0 16px;
+  .vehicles-pagination {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .vehicles-pagination .ant-pagination-options {
+    margin-left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 12px;
+  }
+
+  .vehicles-pagination .ant-pagination-options-size-changer {
+    width: 120px;
+  }
+
+  .scroll-to-top-button {
+    width: 48px;
+    height: 48px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* Optimized grid layouts for different screen sizes */
+@media (max-width: 576px) {
+  .vehicles-list .ant-row {
+    margin-right: -8px !important;
+    margin-left: -8px !important;
+  }
+
+  .vehicles-list .ant-col {
+    padding-right: 8px !important;
+    padding-left: 8px !important;
   }
 }
 

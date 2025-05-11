@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+// Modified VehicleDetailModal.jsx with proper ref handling
+import React, { useState, useEffect, useRef } from 'react';
 import { Modal, Carousel, Button, Spin, Empty } from 'antd';
 import {
     LeftOutlined,
     RightOutlined,
     FullscreenOutlined,
-    FullscreenExitOutlined
+    FullscreenExitOutlined,
+    CloseOutlined
 } from '@ant-design/icons';
 import './VehicleDetailModal.css';
 
@@ -12,13 +14,28 @@ const VehicleDetailModal = ({ visible, vehicle, onClose }) => {
     const [loading, setLoading] = useState(true);
     const [images, setImages] = useState([]);
     const [fullscreen, setFullscreen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
-    // Загружаем изображения техники, когда модальное окно становится видимым
+    // Use useRef instead of useState for the carousel reference
+    const carouselRef = useRef(null);
+
+    // Check if device is mobile
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    // Load vehicle images when modal becomes visible
     useEffect(() => {
         if (visible && vehicle) {
             setLoading(true);
 
-            // Используем изображения из объекта vehicle если они доступны, иначе плейсхолдеры
+            // Use images from vehicle object if available, otherwise use placeholders
             const vehicleImages = vehicle.images && vehicle.images.length > 0
                 ? vehicle.images
                 : [
@@ -29,30 +46,79 @@ const VehicleDetailModal = ({ visible, vehicle, onClose }) => {
 
             setImages(vehicleImages);
 
-            // Имитация задержки загрузки
+            // Simulate loading delay
             setTimeout(() => {
                 setLoading(false);
             }, 300);
         }
     }, [visible, vehicle]);
 
-    // Обработка закрытия модального окна
+    // Handle modal close
     const handleClose = () => {
         setFullscreen(false);
         onClose();
     };
 
-    // Переключение полноэкранного режима
+    // Toggle fullscreen mode
     const toggleFullscreen = () => {
         setFullscreen(!fullscreen);
     };
 
-    // Если нет данных о технике
+    // Handle swipe navigation for mobile
+    const handleSwipeStart = (e) => {
+        const startX = e.touches[0].clientX;
+        const swipeArea = e.currentTarget;
+
+        const handleSwipeMove = (moveEvent) => {
+            moveEvent.preventDefault();
+        };
+
+        const handleSwipeEnd = (endEvent) => {
+            const endX = endEvent.changedTouches[0].clientX;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > 50) { // Minimum swipe distance
+                if (diff > 0) {
+                    // Swipe left, go to next
+                    if (carouselRef.current) {
+                        carouselRef.current.next();
+                    }
+                } else {
+                    // Swipe right, go to previous
+                    if (carouselRef.current) {
+                        carouselRef.current.prev();
+                    }
+                }
+            }
+
+            swipeArea.removeEventListener('touchmove', handleSwipeMove);
+            swipeArea.removeEventListener('touchend', handleSwipeEnd);
+        };
+
+        swipeArea.addEventListener('touchmove', handleSwipeMove, { passive: false });
+        swipeArea.addEventListener('touchend', handleSwipeEnd);
+    };
+
+    // Navigate to previous image
+    const handlePrev = () => {
+        if (carouselRef.current) {
+            carouselRef.current.prev();
+        }
+    };
+
+    // Navigate to next image
+    const handleNext = () => {
+        if (carouselRef.current) {
+            carouselRef.current.next();
+        }
+    };
+
+    // If no vehicle data
     if (!vehicle) {
         return null;
     }
 
-    // Компонент карусели изображений
+    // Image carousel component
     const ImageCarousel = ({ images, loading }) => {
         if (loading) {
             return (
@@ -78,23 +144,57 @@ const VehicleDetailModal = ({ visible, vehicle, onClose }) => {
                     className="fullscreen-button"
                     icon={fullscreen ? <FullscreenExitOutlined /> : <FullscreenOutlined />}
                     onClick={toggleFullscreen}
+                    size={isMobile ? "large" : "middle"}
                 />
+
                 <Carousel
-                    arrows
+                    arrows={!isMobile} // Hide default arrows on mobile
                     prevArrow={<Button type="primary" shape="circle" icon={<LeftOutlined />} />}
                     nextArrow={<Button type="primary" shape="circle" icon={<RightOutlined />} />}
                     autoplay={false}
                     className="vehicle-carousel"
+                    ref={carouselRef} // Use the ref directly
                 >
                     {images.map(image => (
                         <div key={image.id} className="carousel-item">
-                            <img src={image.url} alt={image.caption || 'Vehicle image'} />
+                            <img
+                                src={image.url}
+                                alt={image.caption || 'Vehicle image'}
+                                loading="lazy" // Add lazy loading
+                            />
                             {image.caption && (
                                 <div className="image-caption">{image.caption}</div>
+                            )}
+
+                            {isMobile && (
+                                <div
+                                    className="carousel-swipe-area"
+                                    onTouchStart={handleSwipeStart}
+                                />
                             )}
                         </div>
                     ))}
                 </Carousel>
+
+                {/* Add large touch-friendly navigation buttons for mobile */}
+                {isMobile && (
+                    <div className="carousel-controls">
+                        <Button
+                            type="primary"
+                            shape="circle"
+                            icon={<LeftOutlined />}
+                            onClick={handlePrev}
+                            size="large"
+                        />
+                        <Button
+                            type="primary"
+                            shape="circle"
+                            icon={<RightOutlined />}
+                            onClick={handleNext}
+                            size="large"
+                        />
+                    </div>
+                )}
             </div>
         );
     };
@@ -105,10 +205,12 @@ const VehicleDetailModal = ({ visible, vehicle, onClose }) => {
             title={vehicle.name}
             onCancel={handleClose}
             footer={null}
-            width={fullscreen ? "90%" : 800}
+            width={isMobile ? "100%" : (fullscreen ? "90%" : 800)}
             centered
-            className={`vehicle-detail-modal ${fullscreen ? 'fullscreen-modal' : ''}`}
+            className={`vehicle-detail-modal ${fullscreen || isMobile ? 'fullscreen-modal' : ''}`}
             destroyOnClose
+            closeIcon={<CloseOutlined />}
+            bodyStyle={{ padding: 0 }}
         >
             <ImageCarousel images={images} loading={loading} />
         </Modal>

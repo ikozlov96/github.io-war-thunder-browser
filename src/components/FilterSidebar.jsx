@@ -1,6 +1,14 @@
 import React from 'react';
 import {Button, Collapse, Input, Radio, Slider, Tooltip} from 'antd';
-import {ClearOutlined, FilterOutlined, SearchOutlined, SortAscendingOutlined, InfoCircleOutlined} from '@ant-design/icons';
+import {
+    ClearOutlined,
+    FilterOutlined,
+    SearchOutlined,
+    SortAscendingOutlined,
+    InfoCircleOutlined,
+    MinusOutlined,
+    PlusOutlined
+} from '@ant-design/icons';
 import {getCountryColor, getTypeName, formatBR, getTypeIcon} from '../utils';
 import {getCountryFlag} from '../countryFlags'; // Импортируем функцию для получения SVG флагов
 import './FilterSidebar.css';
@@ -77,6 +85,76 @@ const FilterSidebar = ({
         return closest;
     };
 
+    // Функция для получения следующего доступного значения BR
+    const getNextBR = () => {
+        if (!brValues || brValues.length === 0) {
+            return Math.min(12, brValue + 0.3);
+        }
+
+        // Сортируем BR значения по возрастанию
+        const sortedBRs = [...brValues].sort((a, b) => a - b);
+
+        // Находим индекс текущего (или ближайшего) значения
+        let currentIndex = 0;
+        let closestDistance = Infinity;
+
+        for (let i = 0; i < sortedBRs.length; i++) {
+            const distance = Math.abs(sortedBRs[i] - brValue);
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                currentIndex = i;
+            }
+        }
+
+        // Если текущее значение меньше существующего, но очень близко к нему - используем это значение
+        if (brValue < sortedBRs[currentIndex] && closestDistance < 0.05) {
+            return sortedBRs[currentIndex];
+        }
+
+        // Иначе берем следующее значение (если оно существует)
+        if (currentIndex < sortedBRs.length - 1) {
+            return sortedBRs[currentIndex + 1];
+        }
+
+        // Если мы уже на максимальном значении, возвращаем его
+        return sortedBRs[currentIndex];
+    };
+
+    // Функция для получения предыдущего доступного значения BR
+    const getPrevBR = () => {
+        if (!brValues || brValues.length === 0) {
+            return Math.max(0, brValue - 0.3);
+        }
+
+        // Сортируем BR значения по возрастанию
+        const sortedBRs = [...brValues].sort((a, b) => a - b);
+
+        // Находим индекс текущего (или ближайшего) значения
+        let currentIndex = 0;
+        let closestDistance = Infinity;
+
+        for (let i = 0; i < sortedBRs.length; i++) {
+            const distance = Math.abs(sortedBRs[i] - brValue);
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                currentIndex = i;
+            }
+        }
+
+        // Если текущее значение больше существующего, но очень близко к нему - используем это значение
+        if (brValue > sortedBRs[currentIndex] && closestDistance < 0.05) {
+            return sortedBRs[currentIndex];
+        }
+
+        // Иначе берем предыдущее значение (если оно существует)
+        if (currentIndex > 0) {
+            return sortedBRs[currentIndex - 1];
+        }
+
+        // Если мы уже на минимальном значении, возвращаем его
+        return sortedBRs[currentIndex];
+    };
+
     return (
         <div className={`filter-sidebar ${tabletClass}`}>
             <div className="filter-header">
@@ -118,7 +196,7 @@ const FilterSidebar = ({
                         'Filter inactive - showing all BR values'
                     }
                 </p>
-                <div className="slider-wrapper">
+                <div className="slider-wrapper touch-friendly">
                     <Slider
                         min={0}
                         max={12}
@@ -129,6 +207,10 @@ const FilterSidebar = ({
                             // Снэпим к ближайшему реальному BR после завершения перетаскивания
                             const closestBR = findClosestBR(value);
                             onFilterChange('brValue', closestBR);
+                            // Активируем фильтр при изменении значения
+                            if (!brFilterActive) {
+                                onFilterChange('brFilterActive', true);
+                            }
                         }}
                         tooltip={{
                             formatter: (value) => `${value.toFixed(1)}`
@@ -136,10 +218,35 @@ const FilterSidebar = ({
                         marks={marks}
                         className={`br-slider ${isTablet || window.innerWidth <= 768 ? 'enlarged-slider' : ''}`}
                     />
-                </div>
-                <div className="slider-labels no-select">
-                    <span>0.0</span>
-                    <span>12.0</span>
+
+                    {/* Add tap buttons for incremental changes */}
+                    <div className="br-touch-buttons">
+                        <Button
+                            onClick={() => {
+                                const prevBR = getPrevBR();
+                                handleBRChange(prevBR);
+                                // Активируем фильтр при изменении значения
+                                if (!brFilterActive) {
+                                    onFilterChange('brFilterActive', true);
+                                }
+                            }}
+                            size="large"
+                            icon={<MinusOutlined />}
+                        />
+                        <span className="br-current-value">{formatBR(brValue)}</span>
+                        <Button
+                            onClick={() => {
+                                const nextBR = getNextBR();
+                                handleBRChange(nextBR);
+                                // Активируем фильтр при изменении значения
+                                if (!brFilterActive) {
+                                    onFilterChange('brFilterActive', true);
+                                }
+                            }}
+                            size="large"
+                            icon={<PlusOutlined />}
+                        />
+                    </div>
                 </div>
             </div>
 

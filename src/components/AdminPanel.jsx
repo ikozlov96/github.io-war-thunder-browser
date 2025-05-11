@@ -18,6 +18,7 @@ import {
     Tabs,
     Upload,
     Alert,
+    Checkbox,
 } from 'antd';
 import {
     DashboardOutlined,
@@ -35,6 +36,7 @@ import {formatBR, getCountryName, getTypeName} from '../utils';
 import './AdminPanel.css';
 import api from '../api'; // Импортируем API клиент
 import ImageUploader from './ImageUploader';
+import BatchImageUploader from './BatchImageUploader'; // Новый компонент
 
 const {Header, Sider, Content} = Layout;
 const {Option} = Select;
@@ -45,9 +47,12 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
     const [activeTab, setActiveTab] = useState('vehicles');
     const [editingVehicle, setEditingVehicle] = useState(null);
     const [imageUploadVisible, setImageUploadVisible] = useState(false);
+    const [batchUploadVisible, setBatchUploadVisible] = useState(false); // Новое состояние
     const [searchText, setSearchText] = useState('');
     const [form] = Form.useForm();
     const [tempImages, setTempImages] = useState([]); // Состояние для временных изображений
+    const [selectedRowKeys, setSelectedRowKeys] = useState([]); // Состояние выбранных строк
+    const [selectedVehicles, setSelectedVehicles] = useState([]); // Выбранные транспортные средства
 
     // Обработка поиска
     const handleSearch = value => {
@@ -58,6 +63,42 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
     const filteredVehicles = vehicles.filter(vehicle =>
         vehicle.name.toLowerCase().includes(searchText.toLowerCase())
     );
+
+    // Настройка выбора строк
+    const rowSelection = {
+        selectedRowKeys,
+        onChange: (selectedKeys, selectedRows) => {
+            setSelectedRowKeys(selectedKeys);
+            setSelectedVehicles(selectedRows);
+        },
+        selections: [
+            Table.SELECTION_ALL,
+            Table.SELECTION_INVERT,
+            Table.SELECTION_NONE,
+            {
+                key: 'hasImages',
+                text: 'Выбрать технику с изображениями',
+                onSelect: () => {
+                    const keys = vehicles
+                        .filter(vehicle => vehicle.hasImages)
+                        .map(vehicle => vehicle.name);
+                    setSelectedRowKeys(keys);
+                    setSelectedVehicles(vehicles.filter(vehicle => vehicle.hasImages));
+                },
+            },
+            {
+                key: 'noImages',
+                text: 'Выбрать технику без изображений',
+                onSelect: () => {
+                    const keys = vehicles
+                        .filter(vehicle => !vehicle.hasImages)
+                        .map(vehicle => vehicle.name);
+                    setSelectedRowKeys(keys);
+                    setSelectedVehicles(vehicles.filter(vehicle => !vehicle.hasImages));
+                },
+            },
+        ],
+    };
 
     // Начать редактирование техники
     const handleEdit = vehicle => {
@@ -239,6 +280,47 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
         message.success(`${tempImages.length} изображений сохранено`);
     };
 
+    // Обработчик кнопки пакетной загрузки
+    const handleBatchUploadOpen = () => {
+        if (selectedRowKeys.length === 0) {
+            message.warning('Выберите хотя бы одну единицу техники для загрузки изображений.');
+            return;
+        }
+        setBatchUploadVisible(true);
+    };
+
+    // Функция сохранения изображений для нескольких транспортных средств
+    const handleSaveBatchImages = (images) => {
+        if (images.length === 0) {
+            message.warning("Нет изображений для сохранения");
+            return;
+        }
+
+        // Создаем уникальные копии изображений для каждого транспортного средства
+        const updatedVehicles = vehicles.map(vehicle => {
+            if (selectedRowKeys.includes(vehicle.name)) {
+                const currentImages = vehicle.images || [];
+                // Создаем уникальные копии изображений для каждого ТС
+                const uniqueImages = images.map(image => ({
+                    ...image,
+                    id: Date.now() + Math.random(),  // Генерируем уникальный ID
+                }));
+
+                return {
+                    ...vehicle,
+                    images: [...currentImages, ...uniqueImages],
+                    hasImages: true
+                };
+            }
+            return vehicle;
+        });
+
+        // Сохраняем изменения через колбэк
+        onSave(updatedVehicles);
+        setBatchUploadVisible(false);
+        message.success(`${images.length} изображений добавлено к ${selectedRowKeys.length} единицам техники`);
+    };
+
     // Настройки загрузки файлов
     const uploadProps = {
         name: 'image',
@@ -265,6 +347,98 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
             console.log("После удаления:", newArray);
             return newArray;
         });
+    };
+
+    // Функция для редактирования описания изображения
+    const handleImageCaptionEdit = (vehicle, imageIndex, newCaption) => {
+        const updatedVehicles = vehicles.map(v => {
+            if (v.name === vehicle.name && v.images) {
+                const updatedImages = [...v.images];
+                updatedImages[imageIndex] = {
+                    ...updatedImages[imageIndex],
+                    caption: newCaption
+                };
+                return {
+                    ...v,
+                    images: updatedImages
+                };
+            }
+            return v;
+        });
+
+        onSave(updatedVehicles);
+        // Обновить текущую редактируемую технику если она открыта
+        if (editingVehicle && editingVehicle.name === vehicle.name) {
+            setEditingVehicle(updatedVehicles.find(v => v.name === vehicle.name));
+        }
+
+        message.success('Описание изображения обновлено');
+    };
+
+    // Функция для удаления изображения
+    const handleImageDelete = (vehicle, imageIndex) => {
+        // Получаем данные удаляемого изображения для лога
+        const imageToDelete = vehicle.images[imageIndex];
+        console.log("Удаление изображения:", imageToDelete);
+
+        // Создаем обновленный массив всех машин
+        const updatedVehicles = vehicles.map(v => {
+            if (v.name === vehicle.name && v.images) {
+                // Создаем новый массив изображений, исключая удаляемое
+                const updatedImages = v.images.filter((_, i) => i !== imageIndex);
+                return {
+                    ...v,
+                    images: updatedImages,
+                    hasImages: updatedImages.length > 0
+                };
+            }
+            return v;
+        });
+
+        // Сохраняем обновленные данные
+        onSave(updatedVehicles);
+
+        // Обновляем текущую редактируемую технику, если она открыта
+        if (editingVehicle && editingVehicle.name === vehicle.name) {
+            const updated = updatedVehicles.find(v => v.name === vehicle.name);
+            setEditingVehicle(updated);
+        }
+
+        message.success('Изображение удалено');
+    };
+
+    // Функция для изменения порядка изображений
+    const handleMoveImage = (vehicle, imageIndex, direction) => {
+        if (!vehicle.images ||
+            (direction === 'up' && imageIndex === 0) ||
+            (direction === 'down' && imageIndex === vehicle.images.length - 1)) {
+            return;
+        }
+
+        const updatedVehicles = vehicles.map(v => {
+            if (v.name === vehicle.name && v.images) {
+                const updatedImages = [...v.images];
+                const newIndex = direction === 'up' ? imageIndex - 1 : imageIndex + 1;
+
+                // Swap images
+                [updatedImages[imageIndex], updatedImages[newIndex]] =
+                    [updatedImages[newIndex], updatedImages[imageIndex]];
+
+                return {
+                    ...v,
+                    images: updatedImages
+                };
+            }
+            return v;
+        });
+
+        onSave(updatedVehicles);
+        // Обновить текущую редактируемую технику если она открыта
+        if (editingVehicle && editingVehicle.name === vehicle.name) {
+            setEditingVehicle(updatedVehicles.find(v => v.name === vehicle.name));
+        }
+
+        message.success(`Изображение перемещено ${direction === 'up' ? 'вверх' : 'вниз'}`);
     };
 
     // Колонки для таблицы техники
@@ -380,12 +554,39 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
                                     onSearch={handleSearch}
                                     style={{width: 300}}
                                 />
-                                <Button type="primary" icon={<PlusOutlined/>}>
-                                    Add Vehicle
-                                </Button>
+                                <Space>
+                                    <Button
+                                        type="primary"
+                                        icon={<PictureOutlined/>}
+                                        onClick={handleBatchUploadOpen}
+                                        disabled={selectedRowKeys.length === 0}
+                                    >
+                                        Upload Images to Selected
+                                    </Button>
+                                    <Button type="primary" icon={<PlusOutlined/>}>
+                                        Add Vehicle
+                                    </Button>
+                                </Space>
+                            </div>
+
+                            <div className="selection-info">
+                                {selectedRowKeys.length > 0 && (
+                                    <Alert
+                                        message={`Selected ${selectedRowKeys.length} vehicles`}
+                                        type="info"
+                                        showIcon
+                                        action={
+                                            <Button size="small" onClick={() => setSelectedRowKeys([])}>
+                                                Clear
+                                            </Button>
+                                        }
+                                        style={{ marginBottom: 16 }}
+                                    />
+                                )}
                             </div>
 
                             <Table
+                                rowSelection={rowSelection}
                                 columns={columns}
                                 dataSource={filteredVehicles}
                                 rowKey="name"
@@ -499,6 +700,8 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
                     </Form>
                 )}
             </Drawer>
+
+            {/* Modal for Single Vehicle Image Upload */}
             <Modal
                 title={`Upload Images for ${editingVehicle?.name || ''}`}
                 open={imageUploadVisible}
@@ -569,10 +772,40 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
                         <div className="image-grid">
                             {editingVehicle && editingVehicle.images && editingVehicle.images.length > 0 ? (
                                 <div className="current-images">
-                                    {editingVehicle.images.map(image => (
+                                    {editingVehicle.images.map((image, index) => (
                                         <div key={image.id} className="image-item">
                                             <img src={image.url} alt={image.caption || 'Vehicle image'}/>
-                                            <div className="image-caption">{image.caption}</div>
+                                            <div className="image-caption">
+                                                <Input
+                                                    defaultValue={image.caption}
+                                                    size="small"
+                                                    onBlur={(e) => handleImageCaptionEdit(editingVehicle, index, e.target.value)}
+                                                    onPressEnter={(e) => {
+                                                        e.target.blur();
+                                                        handleImageCaptionEdit(editingVehicle, index, e.target.value);
+                                                    }}
+                                                />
+                                                <div className="image-actions">
+                                                    <Button
+                                                        icon={<DeleteOutlined />}
+                                                        danger
+                                                        size="small"
+                                                        onClick={() => handleImageDelete(editingVehicle, index)}
+                                                    />
+                                                    <Button
+                                                        icon={<span>↑</span>}
+                                                        size="small"
+                                                        disabled={index === 0}
+                                                        onClick={() => handleMoveImage(editingVehicle, index, 'up')}
+                                                    />
+                                                    <Button
+                                                        icon={<span>↓</span>}
+                                                        size="small"
+                                                        disabled={index === editingVehicle.images.length - 1}
+                                                        onClick={() => handleMoveImage(editingVehicle, index, 'down')}
+                                                    />
+                                                </div>
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
@@ -582,6 +815,35 @@ const AdminPanel = ({vehicles, onSave, onClose}) => {
                         </div>
                     </TabPane>
                 </Tabs>
+            </Modal>
+
+            {/* Modal for Batch Image Upload */}
+            <Modal
+                title="Upload Images to Selected Vehicles"
+                open={batchUploadVisible}
+                onCancel={() => setBatchUploadVisible(false)}
+                footer={null}
+                width={800}
+                maskClosable={false}
+            >
+                <Alert
+                    message="Batch Upload Information"
+                    description={
+                        <div>
+                            <p>Selected vehicles: {selectedRowKeys.length}</p>
+                            <p>Each image will be added to all selected vehicles separately. If you later delete an image from one vehicle, it won't affect other vehicles.</p>
+                        </div>
+                    }
+                    type="info"
+                    showIcon
+                    style={{ marginBottom: 16 }}
+                />
+
+                <BatchImageUploader
+                    vehicles={selectedVehicles}
+                    onSave={handleSaveBatchImages}
+                    onCancel={() => setBatchUploadVisible(false)}
+                />
             </Modal>
         </Layout>
     );

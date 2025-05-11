@@ -129,6 +129,29 @@
     background-color: #03dac6;
 }
 
+/* Selection styles */
+.selection-info {
+    margin-bottom: 16px;
+}
+
+.ant-table-wrapper .ant-table-selection {
+    color: #bb86fc;
+}
+
+.ant-table-tbody > tr.ant-table-row-selected > td {
+    background-color: rgba(187, 134, 252, 0.12);
+    border-color: rgba(187, 134, 252, 0.2);
+}
+
+.ant-table-tbody > tr.ant-table-row-selected:hover > td {
+    background-color: rgba(187, 134, 252, 0.16);
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #bb86fc;
+    border-color: #bb86fc;
+}
+
 /* Form in drawer */
 .ant-drawer-content {
     background-color: #1e1e1e;
@@ -285,7 +308,7 @@
 
 .current-images {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 16px;
     margin-top: 16px;
 }
@@ -297,9 +320,14 @@
     background-color: #242424;
     border: 1px solid #333;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    aspect-ratio: 4/3;
     display: flex;
     flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.image-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .image-item img {
@@ -312,28 +340,94 @@
 .image-caption {
     padding: 8px 12px;
     color: rgba(255, 255, 255, 0.87);
-    font-size: 12px;
+    font-size: 14px;
     background-color: #1e1e1e;
     border-top: 1px solid #333;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.image-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+
+/* Batch uploader styles */
+.batch-uploader {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.batch-uploader .upload-section {
+    margin-bottom: 16px;
+}
+
+.batch-uploader .images-preview {
+    margin-top: 16px;
+}
+
+.batch-uploader .images-preview h3 {
+    color: rgba(255, 255, 255, 0.87);
+    margin-bottom: 16px;
+}
+
+.batch-uploader .ant-list-item {
+    margin-bottom: 16px;
+}
+
+.batch-uploader .ant-list-item .ant-card {
+    background-color: #242424;
+    border-color: #333;
+}
+
+.batch-uploader .ant-list-item .ant-card-head {
+    border-bottom-color: #333;
+}
+
+.batch-uploader .ant-list-item .ant-card-actions {
+    background-color: #1e1e1e;
+    border-top-color: #333;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .admin-header {
         padding: 0 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px;
+        height: auto;
+    }
+
+    .admin-header .admin-title {
+        margin-bottom: 12px;
+    }
+
+    .admin-header .admin-actions {
+        width: 100%;
+        justify-content: flex-end;
     }
 
     .admin-content {
-        padding: 16px;
+        padding: 12px;
     }
 
     .admin-toolbar {
         flex-direction: column;
         gap: 12px;
         align-items: stretch;
+    }
+
+    .admin-toolbar .ant-input-search {
+        width: 100% !important;
+    }
+
+    .admin-toolbar .ant-btn {
+        width: 100%;
+        height: 44px;
     }
 
     .admin-sider {
@@ -355,4 +449,158 @@
     .admin-sider .ant-menu-item-only-child {
         padding-left: 0 !important;
     }
+
+    /* Table optimizations for mobile */
+    .admin-table .ant-table {
+        font-size: 13px;
+    }
+
+    .admin-table .ant-table-thead > tr > th,
+    .admin-table .ant-table-tbody > tr > td {
+        padding: 12px 8px;
+    }
+
+    /* Hide less important columns on mobile */
+    .admin-table .ant-table-column-rank,
+    .admin-table .ant-table-column-type {
+        display: none;
+    }
+
+    .current-images {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+/* Drawer optimizations */
+.ant-drawer-content-wrapper {
+    width: 100% !important;
+}
+
+/* Form controls optimizations */
+@media (max-width: 768px) {
+    .ant-form-item {
+        margin-bottom: 24px;
+    }
+
+    .ant-form-item-label > label {
+        height: 32px;
+        font-size: 15px;
+    }
+
+    .ant-input,
+    .ant-select-selector,
+    .ant-input-number,
+    .ant-input-number-input {
+        height: 44px !important;
+        font-size: 16px !important; /* Prevent iOS zoom on input */
+    }
+
+    .ant-select-selector {
+        padding: 0 12px !important;
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .ant-input-number-handler-wrap {
+        width: 32px;
+    }
+
+    .ant-input-number-handler {
+        height: 22px !important;
+    }
+
+    /* Image uploader improvements for touch */
+    .ant-upload-list-item {
+        padding: 8px;
+    }
+
+    .ant-upload-list-item-name {
+        padding-left: 30px;
+        font-size: 14px;
+    }
+
+    .ant-upload-list-item-card-actions {
+        right: 8px;
+    }
+
+    .ant-upload-list-item-card-actions .ant-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* Tabs in modal - larger touch area */
+    .ant-tabs-tab {
+        padding: 12px 16px !important;
+        font-size: 15px;
+    }
+
+    /* Modal actions with more space */
+    .ant-modal-footer {
+        padding: 16px 24px;
+    }
+
+    .ant-modal-footer .ant-btn {
+        height: 44px;
+        padding: 0 16px;
+    }
+}
+
+/* Improved image uploader */
+.upload-instructions {
+    margin-bottom: 16px;
+    background-color: #242424;
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.upload-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.upload-actions .ant-btn {
+    height: 44px;
+}
+
+@media (min-width: 768px) {
+    .upload-actions {
+        flex-direction: row;
+    }
+}
+
+/* Optimize drag & drop area for mobile */
+.ant-upload.ant-upload-drag {
+    padding: 24px;
+}
+
+.ant-upload.ant-upload-drag p.ant-upload-drag-icon {
+    margin-bottom: 16px;
+}
+
+.ant-upload.ant-upload-drag p.ant-upload-drag-icon .anticon {
+    font-size: 48px;
+}
+
+.ant-upload.ant-upload-drag p.ant-upload-text {
+    font-size: 16px;
+}
+
+.ant-upload.ant-upload-drag p.ant-upload-hint {
+    font-size: 14px;
+}
+
+.admin-header .admin-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.admin-header .admin-actions .ant-btn {
+    min-height: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

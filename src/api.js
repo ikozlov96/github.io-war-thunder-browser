@@ -82,8 +82,7 @@ const api = {
         }
     },
 
-
-    // ПРАВИЛЬНОЕ исправление для api.js
+    // Загрузка изображения
     uploadImage: async (name, country, file, caption) => {
         console.log("uploadImage вызван:");
         console.log("- name:", name);
@@ -105,7 +104,7 @@ const api = {
             console.log("FormData содержит country:", formData.get('country'));
             console.log("FormData содержит image:", formData.get('image').name);
 
-            const url = `${API_URL}/vehicles/${encodeURIComponent(name)}/images`;
+            const url = `${API_URL}/vehicles/${encodeURIComponent(name)}/images?country=${encodeURIComponent(country)}`;
             console.log("URL для загрузки:", url);
 
             // НИКАКИХ дополнительных заголовков - они могут мешать передаче multipart/form-data

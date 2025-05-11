@@ -1,13 +1,14 @@
-/* Основные стили карточки */
+/* Make vehicle cards more responsive */
 .vehicle-card {
     width: 100%;
+    /* Remove fixed height to make it flexible */
+    height: auto;
     transition: all 0.3s;
     overflow: hidden;
-    height: 180px; /* Уменьшенный размер карточки */
     position: relative;
     margin-bottom: 16px;
-    background-color: #242424; /* Темный фон карточки */
-    border-radius: 4px;
+    background-color: #242424;
+    border-radius: 8px; /* Increased border-radius */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
@@ -16,30 +17,33 @@
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Контейнер изображения */
+/* Adjust image container to be aspect ratio based */
 .vehicle-image-container {
     width: 100%;
-    height: 140px; /* Уменьшенная высота изображения */
+    padding-top: 75%; /* 4:3 aspect ratio */
     position: relative;
-    background-color: #1a1a1a; /* Темный фон для изображения */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background-color: #1a1a1a;
 }
 
 .vehicle-image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 .vehicle-no-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #999;
-    height: 100%;
-    width: 100%;
 }
 
 .vehicle-type-icon-large {
@@ -53,41 +57,50 @@
     fill: #999;
 }
 
-/* Информационная панель в одну строку */
+/* Larger touch area for the entire card */
+.vehicle-card-clickable {
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Enlarge info panel for better readability */
 .vehicle-info-panel {
     display: flex;
     align-items: center;
-    height: 40px; /* Фиксированная высота */
-    padding: 0 10px;
+    padding: 12px 16px;
+    height: auto; /* Remove fixed height */
+    min-height: 50px; /* Minimum height for touch */
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.7); /* Более контрастный фон */
+    background-color: rgba(0, 0, 0, 0.7);
     position: relative;
     z-index: 5;
-    backdrop-filter: blur(2px); /* Добавляем размытие для современных браузеров */
+    backdrop-filter: blur(2px);
 }
 
-/* Стилизация SVG флага - УВЕЛИЧЕННЫЕ РАЗМЕРЫ */
+/* Larger flag for better visibility */
 .country-flag-svg {
-    width: 28px; /* Увеличили с 24px */
-    height: 18px; /* Увеличили с 16px */
-    margin-right: 10px; /* Увеличили отступ справа */
+    width: 32px;
+    height: 21px;
+    margin-right: 12px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Обрезаем содержимое по границам */
-    border-radius: 2px; /* Небольшое скругление */
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15); /* Тонкая рамка для визуального выделения */
-    flex-shrink: 0; /* Предотвращает сжатие флагов */
-    background-color: rgba(0, 0, 0, 0.2); /* Фон для флагов с прозрачностью */
+    overflow: hidden;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .country-flag-svg svg {
     width: 100%;
     height: 100%;
-    display: block; /* Устраняем проблемы с inline-block */
-    object-fit: contain; /* Сохраняем пропорции SVG */
-    max-width: 100%; /* Ограничиваем максимальную ширину */
-    max-height: 100%; /* Ограничиваем максимальную высоту */
+    display: block;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /* Специальные стили для сложных флагов */
@@ -100,16 +113,16 @@
     transform: scale(0.8); /* Слегка уменьшаем сложный флаг Германии */
 }
 
-/* Название транспортного средства */
+/* Larger vehicle name */
 .vehicle-name {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     flex: 1;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     margin-right: 8px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Тень для лучшей читаемости */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 /* Контейнер для BR и иконки типа */
@@ -119,28 +132,28 @@
     gap: 8px;
 }
 
-/* Стилизованный BR с контуром */
+/* Larger BR display */
 .vehicle-br {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
-    color: #4CCCFF; /* Голубой цвет для BR */
-    padding: 2px 6px;
+    color: #4CCCFF;
+    padding: 4px 8px;
     border-radius: 4px;
-    border: 1px solid #4CCCFF; /* Контур */
-    background-color: rgba(0, 0, 0, 0.3); /* Полупрозрачный фон */
+    border: 1px solid #4CCCFF;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
-/* Стилизованная иконка типа с контуром */
+/* Larger type icon */
 .vehicle-type-icon {
-    width: 20px;
-    height: 20px;
-    padding: 2px;
+    width: 24px;
+    height: 24px;
+    padding: 3px;
     border-radius: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Светлый контур */
+    border: 1px solid rgba(255, 255, 255, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.3); /* Полупрозрачный фон */
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .vehicle-type-icon svg {
@@ -180,38 +193,46 @@
     opacity: 1;
 }
 
-/* Адаптивность */
+/* Mobile optimizations */
 @media (max-width: 576px) {
-    .vehicle-card {
-        height: 160px;
-    }
-
-    .vehicle-image-container {
-        height: 120px;
-    }
-
     .vehicle-info-panel {
-        height: 36px;
+        padding: 10px 12px;
+        min-height: 44px;
     }
 
     .country-flag-svg {
-        width: 24px;
-        height: 16px;
+        width: 28px;
+        height: 18px;
         margin-right: 6px;
     }
 
     .vehicle-name {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     .vehicle-br {
         font-size: 12px;
-        padding: 1px 4px;
+        padding: 2px 6px;
     }
 
     .vehicle-type-icon {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Tablet optimizations (larger text for better readability) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .vehicle-info-panel {
+        min-height: 54px;
+    }
+
+    .vehicle-name {
+        font-size: 16px;
+    }
+
+    .vehicle-br {
+        font-size: 15px;
     }
 }
 

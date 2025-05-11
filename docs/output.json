@@ -179,7 +179,22 @@
         {
           "id": 1746904492227,
           "url": "/images/usa/Screenshot_2025-05-10_at_65627PM-1746904492203.png",
-          "caption": "Screenshot 2025-05-10 at 6.56.27 PM.png"
+          "caption": "m26.png"
+        },
+        {
+          "id": 1746931319948,
+          "url": "/images/usa/Screenshot_2025-05-10_at_65921PM-1746931319935.png",
+          "caption": "Screenshot 2025-05-10 at 6.59.21 PM.png"
+        },
+        {
+          "id": 1746931319963,
+          "url": "/images/usa/Screenshot_2025-05-10_at_65938PM-1746931319955.png",
+          "caption": "Screenshot 2025-05-10 at 6.59.38 PM.png"
+        },
+        {
+          "id": 1746931319986,
+          "url": "/images/usa/Screenshot_2025-05-10_at_70001PM-1746931319971.png",
+          "caption": "Screenshot 2025-05-10 at 7.00.01 PM.png"
         }
       ],
       "hasImages": true
@@ -665,14 +680,32 @@
       "country": "usa",
       "rank": 4,
       "br": "6.7",
-      "type": "medium_tank"
+      "type": "medium_tank",
+      "images": [
+        {
+          "id": 1746931138767.439,
+          "url": "/images/usa/Screenshot_2025-05-10_at_65627PM-1746931136395.png",
+          "caption": "Screenshot 2025-05-10 at 6.56.27 PM.png",
+          "captionEditMode": false
+        }
+      ],
+      "hasImages": true
     },
     {
       "name": "M26E1",
       "country": "usa",
       "rank": 4,
       "br": "6.7",
-      "type": "medium_tank"
+      "type": "medium_tank",
+      "images": [
+        {
+          "id": 1746931138767.8481,
+          "url": "/images/usa/Screenshot_2025-05-10_at_65627PM-1746931136395.png",
+          "caption": "Screenshot 2025-05-10 at 6.56.27 PM.png",
+          "captionEditMode": false
+        }
+      ],
+      "hasImages": true
     },
     {
       "name": "M46 \"\"Tiger\"\"",
@@ -5278,7 +5311,16 @@
       "country": "italy",
       "rank": 4,
       "br": "6.7",
-      "type": "medium_tank"
+      "type": "medium_tank",
+      "images": [
+        {
+          "id": 1746931138767.4446,
+          "url": "/images/usa/Screenshot_2025-05-10_at_65627PM-1746931136395.png",
+          "caption": "Screenshot 2025-05-10 at 6.56.27 PM.png",
+          "captionEditMode": false
+        }
+      ],
+      "hasImages": true
     },
     {
       "name": "M47 (105/55)",
@@ -5663,7 +5705,16 @@
       "country": "italy",
       "rank": 4,
       "br": "6.7",
-      "type": "medium_tank"
+      "type": "medium_tank",
+      "images": [
+        {
+          "id": 1746931138767.0002,
+          "url": "/images/usa/Screenshot_2025-05-10_at_65627PM-1746931136395.png",
+          "caption": "Screenshot 2025-05-10 at 6.56.27 PM.png",
+          "captionEditMode": false
+        }
+      ],
+      "hasImages": true
     },
     {
       "name": "M60A1 \"\"D.C.Ariete\"\"",
@@ -5887,7 +5938,16 @@
       "country": "france",
       "rank": 4,
       "br": "6.7",
-      "type": "medium_tank"
+      "type": "medium_tank",
+      "images": [
+        {
+          "id": 1746931138767.7488,
+          "url": "/images/usa/Screenshot_2025-05-10_at_65627PM-1746931136395.png",
+          "caption": "Screenshot 2025-05-10 at 6.56.27 PM.png",
+          "captionEditMode": false
+        }
+      ],
+      "hasImages": true
     },
     {
       "name": "Lorraine 40t",

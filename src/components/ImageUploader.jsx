@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Upload, Button, message, Modal, List, Card } from 'antd';
-import { UploadOutlined, DeleteOutlined, SaveOutlined } from '@ant-design/icons';
+import { Upload, Button, message, List, Card, Input, Space } from 'antd';
+import { UploadOutlined, DeleteOutlined, SaveOutlined, ArrowUpOutlined, ArrowDownOutlined } from '@ant-design/icons';
 import api from '../api';
 
 const ImageUploader = ({ vehicle, onImagesAdded }) => {
     const [fileList, setFileList] = useState([]);
     const [uploading, setUploading] = useState(false);
-    const [previewVisible, setPreviewVisible] = useState(false);
-    const [previewImage, setPreviewImage] = useState('');
+    const [tempImages, setTempImages] = useState([]);
+    const [imageCaptions, setImageCaptions] = useState({});
 
     // Сброс списка файлов при смене техники
     useEffect(() => {
         setFileList([]);
+        setTempImages([]);
+        setImageCaptions({});
     }, [vehicle]);
 
     const handleUpload = async () => {
@@ -51,10 +53,18 @@ const ImageUploader = ({ vehicle, onImagesAdded }) => {
             }
 
             if (uploadedImages.length > 0) {
-                // Вызываем колбэк с новыми изображениями
-                onImagesAdded(uploadedImages);
-                message.success(`Сохранено ${uploadedImages.length} изображений`);
-                setFileList([]); // Очищаем список файлов
+                // Добавляем загруженные изображения во временное хранилище
+                setTempImages(prev => [...prev, ...uploadedImages]);
+
+                // Инициализируем подписи
+                const newCaptions = {...imageCaptions};
+                uploadedImages.forEach(img => {
+                    newCaptions[img.id] = img.caption || '';
+                });
+                setImageCaptions(newCaptions);
+
+                // Очищаем список файлов
+                setFileList([]);
             }
         } catch (error) {
             console.error('Общая ошибка загрузки:', error);
@@ -69,52 +79,151 @@ const ImageUploader = ({ vehicle, onImagesAdded }) => {
         setFileList(fileList);
     };
 
-    // Обработчик предпросмотра изображений
-    const handlePreview = async (file) => {
-        if (!file.url && !file.preview) {
-            file.preview = await new Promise((resolve) => {
-                const reader = new FileReader();
-                reader.readAsDataURL(file.originFileObj);
-                reader.onload = () => resolve(reader.result);
-            });
+    // Изменение подписи к изображению
+    const handleCaptionChange = (id, value) => {
+        setImageCaptions(prev => ({
+            ...prev,
+            [id]: value
+        }));
+    };
+
+    // Удаление загруженного изображения
+    const handleImageRemove = (imageId) => {
+        setTempImages(prev => prev.filter(image => image.id !== imageId));
+        // Удаляем и подпись
+        setImageCaptions(prev => {
+            const updated = { ...prev };
+            delete updated[imageId];
+            return updated;
+        });
+    };
+
+    // Изменение порядка изображений
+    const handleMoveImage = (index, direction) => {
+        if ((direction === 'up' && index === 0) ||
+            (direction === 'down' && index === tempImages.length - 1)) {
+            return;
         }
 
-        setPreviewImage(file.url || file.preview);
-        setPreviewVisible(true);
+        const newTempImages = [...tempImages];
+        const targetIndex = direction === 'up' ? index - 1 : index + 1;
+
+        // Swap images
+        [newTempImages[index], newTempImages[targetIndex]] =
+            [newTempImages[targetIndex], newTempImages[index]];
+
+        setTempImages(newTempImages);
+    };
+
+    // Сохранение всех изображений
+    const handleSaveAllImages = () => {
+        if (tempImages.length === 0) {
+            message.warning('Нет изображений для сохранения');
+            return;
+        }
+
+        // Применяем текущие подписи к изображениям
+        const imagesWithCaptions = tempImages.map(image => ({
+            ...image,
+            caption: imageCaptions[image.id] || image.caption || ''
+        }));
+
+        onImagesAdded(imagesWithCaptions);
+
+        // Очищаем временные данные
+        setTempImages([]);
+        setImageCaptions({});
+        message.success(`${imagesWithCaptions.length} изображений сохранено`);
     };
 
     return (
         <div>
-            <Upload
-                listType="picture"
-                fileList={fileList}
-                onPreview={handlePreview}
-                onChange={handleChange}
-                beforeUpload={() => false} // Отключаем автоматическую загрузку
-                multiple
-            >
-                <Button icon={<UploadOutlined />}>Выбрать изображения</Button>
-            </Upload>
+            <div className="upload-section">
+                <Upload
+                    listType="picture"
+                    fileList={fileList}
+                    onChange={handleChange}
+                    beforeUpload={(file) => {
+                        const isImage = file.type.startsWith('image/');
+                        if (!isImage) {
+                            message.error('Можно загружать только изображения!');
+                            return Upload.LIST_IGNORE;
+                        }
+                        return false; // Отключаем автоматическую загрузку
+                    }}
+                    multiple
+                >
+                    <Button icon={<UploadOutlined />}>Выбрать изображения</Button>
+                </Upload>
 
-            <Button
-                type="primary"
-                onClick={handleUpload}
-                disabled={fileList.length === 0}
-                loading={uploading}
-                style={{ marginTop: 16 }}
-                icon={<SaveOutlined />}
-            >
-                {uploading ? 'Загрузка...' : 'Загрузить и сохранить'}
-            </Button>
+                <Button
+                    type="primary"
+                    onClick={handleUpload}
+                    disabled={fileList.length === 0}
+                    loading={uploading}
+                    style={{ marginTop: 16 }}
+                    icon={<UploadOutlined />}
+                >
+                    {uploading ? 'Загрузка...' : 'Загрузить'}
+                </Button>
+            </div>
 
-            <Modal
-                open={previewVisible}
-                title="Предпросмотр"
-                footer={null}
-                onCancel={() => setPreviewVisible(false)}
-            >
-                <img alt="preview" style={{ width: '100%' }} src={previewImage} />
-            </Modal>
+            {tempImages.length > 0 && (
+                <div className="images-preview" style={{ marginTop: 20 }}>
+                    <h3>Предварительный просмотр</h3>
+                    <List
+                        grid={{ gutter: 16, column: 3 }}
+                        dataSource={tempImages}
+                        renderItem={(image, index) => (
+                            <List.Item>
+                                <Card
+                                    cover={
+                                        <div style={{ height: 150, overflow: 'hidden' }}>
+                                            <img
+                                                alt={image.caption}
+                                                src={image.url}
+                                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                            />
+                                        </div>
+                                    }
+                                    actions={[
+                                        <ArrowUpOutlined
+                                            key="up"
+                                            onClick={() => handleMoveImage(index, 'up')}
+                                            style={{ color: index === 0 ? '#ccc' : '#1890ff' }}
+                                        />,
+                                        <ArrowDownOutlined
+                                            key="down"
+                                            onClick={() => handleMoveImage(index, 'down')}
+                                            style={{ color: index === tempImages.length - 1 ? '#ccc' : '#1890ff' }}
+                                        />,
+                                        <DeleteOutlined
+                                            key="delete"
+                                            onClick={() => handleImageRemove(image.id)}
+                                        />
+                                    ]}
+                                >
+                                    <Input
+                                        placeholder="Описание изображения"
+                                        value={imageCaptions[image.id] || image.caption || ''}
+                                        onChange={(e) => handleCaptionChange(image.id, e.target.value)}
+                                    />
+                                </Card>
+                            </List.Item>
+                        )}
+                    />
+
+                    <div style={{ marginTop: 16, display: 'flex', justifyContent: 'flex-end' }}>
+                        <Button
+                            type="primary"
+                            icon={<SaveOutlined />}
+                            onClick={handleSaveAllImages}
+                        >
+                            Сохранить все изображения
+                        </Button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
