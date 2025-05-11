@@ -441,9 +441,17 @@ function App() {
     return (
         <ConfigProvider theme={materialDarkTheme}>
             <Layout className="app-layout">
+
                 <Header className="app-header">
                     <div className="logo">
-                        <h1>War Thunder Vehicles</h1>
+                        <h1>
+                            <img
+                                src={`${process.env.PUBLIC_URL}/logo.svg`}
+                                alt="Weak Spot Logo"
+                                className="app-logo"
+                            />
+                            War Thunder Weak Spots
+                        </h1>
                     </div>
 
                     <div className="header-actions">

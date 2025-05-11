@@ -355,3 +355,41 @@ body {
 .ant-btn:active {
   transform: scale(0.97); /* Небольшая анимация нажатия */
 }
+
+.logo h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.app-logo {
+  height: 36px;
+  width: 36px;
+  margin-right: 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo:hover .app-logo {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 3px rgba(187, 134, 252, 0.8));
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+  .logo h1 {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 220px;
+  }
+
+  .app-logo {
+    height: 28px;
+    width: 28px;
+    margin-right: 8px;
+  }
+}

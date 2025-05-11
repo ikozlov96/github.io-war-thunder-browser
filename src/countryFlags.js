@@ -28,13 +28,14 @@ export const countryFlags = {
 </g>
 </svg>`,
 
-    israel: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
-    <rect width="24" height="16" fill="#FFFFFF"/>
-    <rect y="0" width="24" height="2.46" fill="#0038B8"/>
-    <rect y="13.54" width="24" height="2.46" fill="#0038B8"/>
-    <path d="M12,5.23L14,9.23H10L12,5.23z" fill="#0038B8"/>
-    <path d="M12,10.77L10,6.77H14L12,10.77z" fill="#0038B8"/>
-  </svg>`,
+    israel: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300px" height="218px" viewBox="0 0 299 218" version="1.1">
+<g id="surface1">
+<rect x="0" y="0" width="299" height="218" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,21.960784%,72.156864%);fill-opacity:1;" d="M 0 20.4375 L 299 20.4375 L 299 54.5 L 0 54.5 Z M 0 20.4375 "/>
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,21.960784%,72.156864%);fill-opacity:1;" d="M 0 163.5 L 299 163.5 L 299 197.5625 L 0 197.5625 Z M 0 163.5 "/>
+<path style="fill:none;stroke-width:27.5;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,21.960784%,72.156864%);stroke-opacity:1;stroke-miterlimit:4;" d="M 423.809835 472.849771 L 676.190165 472.849771 L 550 254.300459 Z M 550 545.699541 L 676.190165 327.150229 L 423.809835 327.150229 Z M 550 545.699541 " transform="matrix(0.271818,0,0,0.2725,0,0)"/>
+</g>
+</svg>`,
 
     sweden: `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="16" viewBox="0 0 24 16">
     <rect width="24" height="16" fill="#006AA7"/>
