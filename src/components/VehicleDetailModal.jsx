@@ -1,41 +1,50 @@
-// Modified VehicleDetailModal.jsx with proper ref handling
-import React, { useState, useEffect, useRef } from 'react';
-import { Modal, Carousel, Button, Spin, Empty } from 'antd';
-import {
-    LeftOutlined,
-    RightOutlined,
-    FullscreenOutlined,
-    FullscreenExitOutlined,
-    CloseOutlined
-} from '@ant-design/icons';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { CloseOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons';
 import './VehicleDetailModal.css';
 
 const VehicleDetailModal = ({ visible, vehicle, onClose }) => {
     const [loading, setLoading] = useState(true);
     const [images, setImages] = useState([]);
-    const [fullscreen, setFullscreen] = useState(false);
-    const [isMobile, setIsMobile] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [touchStart, setTouchStart] = useState(null);
+    const [touchEnd, setTouchEnd] = useState(null);
+    const [showControls, setShowControls] = useState(true);
+    const [touchStartTime, setTouchStartTime] = useState(null);
+    const [touchPosition, setTouchPosition] = useState({ startY: 0, currentY: 0 });
+    const modalRef = useRef(null);
+    const controlsTimerRef = useRef(null);
 
-    // Use useRef instead of useState for the carousel reference
-    const carouselRef = useRef(null);
-
-    // Check if device is mobile
+    // Слушатели клавиатуры
     useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth <= 768);
+        const handleKeyDown = (e) => {
+            if (!visible) return;
+
+            switch (e.key) {
+                case 'Escape':
+                    onClose();
+                    break;
+                case 'ArrowLeft':
+                    handlePrev();
+                    break;
+                case 'ArrowRight':
+                    handleNext();
+                    break;
+                default:
+                    break;
+            }
         };
 
-        checkMobile();
-        window.addEventListener('resize', checkMobile);
-        return () => window.removeEventListener('resize', checkMobile);
-    }, []);
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [visible, images, currentIndex, onClose]);
 
-    // Load vehicle images when modal becomes visible
+    // Загружаем изображения техники, когда модальное окно становится видимым
     useEffect(() => {
         if (visible && vehicle) {
             setLoading(true);
+            setCurrentIndex(0);
 
-            // Use images from vehicle object if available, otherwise use placeholders
+            // Используем изображения из объекта vehicle если они доступны, иначе плейсхолдеры
             const vehicleImages = vehicle.images && vehicle.images.length > 0
                 ? vehicle.images
                 : [
@@ -46,174 +55,215 @@ const VehicleDetailModal = ({ visible, vehicle, onClose }) => {
 
             setImages(vehicleImages);
 
-            // Simulate loading delay
+            // Имитация задержки загрузки
             setTimeout(() => {
                 setLoading(false);
             }, 300);
         }
     }, [visible, vehicle]);
 
-    // Handle modal close
-    const handleClose = () => {
-        setFullscreen(false);
-        onClose();
-    };
-
-    // Toggle fullscreen mode
-    const toggleFullscreen = () => {
-        setFullscreen(!fullscreen);
-    };
-
-    // Handle swipe navigation for mobile
-    const handleSwipeStart = (e) => {
-        const startX = e.touches[0].clientX;
-        const swipeArea = e.currentTarget;
-
-        const handleSwipeMove = (moveEvent) => {
-            moveEvent.preventDefault();
-        };
-
-        const handleSwipeEnd = (endEvent) => {
-            const endX = endEvent.changedTouches[0].clientX;
-            const diff = startX - endX;
-
-            if (Math.abs(diff) > 50) { // Minimum swipe distance
-                if (diff > 0) {
-                    // Swipe left, go to next
-                    if (carouselRef.current) {
-                        carouselRef.current.next();
-                    }
-                } else {
-                    // Swipe right, go to previous
-                    if (carouselRef.current) {
-                        carouselRef.current.prev();
-                    }
+    // Автоматически скрывать элементы управления на мобильных устройствах
+    useEffect(() => {
+        if (visible && showControls) {
+            controlsTimerRef.current = setTimeout(() => {
+                const isMobile = window.innerWidth <= 768;
+                if (isMobile) {
+                    setShowControls(false);
                 }
+            }, 3000);
+        }
+
+        return () => {
+            if (controlsTimerRef.current) {
+                clearTimeout(controlsTimerRef.current);
             }
-
-            swipeArea.removeEventListener('touchmove', handleSwipeMove);
-            swipeArea.removeEventListener('touchend', handleSwipeEnd);
         };
+    }, [visible, showControls]);
 
-        swipeArea.addEventListener('touchmove', handleSwipeMove, { passive: false });
-        swipeArea.addEventListener('touchend', handleSwipeEnd);
+    // Переключение на предыдущее изображение
+    const handlePrev = useCallback(() => {
+        if (images.length <= 1) return;
+        setCurrentIndex(prevIndex => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+        setShowControls(true);
+    }, [images]);
+
+    // Переключение на следующее изображение
+    const handleNext = useCallback(() => {
+        if (images.length <= 1) return;
+        setCurrentIndex(prevIndex => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+        setShowControls(true);
+    }, [images]);
+
+    // Обработчики сенсорных жестов
+    const handleTouchStart = (e) => {
+        setTouchStart({ x: e.touches[0].clientX, y: e.touches[0].clientY });
+        setTouchStartTime(new Date().getTime());
+        setTouchPosition({
+            startY: e.touches[0].clientY,
+            currentY: e.touches[0].clientY
+        });
+        setShowControls(true);
     };
 
-    // Navigate to previous image
-    const handlePrev = () => {
-        if (carouselRef.current) {
-            carouselRef.current.prev();
+    const handleTouchMove = (e) => {
+        if (!touchStart) return;
+
+        setTouchEnd({ x: e.touches[0].clientX, y: e.touches[0].clientY });
+        setTouchPosition(prev => ({
+            ...prev,
+            currentY: e.touches[0].clientY
+        }));
+
+        // Проверка свайпа вверх для закрытия
+        const diffY = touchStart.y - e.touches[0].clientY;
+        if (diffY > 100) {
+            // Применяем визуальный эффект для закрытия
+            if (modalRef.current) {
+                modalRef.current.style.opacity = Math.max(0.3, 1 - (diffY / 300));
+                modalRef.current.style.transform = `translateY(-${diffY/3}px)`;
+            }
         }
     };
 
-    // Navigate to next image
-    const handleNext = () => {
-        if (carouselRef.current) {
-            carouselRef.current.next();
+    const handleTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+
+        const touchTime = new Date().getTime() - touchStartTime;
+        const isFastTouch = touchTime < 300;
+
+        // Reset modal styles
+        if (modalRef.current) {
+            modalRef.current.style.opacity = '1';
+            modalRef.current.style.transform = 'translateY(0)';
         }
+
+        // Horizontal swipe for navigation
+        const horizontalDistance = touchStart.x - touchEnd.x;
+        const verticalDistance = touchStart.y - touchEnd.y;
+
+        // Проверяем, что свайп был преимущественно горизонтальным
+        if (Math.abs(horizontalDistance) > Math.abs(verticalDistance) && Math.abs(horizontalDistance) > 50) {
+            if (horizontalDistance > 0) {
+                handleNext();
+            } else {
+                handlePrev();
+            }
+        }
+        // Свайп вверх для закрытия
+        else if (verticalDistance > 100 || (verticalDistance > 50 && isFastTouch)) {
+            onClose();
+        }
+        // Свайп вниз для закрытия (более короткий)
+        else if (verticalDistance < -100 || (verticalDistance < -50 && isFastTouch)) {
+            onClose();
+        }
+
+        setTouchStart(null);
+        setTouchEnd(null);
     };
 
-    // If no vehicle data
-    if (!vehicle) {
+    // Обработчик клика для показа/скрытия элементов управления
+    const handleImageClick = () => {
+        setShowControls(!showControls);
+    };
+
+    // Если компонент невидим или нет данных о технике, ничего не рендерим
+    if (!visible || !vehicle) {
         return null;
     }
 
-    // Image carousel component
-    const ImageCarousel = ({ images, loading }) => {
-        if (loading) {
-            return (
-                <div className="carousel-loading">
-                    <Spin size="large" tip="Loading images..." />
-                </div>
-            );
-        }
+    // Получаем текущее изображение
+    const currentImage = images[currentIndex];
 
-        if (!images || images.length === 0) {
-            return (
-                <Empty
-                    image={Empty.PRESENTED_IMAGE_SIMPLE}
-                    description="No images available"
-                    className="empty-carousel"
-                />
-            );
-        }
+    // Определяем, является ли устройство мобильным
+    const isMobile = window.innerWidth <= 768;
 
-        return (
-            <div className="carousel-container">
-                <Button
-                    className="fullscreen-button"
-                    icon={fullscreen ? <FullscreenExitOutlined /> : <FullscreenOutlined />}
-                    onClick={toggleFullscreen}
-                    size={isMobile ? "large" : "middle"}
-                />
+    return (
+        <div
+            className={`photo-gallery-modal ${visible ? 'visible' : ''}`}
+            ref={modalRef}
+        >
+            <div
+                className="photo-gallery-content"
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+                onClick={handleImageClick}
+            >
+                {/* Кнопка закрытия, видима только при наличии showControls */}
+                {showControls && (
+                    <button
+                        className="close-button"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onClose();
+                        }}
+                    >
+                        <CloseOutlined />
+                    </button>
+                )}
 
-                <Carousel
-                    arrows={!isMobile} // Hide default arrows on mobile
-                    prevArrow={<Button type="primary" shape="circle" icon={<LeftOutlined />} />}
-                    nextArrow={<Button type="primary" shape="circle" icon={<RightOutlined />} />}
-                    autoplay={false}
-                    className="vehicle-carousel"
-                    ref={carouselRef} // Use the ref directly
-                >
-                    {images.map(image => (
-                        <div key={image.id} className="carousel-item">
-                            <img
-                                src={image.url}
-                                alt={image.caption || 'Vehicle image'}
-                                loading="lazy" // Add lazy loading
+                {/* Кнопки навигации, видимы только при наличии showControls и если изображений больше 1 */}
+                {showControls && images.length > 1 && (
+                    <>
+                        <button
+                            className={`nav-button prev-button ${isMobile ? 'mobile' : ''}`}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                handlePrev();
+                            }}
+                        >
+                            <LeftOutlined />
+                        </button>
+                        <button
+                            className={`nav-button next-button ${isMobile ? 'mobile' : ''}`}
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                handleNext();
+                            }}
+                        >
+                            <RightOutlined />
+                        </button>
+                    </>
+                )}
+
+                {/* Индикаторы изображений для мобильных устройств */}
+                {showControls && images.length > 1 && isMobile && (
+                    <div className="image-indicators">
+                        {images.map((_, index) => (
+                            <div
+                                key={index}
+                                className={`indicator ${index === currentIndex ? 'active' : ''}`}
                             />
-                            {image.caption && (
-                                <div className="image-caption">{image.caption}</div>
-                            )}
+                        ))}
+                    </div>
+                )}
 
-                            {isMobile && (
-                                <div
-                                    className="carousel-swipe-area"
-                                    onTouchStart={handleSwipeStart}
-                                />
-                            )}
-                        </div>
-                    ))}
-                </Carousel>
+                {/* Основное изображение */}
+                {!loading && currentImage && (
+                    <div className="image-container">
+                        <img
+                            src={currentImage.url}
+                            alt={currentImage.caption || 'Vehicle image'}
+                            className="main-image"
+                        />
+                        {/* Отображаем подпись только если она есть и только при showControls */}
+                        {showControls && currentImage.caption && (
+                            <div className="image-caption">
+                                {currentImage.caption}
+                            </div>
+                        )}
+                    </div>
+                )}
 
-                {/* Add large touch-friendly navigation buttons for mobile */}
-                {isMobile && (
-                    <div className="carousel-controls">
-                        <Button
-                            type="primary"
-                            shape="circle"
-                            icon={<LeftOutlined />}
-                            onClick={handlePrev}
-                            size="large"
-                        />
-                        <Button
-                            type="primary"
-                            shape="circle"
-                            icon={<RightOutlined />}
-                            onClick={handleNext}
-                            size="large"
-                        />
+                {/* Загрузка */}
+                {loading && (
+                    <div className="loading-container">
+                        <div className="spinner"></div>
                     </div>
                 )}
             </div>
-        );
-    };
-
-    return (
-        <Modal
-            visible={visible}
-            title={vehicle.name}
-            onCancel={handleClose}
-            footer={null}
-            width={isMobile ? "100%" : (fullscreen ? "90%" : 800)}
-            centered
-            className={`vehicle-detail-modal ${fullscreen || isMobile ? 'fullscreen-modal' : ''}`}
-            destroyOnClose
-            closeIcon={<CloseOutlined />}
-            bodyStyle={{ padding: 0 }}
-        >
-            <ImageCarousel images={images} loading={loading} />
-        </Modal>
+        </div>
     );
 };
 
